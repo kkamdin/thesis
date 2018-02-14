@@ -1,0 +1,153 @@
+%************************************************
+\chapter{Research and Development For Future LXe TPCs}
+
+\label{ch:RandD} % $\mathbb{ZNR}$
+%************************************************
+
+\section{Test Bed Description}
+This section describes 
+\subsection{Experimental Vessel}
+
+\subsection{Slow Control}
+\subsection{Data Acquisition}
+\subsection{Charge Amplifiers}
+
+\section{High Voltage Feedthrough Design}
+A significant amount of time was spent developing and testing \ac{HV} feedthroughs for the test bed. This section describes a few of the feedthroughs that were unsuccessful, leading to the final design, which is capable of delivering -11kV to the cathode with no observable breakdown or other effects. Extensive detail of the tests and procedures are not provided. Instead, the following vignettes are intended as an overview to be useful to a student tasked with designing a HV feedthrough. 
+
+\subsection{Implementing SHV Feed Throughs from Vacuum Suppliers}
+The first attempts at building feedthroughs were to use off-the-shelf products from typical vacuum supply vendors such as MDC and Kurt Lesker. Vacuum \ac{HV} feedthroughs are intended to for use from air to vacuum, not air to \ac{LXe}, so it is not surprising that these were not successful. Additionally, by combining ceramic and metal (typically aluminum, stainless steel, nickel, copper) they are especially prone to breakdown at the meeting of these different materials, known colloquially as ``triple points''. When there are interfaces between materials with different permittivities (dielectric constants), the electric fields are distorted.  Field is pushed out of the higher dielectric material into the lower dielectric material. This creates a field enhancement where peak fields can be much higher than average fields in the system. The field enhancement from "triple points" where there is in interface between a conductor and two dielectrics (e.g a plastic or ceramic feedthrough insulator and a gas or liquid) is a common source of breakdown along insulator surfaces. Good design practices, namely choices of geometry reduce the field enhancements in these regions.
+
+
+Note that ceramic feedthroughs are not appropriate for low background experiments due to high radioactivity , but for test bed work they may be used.
+
+The first few feed throughs used a 12kV \ac{SHV} weldable feed though as shown in Figure~\ref{fig:12kV-SHV}. If used as operation is intended, the side indicated by A is used on the vacuum-side and B connects to the voltage supply. Instead, we trimmed the long B side and attached a copper, screw-port connector to make the 90 degree connection from vertical feed through to horizontal grid. This was done to avoid placing a conducting surface at high voltage (the tip of side A) in gaseous xenon, thereby increasing the risk of breakdown to the walls of the detector. The feed through's vertical placement is designed such that the copper connector is fully submersed in \ac{LXe}.
+
+ 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5in]{figures/testbed/12kV-SHV.jpg}
+\caption{A 12kV SHV weldable connector from vacuum supplier Kurt Lesker.}
+\label{fig:12kV-SHV}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3in]{figures/testbed/ft1_1.jpg}
+\caption{12kV SHV weldable connector, inverted, clipped, and attached with a machined copper connector. The connector uses a screw to capture the SHV feed though, and the same screw to capture a stranded wire, visible in this picture, which is then fed through a hole drilled in the PTFE to connect to the wire grid frames. The wire was wrapped around the grid frame.}
+\label{fig:ft1_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3in]{figures/testbed/ft1_2.jpg}
+\caption{The copper tape in this picture is sitting on top of a 1/2~-in swage connector. The swage connector captures a 1/2~in pipe, which has the 12kV SHV feedthrough welded to the end.}
+\label{fig:ft1_2}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3in]{figures/testbed/ft2_1.jpg}
+\caption{The same 12kV SHV feed through, now with a modified spring connection connecting the feed through to the grid frame.}
+\label{fig:ft2_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3in]{figures/testbed/ft2_2.jpg}
+\caption{A close up of the cathode grid, showing the spring connection.}
+\label{fig:ft2_2}
+\end{center}
+\end{figure}
+
+
+Feed throughs were tested by performing a cool down, ramping the \ac{HV} supply slowly, and watching an oscilloscope for a higher than baseline photon rate Figure~\ref{fig:phog} or a full xenon breakdown Figure~\ref{fig:breakdown}. We also tested the effect of raising the voltage on the \ac{HV} supply at a specific rate, and determined that the extremely slow and steady rate of a computer program was not necessarily superior to the imperfect method of the human experimenter -- the construction of the feed through, itself, outweighed gains from computer supervised voltage ramping.  
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\halffig]{figures/testbed/baseline.jpg}
+\includegraphics[width=\halffig]{figures/testbed/phog.jpg}
+\caption{Oscilloscope showing baseline rate of single photons (left) compared to a high rate of single photons (right) caused by the high voltage feed through.}
+\label{fig:phog}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=4in]{figures/testbed/breakdown.jpg}
+\caption{Full xenon breakdown as visible on the PMT trace. The large, saturated pulse is caused by the high intensity of light. This type of breakdown was often accompanied by an audible buzz, and a rise in current that would initiate a trip of the high voltage supply.}
+\label{fig:breakdown}
+\end{center}
+\end{figure}
+
+Iterations of the 12kV SHV feed though were not able to reach more than about 9kV, and not more than about 7kV for extended periods of time like those that would be required for data acquisition. A summary of the issues with this type of feed through design is given below:
+\begin{itemize}
+\item Gas gaps
+\item Triple points
+\item Prone to aging
+\end{itemize}
+
+We also tried a stock 20kV SHV feed through with a custom end cap designed by a \ac{HV} engineer, meant to smooth out typical triple point issues. This feed through was mounted on a CF flange far from the active region. A length of cable was stripped of grounding sheath for its entire length. A small section on one end was stripped of dielectric, this end was tied to the SHV feed though with copper wire, and the custom end cap was placed over this. The side of the cable making the connection to the cathode grid was drilled out for a short length on the bottom, leaving only a tube of dielectric with no conductor. A threaded rod was inserted into the cable, such that the rod made contact with the conductor. The cathode grid frame was screwed onto the threaded rod. The SHV-20 feed though is summarized in pictures in Figure~\ref{fig:shv20}, and was found to hold sufficient voltage (~10kV) for extended periods of time. However, it was found that the voltage capability of this feed though decreased over time; this is discussed in the next section.
+
+\begin{figure}[htbp]
+\begin{minipage}{0.47\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft3_1.jpg}
+    \end{minipage}
+    \hspace{\fill} % note: no blank line here
+    \begin{minipage}{0.47\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft3_2.jpg}
+    \end{minipage}
+
+    \vspace*{1cm} % vertical separation
+
+    \begin{minipage}{0.47\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft3_3.jpg}
+    \end{minipage}
+    \hspace{\fill} % note: no blank line here
+    \begin{minipage}{0.47\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft3_4.jpg}
+    \end{minipage}
+\caption{Top: (left) cathode connection side (right) SHV-20 connection side Bottom: (left) an example showing how the cable was attached to the stock SHV-20 feed though end (right) a custom cap fit over the connection, smoothing out triple points.}
+ \label{fig:shv20}
+\end{figure}
+
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3in, angle=-90]{figures/testbed/ft3_5.jpg}
+\caption{Effect of holing the feed through in place with PEEK zip ties was explored, effects were minimal.}
+\label{fig:aging}
+\end{center}
+\end{figure}
+
+
+ 
+\subsubsection{Feedthrough Aging}
+It was noticed during subsequent operation that the SHV-20 feed through was subject to some sort of aging process (black line in Figure~\ref{fig:aging}). A month of use resulted in noticeably lower voltage capabilities. The issue could have been any point along the entire voltage chain: feed through - custom cap - connection to cable - cable - connection to grid - grid. Tests focusing on different parts of the voltage chain didn't reveal any weak points. Instead, it was found that the SHV-20 feed though, itself, was subject to aging (red line in Figure~\ref{fig:aging}). 
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5in]{figures/testbed/shv20_breakdowns.png}
+\caption{The black line shows the aging observed in the course of normal operations. The red line shows breakdown tests of the SHV-20 feed though in gas, illustrating that the aging observed during operation was due to aging of the feed though.}
+\label{fig:aging}
+\end{center}
+\end{figure}
+
+Feedthrough aging can be the result of arcing and discharges which cause local heating and carbonization of an insulator surface. Once there is a carbon path, the insulator is considered "tracked" and then holds a much lower voltage than before.  Sophisticated \ac{HV} systems keep peak currents and fault energies to a minimum using series resistors. In this way, a breakdown event does not degrade system performance in the future. In addition to carbon tracks, there can also be insulator degradation from exposure to UV if there is ionization in the region. Xenon ionization is in the UV region of the spectrum, and so any ionization near a feed though insulator may degrade the feed through performance. In the case of this particular feed though, the high field which caused the breakdowns or ionization was likely a result of poor triple-point geometry. 
+
+
+\subsection{Custom Feedthroughs}
+
+
+%*****************************************
+%*****************************************
+%*****************************************
+%*****************************************
+%*****************************************

@@ -1,0 +1,97 @@
+% Table of Contents - List of Tables/Figures/Listings and Acronyms
+
+%\refstepcounter{dummy}
+
+\pdfbookmark[1]{\contentsname}{tableofcontents} % Bookmark name visible in a PDF viewer
+
+\setcounter{tocdepth}{2} % Depth of sections to include in the table of contents - currently up to subsections
+
+\setcounter{secnumdepth}{3} % Depth of sections to number in the text itself - currently up to subsubsections
+
+\manualmark
+\markboth{\spacedallcaps{\contentsname}}{\spacedallcaps{\contentsname}}
+\tableofcontents 
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedallcaps{#1}}{\spacedallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedallcaps{#1}}}
+
+\clearpage
+
+\begingroup 
+\let\clearpage\relax
+\let\cleardoublepage\relax
+\let\cleardoublepage\relax
+
+%----------------------------------------------------------------------------------------
+%	List of Figures
+%----------------------------------------------------------------------------------------
+
+\refstepcounter{dummy}
+%\addcontentsline{toc}{chapter}{\listfigurename} % Uncomment if you would like the list of figures to appear in the table of contents
+\pdfbookmark[1]{\listfigurename}{lof} % Bookmark name visible in a PDF viewer
+
+\listoffigures
+
+\vspace{8ex}
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	List of Tables
+%----------------------------------------------------------------------------------------
+
+\refstepcounter{dummy}
+%\addcontentsline{toc}{chapter}{\listtablename} % Uncomment if you would like the list of tables to appear in the table of contents
+\pdfbookmark[1]{\listtablename}{lot} % Bookmark name visible in a PDF viewer
+
+\listoftables
+        
+\vspace{8ex}
+\newpage
+    
+%----------------------------------------------------------------------------------------
+%	List of Listings
+%---------------------------------------------------------------------------------------- 
+%
+%\refstepcounter{dummy}
+%%\addcontentsline{toc}{chapter}{\lstlistlistingname} % Uncomment if you would like the list of listings to appear in the table of contents
+%\pdfbookmark[1]{\lstlistlistingname}{lol} % Bookmark name visible in a PDF viewer
+%
+%\lstlistoflistings 
+%
+%\vspace{8ex}
+%\newpage
+       
+%----------------------------------------------------------------------------------------
+%	Acronyms
+%----------------------------------------------------------------------------------------
+
+\refstepcounter{dummy}
+%\addcontentsline{toc}{chapter}{Acronyms} % Uncomment if you would like the acronyms to appear in the table of contents
+\pdfbookmark[1]{Acronyms}{acronyms} % Bookmark name visible in a PDF viewer
+
+\markboth{\spacedallcaps{Acronyms}}{\spacedallcaps{Acronyms}}
+
+\chapter*{Acronyms}
+
+\begin{acronym}[UML]
+\acro{SM}{Standard Model}
+\acro{BSM}{Beyond the Standard Model}
+\acro{SUSY}{Supersymmetry}
+\acro{MSSM}{Minimal Supersymmetric Model}
+\acro{cMSSM}{Constrained MSSM}
+\acro{pMSSM}{Phenomenological MSSM}
+\acro{LSP}{Lightest Supersymmetric Particle}
+\acro{WIMP}{Weakly Interacting Massive Particle}
+\acro{LIP}{Lightly Ionizing Particle}
+
+\acro{LUX}{Large Underground Xenon [Experiment]}
+\acro{LXe}{Liquid Xenon}
+\acro{SURF}{Sanford Underground Research Facility}
+
+\acro{HV}{High Voltage}
+\acro{SHV}{Safe High Voltage (a manufacturing identification)}
+
+\acro{RMS}{root mean square}
+\end{acronym}
+                   
+\endgroup

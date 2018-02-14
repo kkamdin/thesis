@@ -1,0 +1,325 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis Typographic Thesis
+% Configuration File
+%
+% This file has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% André Miede (http://www.miede.de) with extensive commenting changes by:
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% GNU General Public License (v2)
+%
+% Important note:
+% The main lines to change in this file are in the DOCUMENT VARIABLES
+% section, the rest of the file is for advanced configuration.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	CHARACTER ENCODING
+%----------------------------------------------------------------------------------------
+
+% Disabled because xelatex
+%\usepackage{inputenc}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT VARIABLES
+%	Fill in the lines below to enter your information into the thesis template
+%	Each of the commands can be cited anywhere in the thesis
+%----------------------------------------------------------------------------------------
+
+%\PassOptionsToPackage{eulerchapternumbers,listings,subfig,beramono,parts,manychapters}{classicthesis}
+\PassOptionsToPackage{eulerchapternumbers,listings,subfig,beramono,parts,manychapters}{classicthesis}
+% Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
+% Might want to turn of xelatex and re-enable pdfspacing
+
+\newcommand{\myTitle}{A Search for Lightly Ionizing Particles in the LUX Detector and R\&D For Future Experiments\xspace}
+\newcommand{\mySubtitle}{Subtitle\xspace}
+\newcommand{\myDegree}{Doctor of Philosophy PhD\xspace}
+\newcommand{\myName}{Katayun J Kamdin\xspace}
+\newcommand{\myProf}{Dr. Daniel McKinsey\xspace}
+\newcommand{\myOtherProf}{Put name here\xspace}
+\newcommand{\mySupervisor}{Put name here\xspace}
+\newcommand{\myFaculty}{Put data here\xspace}
+\newcommand{\myDepartment}{Physics Department\xspace}
+\newcommand{\myUni}{University of California, Berkeley\xspace}
+\newcommand{\myLocation}{Berkeley, CA\xspace}
+\newcommand{\myTime}{August 2018\xspace}
+\newcommand{\myVersion}{Version 0.0\xspace}
+
+%----------------------------------------------------------------------------------------
+%	USEFUL COMMANDS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\ie}{i.\,e.}
+\newcommand{\Ie}{I.\,e.}
+\newcommand{\eg}{e.\,g.}
+\newcommand{\Eg}{E.\,g.} 
+
+\newcommand*{\tsup}[1]{\textsuperscript{#1}}
+\newcommand*{\tsub}[1]{\textsubscript{#1}}
+
+\newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
+\providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+\newlength{\abcd} % for ab..z string length calculation
+
+\newcommand*{\TeV}{\ensuremath{\mathrm{Te\kern -0.05em V}}\xspace}
+\newcommand*{\GeV}{\ensuremath{\mathrm{Ge\kern -0.05em V}}\xspace}
+\newcommand*{\MeV}{\ensuremath{\mathrm{Me\kern -0.05em V}}\xspace}
+\newcommand*{\keV}{\ensuremath{\mathrm{ke\kern -0.05em V}}\xspace}
+
+\let\tev=\TeV
+\let\gev=\GeV
+\let\mev=\MeV
+\let\kev=\keV
+\let\ev=\eV
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\mL}{\mathcal{L}}
+\newcommand{\mS}{\mathcal{S}}
+
+\newcommand*{\um}{\ensuremath{\mu\mathrm{m}}\xspace}
+\newcommand*{\lcms}{\ensuremath{\mathrm{cm}^{-2}s^{-1}}}
+\newcommand*{\ipb}{\ensuremath{\mathrm{pb}^{-1}}}
+\newcommand*{\ifb}{\ensuremath{\mathrm{fb}^{-1}}}
+\newcommand*{\dedx}{\ensuremath{dE/dx}\xspace}
+\newcommand*{\Nss}{\ensuremath{N_{SS}}\xspace}
+\newcommand*{\Nsplit}{\ensuremath{N_{\mathrm{split}}}\xspace}
+\newcommand*{\met}{\ensuremath{E_T^{\mathrm{miss}}}\xspace}
+\newcommand*{\calomet}{\ensuremath{\mathrm{Calorimeter}~E_T^{\mathrm{miss}}}\xspace}
+\newcommand*{\rhadron}{R-Hadron\xspace}
+\newcommand*{\rhadrons}{R-Hadrons\xspace}
+\newcommand*{\MeVgcm}{\ensuremath{\MeV\mathrm{g}^{-1}\mathrm{cm}^2}\xspace}
+\newcommand*{\mt}{\ensuremath{M_{\mathrm{T}}}\xspace}
+\newcommand*{\mdedx}{\ensuremath{M_{\dedx}}\xspace}
+\newcommand*{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand*{\ptcone}{\ensuremath{p_T^\mathrm{Cone}}\xspace}
+\newcommand*{\emfrac}{\ensuremath{f_\mathrm{EM}}\xspace}
+\newcommand*{\lumi}{3.2}
+\newcommand*{\signoise}{\ensuremath{\sigma_{\mathrm{noise}}}\xspace}
+
+\newcommand*{\fullfig}{0.85\textwidth}
+\newcommand*{\halffig}{0.49\textwidth}
+
+% --------------------------------------------------------------------------------
+% Particles
+% --------------------------------------------------------------------------------
+
+\newcommand*{\pL}{\ensuremath{\Lambda}\xspace}
+\newcommand*{\pLB}{\ensuremath{\bar{\Lambda}}\xspace}
+\newcommand*{\pKS}{\ensuremath{K_\text{S}^{0}}\xspace}
+\newcommand*{\pKL}{\ensuremath{K_L}\xspace}
+\newcommand*{\pP}{\ensuremath{p}\xspace}
+\newcommand*{\pAP}{\ensuremath{\bar{p}}\xspace}
+\newcommand*{\pip}{\ensuremath{\pi^+}\xspace}
+\newcommand*{\pim}{\ensuremath{\pi^-}\xspace}
+\newcommand*{\piz}{\ensuremath{\pi^0}\xspace}
+\newcommand*{\ep}{\ensuremath{E/p}\xspace}
+\newcommand*{\epav}{\ensuremath{\langle E/p \rangle}\xspace}
+\newcommand*{\epcor}{\ensuremath{\langle E/p \rangle_{\mathrm{COR}}}\xspace}
+\newcommand*{\epbg}{\ensuremath{\langle E/p \rangle_{\mathrm{BG}}}\xspace}
+\newcommand*{\Ea}{\ensuremath{E_a}\xspace}
+\newcommand*{\QGSP}{\texttt{QGSP\_BERT}\xspace}
+\newcommand*{\FTFP}{\texttt{FTFP\_BERT}\xspace}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+%------------------------------------------------			
+
+\usepackage{csquotes}
+\PassOptionsToPackage{%
+%backend=biber, % Instead of bibtex
+backend=bibtex8,bibencoding=ascii,%
+language=auto,%
+style=numeric-comp,%
+%style=authoryear-comp, % Author 1999, 2010
+%bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
+sorting=none, % name, year, title
+maxbibnames=10, % default: 3, et al.
+%backref=true,%
+natbib=true, % natbib compatibility mode (\citep and \citet still work)
+doi=false
+}{biblatex}
+\usepackage{biblatex}
+% Biblatex customization
+\DeclareFieldFormat[article]{volume}{\textbf{#1}\addcolon\space}
+\DeclareFieldFormat[book,booklet,report,techreport]{title}{\mkbibquote{#1\isdot}} 
+
+\PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS 
+ \usepackage{amsmath}
+
+\makeatletter
+\def\blx@maxline{77}
+\makeatother
+
+% Disabled because xelatex
+%\PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
+%\usepackage{fontenc}
+
+\usepackage{textcomp} % Fix warning with missing font shapes
+\usepackage{scrhack} % Fix warnings when using KOMA with listings package  
+\usepackage{xspace} % To get the spacing after macros right
+\usepackage{mparhack} % To get marginpar right
+\usepackage{fixltx2e} % Fixes some LaTeX stuff 
+\PassOptionsToPackage{smaller}{acronym} % Include printonlyused in the first bracket to only show acronyms used in the text
+\usepackage{acronym} % Nice macros for handling all acronyms in the thesis
+%\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
+\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
+\usepackage{graphicx} 
+\usepackage[left]{lineno}
+\usepackage{slashed}
+
+%----------------------------------------------------------------------------------------
+%	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
+%----------------------------------------------------------------------------------------
+
+\usepackage{tabularx} % Better tables
+\setlength{\extrarowheight}{3pt} % Increase table row height
+\newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedallcaps{#1}}}
+\newcommand{\myfloatalign}{\centering} % To be used with each float for alignment
+\usepackage{caption}
+\captionsetup{font=small}
+\usepackage{subfig} 
+\usepackage{multirow}
+
+% Center by default
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother 
+
+%----------------------------------------------------------------------------------------
+%	CODE LISTINGS SETUP
+%----------------------------------------------------------------------------------------
+
+\usepackage{listings} 
+%\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % For special keywords
+\lstset{language=[LaTeX]Tex,%C++ % Specify the language(s) for listings here
+morekeywords={PassOptionsToPackage,selectlanguage},
+keywordstyle=\color{highlight}, % Add \bfseries for bold
+basicstyle=\small\ttfamily, % Makes listings a smaller font size and a different font
+%identifierstyle=\color{NavyBlue}, % Color of text inside brackets
+commentstyle=\color{Green}\ttfamily, % Color of comments
+stringstyle=\rmfamily, % Font type to use for strings
+numbers=left, % Change left to none to remove line numbers
+numberstyle=\scriptsize, % Font size of the line numbers
+stepnumber=5, % Increment of line numbers
+numbersep=8pt, % Distance of line numbers from code listing
+showstringspaces=false, % Sets whether spaces in strings should appear underlined
+breaklines=true, % Force the code to stay in the confines of the listing box
+%frameround=ftff, % Uncomment for rounded frame
+%frame=single, % Frame border - none/leftline/topline/bottomline/lines/single/shadowbox/L
+belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text and the listing box
+}
+
+%----------------------------------------------------------------------------------------
+%	HYPERREFERENCES
+%----------------------------------------------------------------------------------------
+
+%\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
+\PassOptionsToPackage{hyperfootnotes=false,pdfpagelabels}{hyperref}
+\usepackage{hyperref}  % backref linktocpage pagebackref
+%\pdfcompresslevel=9
+%\pdfadjustspacing=1
+
+\hypersetup{
+% Uncomment the line below to remove all links (to references, figures, tables, etc), useful for b/w printouts
+%draft, 
+colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+% Uncomment the line below if you want to have black links (e.g. for printing black and white)
+%colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV, 
+breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
+urlcolor=highlight, linkcolor=highlight, citecolor=highlight, %pagecolor=RoyalBlue,%
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+%------------------------------------------------
+% PDF file meta-information
+pdftitle={\myTitle},
+pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
+pdfsubject={},
+pdfkeywords={},
+pdfcreator={pdfLaTeX},
+pdfproducer={LaTeX with hyperref and classicthesis}
+%------------------------------------------------
+}
+
+%----------------------------------------------------------------------------------------
+%	AUTOREFERENCES SETUP
+%	Redefines how references in text are prefaced for different 
+%	languages (e.g. "Section 1.2" or "section 1.2")
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\@ifpackageloaded{babel}
+{
+\addto\extrasamerican{
+\renewcommand*{\figureautorefname}{Figure}
+\renewcommand*{\tableautorefname}{Table}
+\renewcommand*{\partautorefname}{Part}
+\renewcommand*{\chapterautorefname}{Chapter}
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\subsectionautorefname}{Section}
+\renewcommand*{\subsubsectionautorefname}{Section}
+}
+\addto\extrasngerman{
+\renewcommand*{\paragraphautorefname}{Absatz}
+\renewcommand*{\subparagraphautorefname}{Unterabsatz}
+\renewcommand*{\footnoteautorefname}{Fu\"snote}
+\renewcommand*{\FancyVerbLineautorefname}{Zeile}
+\renewcommand*{\theoremautorefname}{Theorem}
+\renewcommand*{\appendixautorefname}{Anhang}
+\renewcommand*{\equationautorefname}{Gleichung}
+\renewcommand*{\itemautorefname}{Punkt}
+}
+\providecommand{\subfigureautorefname}{\figureautorefname} % Fix to getting autorefs for subfigures right
+}{\relax}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+
+\usepackage{classicthesis} 
+
+%----------------------------------------------------------------------------------------
+%	CHANGING TEXT AREA 
+%----------------------------------------------------------------------------------------
+
+%\linespread{1.05} % a bit more for Palatino
+%\areaset[current]{312pt}{761pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip
+%\setlength{\marginparwidth}{7em}%
+%\setlength{\marginparsep}{2em}%
+
+%----------------------------------------------------------------------------------------
+% BIB SET UP
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	USING DIFFERENT FONTS
+%----------------------------------------------------------------------------------------
+
+% Requires xelatex!
+% Crimson for main, MnSymbol for math
+\usepackage{fontspec}
+\usepackage{crimson}
+\usepackage{MnSymbol}
+
+% Montserrat or Julius Sans One for headings
+%\setsansfont[Ligatures=TeX,Scale=MatchLowercase,Path=fonts/,UprightFont=*-Regular,BoldFont=*-Bold]{Montserrat}
+\setsansfont[Ligatures=TeX,Scale=0.82,Path=fonts/,UprightFont=*-Regular]{JuliusSansOne}
+
+%\usepackage[oldstylenums]{kpfonts} % oldstyle notextcomp
+%\usepackage[osf]{libertine}
+%\usepackage[light,condensed,math]{iwona}
+%\renewcommand{\sfdefault}{iwona}
+%\usepackage{lmodern} % <-- no osf support :-(
+%\usepackage{cfr-lm} % 
+%\usepackage[urw-garamond]{mathdesign} <-- no osf support :-(
+%\usepackage[default,osfigures]{opensans} % scale=0.95 
+%\usepackage[sfdefault]{FiraSans}
