@@ -16,7 +16,7 @@ Summary of four years on ATLAS, primarily a measurement of calorimeter response 
 - `figures/` plots and images for all chapters
 - `bibliography.bib`: the BibTex database for references
 - `classicthesis.sty`: style definitions
-- `axen_thesis.tex`: the main filewhere all the content gets bundled together
+- `kamdin_thesis.tex`: the main filewhere all the content gets bundled together
 - `classicthesis-config.tex`: a central place to load packages
   - Changes and adjustments to the style or mostly controlled here
 
