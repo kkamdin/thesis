@@ -6,16 +6,48 @@
 
 A small test bed was built at Lawrence Berkeley National Laboratory to study various detector effects facing large \ac{LXe} \ac{TPC}s. The test bed was built and instrumented over the course of about two years, from 2015 through 2016. This chapter describes some of the details of that instrumentation.
 
-\section{Experimental Vessel}
-The experimental vessel is a 
+\section{Experimental Apparatus}
+The experimental apparatus consisted of an inner vessel, a vacuum outer vessel, and a xenon circulation system. The inner vessel was a \ac{SS} canister, topped with a 2.75~in Conflat-adaptable tower that allowed space for instrumentation cabling and \ac{HV} feedthroughs. The inner vessel was offset below a 7.09~in ISO K flange, which held the (removable) vacuum outer vessel in place. Several Mini-CF ports were welded to the ISO K flange for instrumentation cabling.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/testbed/apparatus.jpg}
+\caption{Large scale view of the experimental apparatus showing key parts.}
+\label{fig:apparatus}
+\end{center}
+\end{figure}
+
+The inner vessel contained the \ac{TPC}. A PTFE housing cylinder fastened a PMT in place. Above the PTFE housing, a series of interlocking PTFE rings held strung wire grids and a segmented anode in place. During data taking, the entire PMT and housing were immersed in \ac{LXe}. The liquid level was chosen depending on the experiment at hand, approximated by the S2 width. In some cases, the TPC was ``overfilled'' by allowing the liquid level to rise above the anode. The segmented anode was instrumented with charge amplifiers for direct charge readout. When the \ac{TPC} was overfilled, the charge amplifiers detected the ionization electrons directly from the liquid. During typical dual phase \ac{TPC} operation, the charge amplifiers provided a secondary measurement of the ionization electrons in addition to S2.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/testbed/internals_1and2.png}
+%\includegraphics[width=\halffig]{figures/testbed/internals1.png}
+%\includegraphics[width=\halffig]{figures/testbed/internals2.png}
+\caption{Diagrams of two often used internal arrangements. }
+\label{fig:internals}
+\end{center}
+\end{figure}
+
+
+\section{Circulation System}
+The xenon circulation system in shown in Figure~\ref{fig:circ}. A stainless steel capillary extending into the liquid drew xenon from the inner vessel during operation to be purified. Purified xenon that was returned to the vessel was directed into the liquid via a PTFE tube so it could condense quickly. A gas purge was added to the \ac{CF} tower above the inner vessel to continually renew the gas column. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/testbed/full_pid.png}
+\caption{Pumping and instrumentation diagram of the test bed. Special symbols are labelled in the diagram, see key for other symbols. For readability, all gauges are not shown.}
+\label{fig:circ}
+\end{center}
+\end{figure}
 
 \section{Charge Amplifiers}
-The segmented anode was instrumented with three CR-100 charge amplifiers from Cremat (Figure~\ref{fig:cr110}). The raw charge amplifier signals were each fed into a CR-160-R7 shaper evaluation board, also from Cremat. The evaluation board houses two more modules: one CR-200-X shaping amplifier and one CR-100 baseline restorer. The CR-200-X shaping amplifier is an X-$\mu$s gaussian shaping amplifier; it was determined that 1~$\mu$s was most appropriate for the test bed signals.
+The segmented anode was instrumented with three CR-110 charge amplifiers from Cremat (Figure~\ref{fig:cr110}). The raw charge amplifier signals were each fed into a CR-160-R7 shaper evaluation board, also from Cremat. The evaluation board houses two more modules: one CR-200-X shaping amplifier and one CR-110 baseline restorer. The CR-200-X shaping amplifier is an X-$\mu$s gaussian shaping amplifier; it was determined that 1~$\mu$s was most appropriate for the test bed signals.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=4in]{figures/testbed/cr110.png}
-\caption{A picture from the manufacturer's data sheet, shown with an equivalent circuit diagram.}
+\caption{A picture of the CR-110 charge amplifier from the manufacturer's data sheet, shown with an equivalent circuit diagram.}
 \label{fig:cr110}
 \end{center}
 \end{figure}
@@ -25,23 +57,36 @@ The shaper evaluation board produced gaussian pulses from raw charge signals as 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=4in]{figures/testbed/charge_amp_shaper.jpg}
-\caption{A raw and shaped charge amp signal taken in -100C gaseous xenon, with the radon source plumed in}
+\caption{A raw and shaped charge amp signal taken in -100C gaseous xenon, with the radon source plumbed in}
 \label{fig:shaper}
 \end{center}
 \end{figure}
 
-The charge amplifiers were originally placed inside the experimental vessel, mounted directly on the segmented anode. The functionality at \ac{LXe} temperatures didn't deviate from manufacturer's specifications, however it was found that the CR-100 units generated enough heat to create a perpetual gas layer under the anode. In general this is not an issue, but for the purpose of the intended absolute electron extraction efficiency measurement, `overfilling' the TPC and using the charge amplifiers as a direct read-out of electrons in the liquid was required. The charge amplifiers were moved to the outer vessel space, surrounded by small Faraday cage made of copper mesh. See Figure~\ref{fig:chargeamp_mount} for the charge amplifier mounting configurations.
+The charge amplifiers were originally placed inside the experimental vessel, mounted directly on the segmented anode. The functionality in \ac{LXe} conditions didn't deviate from manufacturer's specifications, however it was found that the CR-110 units generated enough heat to create a perpetual gas layer under the anode. In general this is not an issue, but for the purpose of the intended absolute electron extraction efficiency measurement, overfilling'the \ac{TPC} and using the charge amplifiers as a direct read-out of electrons in the liquid was required. The charge amplifiers were moved to the outer vessel space, surrounded by small Faraday cage made of copper mesh. See Figure~\ref{fig:chargeamp_mount} for the charge amplifier mounting configurations.
 
  \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=\halffig]{figures/testbed/chargeamp_mount1.jpg}
-\includegraphics[width=\halffig]{figures/testbed/chargeamp_mount2.jpg}
-\caption{(Right) original mounting of CR-110 charge amplifiers inside the experimental vessel. (Left) Mounting in the outer vacuum reduced head load on the TPC.}
+\includegraphics[height=2.5in, keepaspectratio]{figures/testbed/chargeamp_mount1.jpg}
+\includegraphics[height=2.5in, keepaspectratio]{figures/testbed/chargeamp_mount2.jpg}
+\caption{(Right) original mounting of CR-110 charge amplifiers inside the experimental vessel. (Left) Mounting in the outer vacuum reduced heat load on the TPC.}
 \label{fig:chargeamp_mount}
 \end{center}
 \end{figure}
 
+\subsection{Charge Amplifier Noise Behavior}
+Charge amplifiers have baseline RMS noise proportional to the attached capacitance. Figure~\ref{fig:rms} shows the RMS noise of a CR-110 unit attached to different lengths of BNC cable. The longer the cable, the higher the RMS noise. \ac{TPC}s are essentially capacitors, and when filled with \ac{LXe} have a higher capacitance than when the detector is at vacuum. The capacitance of large \ac{LXe} \ac{TPC}s like \ac{LUX} prohibit the use of charge amplifiers for direct readout of the S2 electrons because the RMS noise would swamp the signal. 
 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3in]{figures/testbed/rms.png}
+\caption{Different lengths of BNC cable attached to a CR-110 test board.}
+\label{fig:rms}
+\end{center}
+\end{figure}
+
+Charge amplifiers also respond to acoustics. Tapping a finger near a charge amplifier will show as a baseline-jumping response on an oscilloscope. This additional source of noise makes \ac{LXe} \ac{TPC}s challenging places to use charge amplifiers for signal readout because any bubbles in the \ac{LXe} create micro-acoustic signals which the charge amplifiers pick up. By design, dual phase \ac{LXe} \ac{TPC}s are operated near the xenon liquid-gas boundary so the formation and dissipation of gas bubbles in the liquid is likely. Additional sources of acoustic noise like circulation of xenon into the experimental vessel also produce visible responses in charge amplifiers. The difference in micro-acoustic noise environment is illustrated in Figure~\ref{fig:amp_noise}.
+
+As \ac{TPC}s are large capacitors, any transients coupling to the ``TPC capacitor" may be picked up by the charge amplifiers. In particular, instabilities in the \ac{HV} chain induce a current in the ``TPC capacitor" that is picked up by the charge amps. Instabilities in \ac{HV} can come from many places. It was observed that for the characteristic capacitance and impedance of the the test bed, partial breakdowns in a length of R60 cabling caused a disruption in the functionality of the charge amplifiers. It was also found that a standard laboratory \ac{HV} supply, a Glassman 20~kV negative polarity unit, created pick-up in the charge amplifiers.  
 
 \section{PMT}
 The test bed was instrumented with an R8778 PMT, the same PMTs used in LUX. Both LUX and LZ PMT bases were used. The radon daughters study presented in Chapter~\ref{ch:radon} exclusively used the LUX PMT base, the electron trains studies first used the LUX base, and later used the LZ base. The LZ base was favored for its larger capacitors. Various shaping amplifiers were used when digitizing the PMT over the course of these studies because the 8~ns sampling interval of the data acquisition was subject to aliasing the fast-rising alpha S1 signals.
@@ -49,10 +94,11 @@ The test bed was instrumented with an R8778 PMT, the same PMTs used in LUX. Both
 %\subsection{PMT Saturation}
 
 \section{Slow Control}
+The inner experimental vessel was instrumented with a platinum RTD to monitor temperature and a capacitance manometer to monitor pressure. A flow meter in the circulation line determined the flow rate of xenon as it passed through the getter and returned to the inner vessel. The voltage applied to two 25~$\Omega$ resistors in parallel
+
 
 \section{Data Acquisition}
-Data were acquired with a Picoscope 5000a, a USB-compatible ``oscilloscope." The picoscope python library was used to write voltage records of PMT and charge signals to ROOT files, which were opened later for reprocessing into reduced quantities such as pulse area or pulse height. The picoscope functioned as a 14~bit ADC with 125~MHz sampling. For special cases, when only one channel was desired, it was possible to increase the sampling rate to 500~MHZ (or 2~ns)
-
+Data were acquired with a Picoscope 5000a, a USB-compatible ``oscilloscope." The picoscope python library was used to write voltage records of PMT and charge signals to ROOT files, which were opened later for reprocessing into reduced quantities such as pulse area or pulse height. The picoscope was run as a 14~bit ADC with 125~MHz sampling. For special cases, when only one channel was desired, it was possible to increase the sampling rate to 500~MHZ (or 2~ns). 
 
 
 \section{High Voltage Feedthrough Design}
@@ -207,7 +253,7 @@ There are two issues with the approach of adding a grounding braid in this metho
 \end{center}
 \end{figure}
 
-
+To move away from stock SHV feedthroughs which were prone to aging, a feedthrough was built out of a \ac{SS} rod with \ac{PTFE} dielectric and no shield braid (Figure~\ref{fig:ssrodft}). The end is a copper rod bent into a U-shape which connects to the \ac{SS} conduction rod via a pin, and the other end, which is threaded, screws into to the cathode grid frame. The bare copper section is only exposed under the liquid level, elsewhere the \ac{PTFE} dielectric helps contain the electric field and prevent breakdown to the inner vessel wall. This feedthrough had good voltage performance, and there was no sign of aging. It was decided, however, that the charge amplifiers were more susceptible to detecting transients from an unshielded feedthrough, so another feedthrough with shielding was constructed (Figure~\ref{fig:cableft}).
 
 \begin{figure}[htbp]
 \begin{minipage}{0.47\textwidth}
@@ -228,9 +274,42 @@ There are two issues with the approach of adding a grounding braid in this metho
     \includegraphics[width=\linewidth]{figures/testbed/ft5_4.jpg}
     \end{minipage}
 \caption{Top: (left) (right) . Bottom: (left) (right).}
- \label{fig:shv20}
+ \label{fig:ssrodft}
 \end{figure}
 
+
+
+\begin{figure}[htbp]
+\begin{minipage}{0.33\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft6_4.jpg}
+    \end{minipage}
+    \hspace{\fill} % note: no blank line here
+    \begin{minipage}{0.33\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft6_5.jpg}
+    \end{minipage}
+        \hspace{\fill} % note: no blank line here
+    \begin{minipage}{0.33\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft6_6.jpg}
+    \end{minipage}
+
+    \vspace*{1cm} % vertical separation
+
+    \begin{minipage}{0.33\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft6_1.jpg}
+    \end{minipage}
+    \hspace{\fill} % note: no blank line here
+    \begin{minipage}{0.33\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft6_2.jpg}
+    \end{minipage}
+        \hspace{\fill} % note: no blank line here
+    \begin{minipage}{0.33\textwidth}
+    \includegraphics[width=\linewidth]{figures/testbed/ft6_3.jpg}
+    \end{minipage}
+    
+    
+\caption{Top: (left) (middle) (right) . Bottom: (left) (middle) (right).}
+ \label{fig:cableft}
+\end{figure}
 
 
 

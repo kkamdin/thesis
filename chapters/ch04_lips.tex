@@ -5,14 +5,43 @@
 %************************************************
 
 \section{Modeling LIP Interaction}
-\subsection{FVP cross section}
+\subsection{Collision Cross Section}
+A \ac{LIP} interacting in the \ac{LXe} volume loses energy via interaction with electrons.  To model \ac{LIP}s in \ac{LUX}, the expression of interest is the collision cross section \ac{CCS}. The differential \ac{CCS} describes the energy lost to electrons in a single collision for incident energy of the LIP. For particles with charge $ze$ and mass M heaver than the electron mass,$ m_{e}$ ( ``heavy'' particles), the Rutherford cross section is a familiar differential \ac{CCS} \cite{PDG}:
+
+\begin{equation}
+\label{ruth}
+\frac{d\sigma_{R}}{dE} = \frac{2\pi r_{e}^{2} c^{2} z^{2}}{\beta^{2}} \frac{1-\beta^{2} E/ T_{max}}{E^{2}}
+\end{equation}
+
+where $r_{e}$ is the classical electron radius, $E$ is the energy loss of incoming particle, $\beta = v/c$ of the incoming particle, and $T_{max}$ is the maximum energy transfer possible in a single collision:
+
+\begin{equation}
+\label{Tmax}
+T_{max} = \frac{ 2m_{2}c^{2} \beta^{2} \gamma^{2}}{1 + 2\gamma m_{2} / M + (m_{e}/M)^{2}}
+\end{equation}
+
+Often the expression $T_{max} ~ 2m_{e}c^{2} \beta^{2}\gamma^{2}$ for $2\gamma m_{2} / M<< 1$ is used implicitly, or is referred to as the ``low energy approximation'' in older texts. The Rutherford cross section is a good starting point, but it describes the ``hard interaction'' or head-on, billiard-ball type collision of a particle interacting with free electrons. Real electrons are bound in atoms, and an incident particle can undergo ``soft interactions'', in which virtual photons are exchanged. When the virtual photon matches the energy of electron orbitals of the target material, there are resonances in the \ac{CCS}. The energy transfer, $E$, must also be finite in real atoms, where the dielectric properties modify the electromagnetic field of a moving charged particle and limit the growth of the cross section. This real-world behavior is described by a correction factor $B(E)$, also sometimes called an ``inelastic form factor'' \cite{PDG}:
+
+\begin{equation}
+\label{totalccs}
+\frac{d\sigma_{CCS}}{dE} = \frac{d\sigma_{R}}{dE} B(E)
+\end{equation}
+
+Various attempts, spanning a better half of the last century, have been made to take into account the real-world behavior of electrons bound in matter. Some of these can be found in [cite 18,27, 41-43 papers from Bichsel]. More well-known contributions are those of Bethe and Fano. In 1930, Bethe derived a cross section doubly differential in energy loss and momentum transfer using the first Born approximation for scattering on free atoms \cite{Bethe:1930}. In 1963, Fano extended the method to describe atoms in solids \cite{Fano:1963}. Combining their two methods yields the Bethe-Fano cross-section, which has undergone much study and by our current understanding has been verified to be close to reality \cite{Bichsel:2006}. There is another method, called the \ac{PAI} model, that is easier to calculate than the Bethe-Fano cross section, and approximates the Bethe-Fano calculation very closely. This thesis uses the \ac{PAI} model as a base, building the full signal model for \ac{LIP}s interacting in the \ac{LUX} detector. 
+
+\subsection{Photo Absorption Ionization Model for Charge Particle Energy Loss}
+The \ac{PAI} model is also sometimes known as the \ac{FVP} or Weisäcker-Williams approximation. A full description of the \ac{PAI} model is described in detail in \cite{AllisonCobb:1980}. The complex dielectric constant $\epsilon = \epsilon_{1} + i \epsilon_{2}$ can be thought of a encoding all the information about a medium. The real part $\epsilon_{1}$ describes the polarization of the material and imaginary part $\epsilon_{2}$ describes the absorptive properties. Typically both $\epsilon_{1}$ and $\epsilon_{2}$ are thought of as functions of $\omega$, or incident photon energy. So $\epsilon(\omega)  = \epsilon_{1}(\omega) + i \epsilon_{2}(\omega) $. This description is limited to free photons, but we desire to describe inelastic collisions as well. So $\epsilon(k, \omega)$, a generalized dielectric constant, is introduced to describe momentum transfer $k$ to atomic electrons. The generalized dielectric constant $\epsilon(k, \omega)$ can be related to atomic matrix elements, and if desired, calculated completely and tediously. However, the \ac{PAI} model allows us to avoid these tedious calculations by making specific approximations, which, when taken together, define the \ac{PAI} model itself. 
+
+In particular, the \ac{PAI} model approximates $\epsilon_{2}(k, \omega)$ by noting that typically, the momentum $k$ transferred to an electron is much less than the energy transfer $\omega$. 
+
+
+
 \subsection{Straggling}
 \subsection{Energy Resolution in LUX}
 \subsection{Position Resolution in LUX}
 
 \section{LIP Search}
 \subsection{LUX Run03 Conditions}
-\subsection{LUX Run04 Conditions}
 
 \section{LIP Search Analysis}
 \subsection{Energy Consistency}

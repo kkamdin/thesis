@@ -43,12 +43,14 @@ The term ``plate out'' is used above but not defined. The literature indicates t
 
 \begin{enumerate}
 \item \textit{implantation} Alpha recoil implantation of a daughter nucleus
-\item \textit{stuck} Daughters are sitting on the surface of a material, it is possible to wash a percentage of these off with various surface cleaning methods.
+\item \textit{sticking} Daughters are sitting on the surface of a material, it is possible to wash a percentage of these off with various surface cleaning methods.
 \end{enumerate}
 
 The percentages of daughters plated out in these different modes are not indicated, but \cite{Samuelsson1996} relates a story of researchers being unable to remove $^{214}$Po from glass samples, where as $^{218}$Po was easily removed with surface cleaning methods. This is explained by the fact that further down the $^{222}$Rn chain, more alpha decays have occurred, so a late-state daughter has had more changed to be implanted. It is also noted that the  durability of the implanted activity subject to change under different conditions, as is the implant integrity. The author cites factors such as humidity and temperature affecting whether daughters implant, and whether they remain implanted; since the conditions for plate out are different in pathways 1 and 2 and it logical to infer that implantation functions differently in these two environments for \ac{LXe} \ac{TPC}s. 
 
 The chemistry of radon has been studied as well, and may provide some context to the plate-out discussion. Radon is frequently regarded as a totally inert element. It is, however, classified as a ``metalloid", and exhibits some of the characteristics of both true metals and nonmetals. For example, it is known to react chemically with fluorine, halogen fluorides, dioxygenyl salts, fluoro-nitrogen salts, and halogen fluoride-metal fluoride complexes to form ionic compounds \cite{stein1982}. It is also known to co-crystalize with hydrogen chloride, hydrogen sulfide, sulfur dioxide and carbon dioxide \cite{stein1987}. In the latter case, the author notes that the radon is not forming true chemical bonds, but rather is held in place by weak Van der Waals forces. These chemical experiments found radon to be readily reactive at ``room temperature and lower", but the low temperate range is not stated. Chemical bonds formed by radon may make up a different type of plate out, or sub-type of `sticking'. Presumably weak surface Van der Waals forces belong in the `sticking' type as well. 
+
+If we look to surface physics, the plate-out term `sticking' is well defined by the terms physisorption and chemisorption. Physisorption is distinct from chemisorption in that it is a general phenomenon occurring between the adsorbed atom and surface, where chemisorption involves a chemical reaction between surface and adsorbate, and is characterized by higher bond strengths. Chemisorption potentials have been calculated for many atoms and surfaces \cite{HammerNorskov} and are generally greater than 1~eV. Physisorption potentials, such as the well-known Van der Waals potential, are less than 1~eV and as low as 10~meV. 
 
 
 Plate out occurs with different rates on different materials \cite{Bigu1987}, and can be an order of magnitude larger on PTFE than stainless steel, likely due to PTFE's tendency to accumulate negative static charge \cite{Morrison2017}. Plate out of radon daughters can be reduced by employing a nitrogen gas purge or an electric field (approximately 90\% of radon daughters are charged) \cite{Bruemmer2015}. However, \cite{Bigu1987}, \cite{Morrison2017}, and \cite{Bruemmer2015} do not distinguish between implantation and sticking, and only use the term ``plate out''. 
@@ -62,7 +64,7 @@ Plate out occurs with different rates on different materials \cite{Bigu1987}, an
     \label{fig:anode_and_grids}
 \end{figure}
 
-A diagram of the TPC for this work is shown in Fig. $\ref{fig:anode_and_grids}$. A 50~mm diameter cathode wire grid, extraction wire grid, and a planar, segmented anode were held in Teflon PTFE housing. The anode was instrumented with charge-sensitive preamplifiers. Both grids were constructed from a stainless steel frame strung with 4~$\mu$m diameter stainless steel wire on a 2~mm pitch. The xenon inlet was a PTFE tube which introduces xenon gas  into the liquid region where it is condensed. The xenon liquid outlet was a thin stainless steel capillary that draws liquid from the TPC into the purification system. Both inlet and outlet tubes were placed near holes drilled in the PTFE to aid circulation into the active volume.
+A diagram of the TPC for this work is shown in Fig. $\ref{fig:anode_and_grids}$. A 50~mm diameter cathode wire grid, extraction wire grid, and a planar, segmented anode were held in Teflon PTFE housing. The anode was instrumented with charge-sensitive preamplifiers. Both grids were constructed from a stainless steel frame strung with 4~$\mu$m diameter stainless steel wire on a 2~mm pitch. The xenon inlet was a PTFE tube which introduced xenon gas into the liquid region where it was condensed. The xenon liquid outlet was a thin stainless steel capillary that drew liquid from the TPC into the purification system. Both inlet and outlet tubes were placed near holes drilled in the PTFE to aid circulation into the active volume.
 
 A particle interaction in the liquid xenon volume produced primary scintillation photons (S1) and ionization electrons. The ionization electrons were drifted with an electric field into the gas phase, where they produced secondary scintillation light (S2). A single Hamamatsu R8778 VUV-sensitive PMT was installed in Teflon PTFE housing, facing upward to view the active region. Directly above the PMT was a copper shield mask, held at the same voltage as the PMT bias of -1250~V.
 
@@ -110,12 +112,12 @@ Prior to filling the TPC with liquid xenon, the circulation was stopped and the 
 \hline
 \\[-5pt]
 
-\multirow{3}{*}{Plate-Out Conditions} & Circulation through $^{220}$Rn Source & yes & yes & no & - \\
+\multirow{3}{*}{Plate-Out} & Circ thur $^{220}$Rn Source & yes & yes & no & - \\
 & Circulation Time (h) & 24 & 48 & 24 & - \\
 & Cathode Voltage (kV) & -1 & 0 & 0 &  - \\
 \\[-5pt]
 
-\multirow{3}{*}{Data-Taking Conditions} & Circulation through $^{220}$Rn Source & no & no & no & yes\\
+\multirow{3}{*}{Data-Taking} & Circ thur $^{220}$Rn Source & no & no & no & yes\\
 & Cathode Voltage (kV) & -6 & -6 & -6 & -6 \\
 & Grid Voltage (kV) & -4 & -4 & -4 & -4 \\
 
@@ -146,7 +148,7 @@ Prior to filling the TPC with liquid xenon, the circulation was stopped and the 
 Voltage records from PMT and charge channels were collected with a 14-bit ADC with 125~MHz sampling and a 20~MHz low-pass filter. The trigger was a coincidence between the PMT and the central anode segment, used to select events in the central ($r<3$~mm) column of xenon. This avoids any electric field fringing effects. %and also minimizes any variation in S2 size f. 
 
 \subsection{Calibration}
-In order to identify a signal region for bulk radon daughters, the flow though $^{220}$Rn source was employed directly following dataset A, allowing $^{220}$Rn to flow into the liquid bulk of the TPC. The bulk daughter decay of interest, $^{212}$Bi alpha, has an energy approximately equal to the $^{220}$Rn alpha decay. The alpha signals were sufficient to saturate the biasing circuit of the PMT, so alpha decays within 1~MeV of each other were indistinguishable. Therefore, the region in S1 area vs. S2 area where the $^{220}$Rn alphas appeared was also where $^{212}$Bi alphas were expected (Fig. $\ref{fig:all_plots}$).
+In order to identify a signal region for bulk radon daughters, the flow though $^{220}$Rn source was employed directly following dataset A, allowing $^{220}$Rn to flow into the liquid bulk of the TPC. The bulk daughter decay of interest, $^{212}$Bi alpha, has an energy approximately equal to the $^{220}$Rn alpha decay. The alpha signals were sufficient to saturate the biasing circuit of the PMT, so alpha decays within 1~MeV of each other were indistinguishable. Therefore, the region in S1 area vs. S2 area where the $^{220}$Rn alphas appeared was also where $^{212}$Bi alphas were expected (Fig. $\ref{fig:all_plots_CD}$).
 
 \subsection{Position Reconstruction}
 The central anode segment was assumed to select events from the central column with 100\% efficiency. Events occurring under one of the outer concentric segments can produce a signal on the central anode, but the signal was largest at the anode nearest the charge. It was not required that there be zero signal on the outer segments, so the (x,y) position of the event is treated as a source of uncertainty, which is taken into account in the calculation of fiducial volume.
@@ -272,10 +274,10 @@ The software cuts used to select $^{212}$Bi alphas are described below:
 \item \textbf{Fiducialization} Require more signal in the central anode segment than the other two concentric anode segments.
 \item \textbf{Select Alpha Events} The tallest pulse in an event was required to be an S1. Alphas are higher energy than the other decays in the $^{220}$Rn chain, and have a characteristically high light yield, so this cut is generous in keeping all alpha events.
 \item \textbf{Reject Bi-Po Topology} Of the alpha events, those with one S1 and one S2 (single-scatter) were classified as $^{212}$Bi alpha. Events with two S1s (one of which is alpha-like), and one or two S2s were classified as Bi-Po.
-\item \textbf{Reject Bi-Po Energy} There are two ways a Bi-Po event can mimic the topology of $^{212}$Bi alpha: (i) alpha decay was prompt and so the scintillation signals from the beta and alpha were combined into one large S1 (ii) the beta was ejected into the cathode wire and therefore there was no signal detectable from the beta. To robustly identify $^{212}$Bi, the alpha S1 areas of $^{212}$Bi alpha and Bi-Po events from Step 2 were histogrammed and fit with Gaussian functions. $^{212}$Bi alpha events were tightly selected with a high and low S1 area cut placed on single-scatter alpha events: anything above $(\mu - 3\sigma)_{Bi-Po}$ was considered a Bi-Po event and anything below $(\mu - 3\sigma)_{Bi-alpha}$ was considered a beta or gamma, and discarded (Fig. $\ref{fig:area_cut}$). 
+\item \textbf{Reject Bi-Po Energy} There are two ways a Bi-Po event can mimic the topology of $^{212}$Bi alpha: (i) alpha decay was prompt and so the scintillation signals from the beta and alpha were combined into one large S1 (ii) the beta was ejected into the cathode wire and therefore there was no signal detectable from the beta. To robustly identify $^{212}$Bi, the alpha S1 areas of $^{212}$Bi alpha and Bi-Po events from Step 2 were histogrammed and fit with Gaussian functions. $^{212}$Bi alpha events were tightly selected with a high and low S1 area cut placed on single-scatter alpha events: anything above $(\mu - 3\sigma)_{Bi-Po}$ was considered a Bi-Po event and anything below $(\mu - 3\sigma)_{Bi-alpha}$ was considered a beta or gamma, and discarded (Fig. $\ref{fig:area_cut}$). It should be noted that this cut doesn't affect the signal region for $^{212}$Bi alpha in bulk; it affects the region for $^{212}$Bi alpha on the cathode. This cut is conservative in discarding Bi-Po events, as this leads to a more conservative fraction for dissolved fraction of $^{212}$Bi alphas.
 %Note that this step is only necessary if one wishes to count the number of $^{212}$Bi alphas observed on the cathode, where decreased light collection and high, non-uniform fields complicate the light and charge yields (S1 and S2 pulse areas). In the bulk region, a $^{212}$Bi alpha is easily distinguishable from a Bi-Po event with a prompt alpha because they differ by almost 3.0~MeV in energy.
 \item \textbf{Z-position Cut} Events in the cathode region were separated from events in the bulk region with a z-position cut (discussed further below).
-\item \textbf{Bulk Signal Area Cut} Only $^{212}$Bi alpha tagged events which also fell in a signal region expected from calibration with the $^{220}$Rn flow though source (Fig. $\ref{fig:all_plots}$h) were considered to be daughters which have dissolved.
+\item \textbf{Bulk Signal Area Cut} Only $^{212}$Bi alpha tagged events which also fell in a signal region expected from calibration with the $^{220}$Rn flow though source (Fig. $\ref{fig:all_plots_CD}$h) were considered to be daughters which have dissolved.
 \end{enumerate}
 
 
@@ -320,7 +322,7 @@ The software cuts used to select $^{212}$Bi alphas are described below:
 %Events of types 2 and 3 are excluded by only choosing $^{212}$Bi alpha bulk events which fall within a signal region determined from calibration with the flow through source (Fig. $\ref{fig:signalregion_calib}$). Events of types 1 and 4 are excluded with the choice of $z$ that defines the cathode region from the bulk region. 
 
 In order to choose the value for the z-position cut in Step 4, a Monte Carlo approach was used. A Bi-Po decay with a prompt alpha (appears as single-scatter) where the beta penetrates into the bulk region, could mimic a $^{212}$Bi alpha bulk event. To better understand Bi-Po cathode events and the danger of mis-identifying them as $^{212}$Bi alphas in bulk, a Monte Carlo study was done with the $^{212}$Bi beta spectrum (the highest energy beta in the $^{220}$Rn chain) to determine the maximum distance a beta could penetrate into the bulk region. The study yielded a maximum beta penetration of $zmax_{MC}$ = 0.12~cm, see Fig. $\ref{fig:betaMC}$. 
-The $z$ position cut separating cathode from bulk was then defined to be $z_{cut} = zmax_{MC} + 3\sigma_{fit}$, where $\sigma_{fit}$ is just the width of a Gaussian fit for the position of the cathode. Figures $\ref{fig:all_plots}$a and $\ref{fig:all_plots}$c show the cathode position fits as well the the location of $z_{cut}$. The cathode position fit error, $\sigma_{fit}$, was the same for both datasets A and B, and was also used to determine $z_{cut}$ for the background and calibration sets.
+The $z$ position cut separating cathode from bulk was then defined to be $z_{cut} = zmax_{MC} + 3\sigma_{fit}$, where $\sigma_{fit}$ is just the width of a Gaussian fit for the position of the cathode. Figures $\ref{fig:all_plots_AB}$a and $\ref{fig:all_plots_AB}$c show the cathode position fits as well the the location of $z_{cut}$. The cathode position fit error, $\sigma_{fit}$, was the same for both datasets A and B, and was also used to determine $z_{cut}$ for the background and calibration sets.
 
 %events are particularly easy to select because of the large S1, so we focus on a search for $^{212}$Bi in bulk.  $^{212}$Bi has a 0.36 branching ratio to a 6.2~MeV alpha and 0.64 branching ratio to a 2.9~MeV beta which is followed by the fast decay of $^{212}$Po via an 8.9~MeV alpha. This beta-alpha, referred to herein as "Bi-Po", occurs in the same event window
 %This analysis reconstructs the z-position of $^{212}$Bi decays via the timing difference between the S1 and S2 of an event. Therefore, we reject BiPo events, the two S2s present a timing ambiguity. We expect all events to take place on the cathode; $^{212}$Bi alpha decays in the drift region indicate mobility of plated-out daughters $^{212}Pb$ and/or $^{212}$Bi.
@@ -342,24 +344,28 @@ The $z$ position cut separating cathode from bulk was then defined to be $z_{cut
 
 \begin{figure}[hbtp]
 \centering
-\rotatebox[origin=t]{90}{Dataset A}\subfloat[]{\includegraphics[width=0.6\textwidth]{figures/radon/hist_a.png}} \subfloat[]{ \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_a.png}}\\
-\rotatebox[origin=t]{90}{Dataset B}\subfloat[]{\includegraphics[width=0.6\textwidth]{figures/radon/hist_b.png}} \subfloat[]{ \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_b.png}}\\
-\newpage
-\newpage
-\rotatebox[origin=t]{90}{Dataset C}\subfloat[]{\includegraphics[width=0.6\textwidth]{figures/radon/hist_bkg.png}} \subfloat[]{ \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_bkg.png}}\\
-\rotatebox[origin=t]{90}{Dataset D}\subfloat[]{\includegraphics[width=0.6\textwidth]{figures/radon/hist_calib.png}} \subfloat[]{ \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_calib.png}}\\
-\caption{\textbf{(left)} Distribution of events in $z$. \textbf{(right)}  The same events distributed in the S1-S2 plane, showing selection criteria for candidate $^{212}$Bi alpha events in the bulk liquid xenon.} 
-\label{fig:all_plots}
+\rotatebox[origin=b]{90}{Dataset A}\subfloat[]{\includegraphics[width=0.6\textwidth]{figures/radon/hist_a.png}} \subfloat[]{ \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_a.png}}\\
+\rotatebox[origin=b]{90}{Dataset B}\subfloat[]{\includegraphics[width=0.6\textwidth]{figures/radon/hist_b.png}} \subfloat[]{ \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_b.png}}\\
+\caption{For datasets A and B: \textbf{(left)} Distribution of events in $z$. \textbf{(right)}  The same events distributed in the S1-S2 plane, showing selection criteria for candidate $^{212}$Bi alpha events in the bulk liquid xenon.} 
+\label{fig:all_plots_AB}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\rotatebox[origin=b]{90}{Dataset C}\subfloat[]{\includegraphics[width=0.6\textwidth]{figures/radon/hist_bkg.png}} \subfloat[]{ \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_bkg.png}}\\
+\rotatebox[origin=b]{90}{Dataset D}\subfloat[]{\includegraphics[width=0.6\textwidth]{figures/radon/hist_calib.png}} \subfloat[]{ \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_calib.png}}\\
+\caption{For datasets C and D: \textbf{(left)} Distribution of events in $z$. \textbf{(right)}  The same events distributed in the S1-S2 plane, showing selection criteria for candidate $^{212}$Bi alpha events in the bulk liquid xenon.} 
+\label{fig:all_plots_CD}
 \end{figure}
 
 
-One feature that merits further discussion from Figure $\ref{fig:all_plots}$ is the strong anti-correlation in S1 Pulse Area vs. S2 Pulse Area apparent in cathode events. The cathode region was subject to very high, non-uniform fields due to the thin wires that comprised the cathode grid. Events that occurred on the wires encountered different fields depending on their position on the surface of the wire. Additionally, two events that occurred at exactly the same spot encountered different fields depending on which direction the decay particle (alpha, beta, etc.) traveled. The amount of scintillation and ionization from an interaction in liquid xenon depends on the field at the interaction site. Higher fields result in more ionization electrons being separated from the interaction site and therefore more S2. Mono-energetic events occurring in a uniform field have small anti-correlated fluctuations in S1 and S2 size. Non-uniform fields greatly exaggerate the typical variation in S1 and S2 size resulting in the spread out cathode region (blue) observed in Figure $\ref{fig:all_plots}$ (right). Events in the bulk region encounter a relatively low, uniform field resulting in a compact signal region in S1 vs. S2 (visible in red region of calibration data, Dataset D). 
+One feature that merits further discussion from Figure $\ref{fig:all_plots_AB}$ is the strong anti-correlation in S1 Pulse Area vs. S2 Pulse Area apparent in cathode events. The cathode region was subject to very high, non-uniform fields due to the thin wires that comprised the cathode grid. Events that occurred on the wires encountered different fields depending on their position on the surface of the wire. Additionally, two events that occurred at exactly the same spot encountered different fields depending on which direction the decay particle (alpha, beta, etc.) traveled. The amount of scintillation and ionization from an interaction in liquid xenon depends on the field at the interaction site. Higher fields result in more ionization electrons being separated from the interaction site and therefore more S2. Mono-energetic events occurring in a uniform field have small anti-correlated fluctuations in S1 and S2 size. Non-uniform fields greatly exaggerate the typical variation in S1 and S2 size resulting in the spread out cathode region (blue) observed in Figures $\ref{fig:all_plots_AB}$ and $\ref{fig:all_plots_CD}$  (right). Events in the bulk region encounter a relatively low, uniform field resulting in a compact signal region in S1 vs. S2 (visible in red region of calibration data, Dataset D). 
 
 %Some interesting differences between dataset A and B stems from the plate out conditions. Dataset A has a clear beta tail coming off the cathode -- these are Bi-Po events occurring on the cathode, where the beta has penetrated the bulk region, thereby artificially decreasing the time between the alpha S1 and subsequent S2. The more prevalent beta tail can be attributed to the cathode preferentially collecting daughters in the plate-out stage in dataset A due to a supplied voltage. It is interesting to note that for dataset B there are many events events still originate from the cathode, which may indicate a migration of daughters from initial positions on the PTFE walls towards the cathode. 
 
 \section{Results and Discussion}
 \label{results}
-We observed 11 bulk $^{212}$Bi alphas for dataset A, 20 for dataset B, and 1 background event in the signal region from dataset C. The counts of cathode region $^{212}$Bi alphas are presented in Table $\ref{T:3}$. There was only one background event observed in the signal region, so with 95\% confidence the true background count is at most 4.74. The observed counts for dataset A and B lie far above the 95\% confidence limit for background, indicating they are true observations of  $^{212}$Bi alphas in bulk. The dissolved fraction of $^{212}$Bi alphas for dataset A ($\approx$ 13~h livetime) is 0.035 $\pm$ 0.010, and for data set B ($\approx$ 25~h livetime) is 0.099 $\pm$ 0.020. 
+We observed 11 bulk $^{212}$Bi alphas for dataset A, 20 for dataset B, and 1 background event in the signal region from dataset C. The counts of cathode region $^{212}$Bi alphas are presented in Table $\ref{T:3}$. There was only one background event observed in the signal region, so with 95\% confidence the true background count is at most 4.74. The observed counts for dataset A and B lie far above the 95\% confidence limit for background, indicating they are true observations of  $^{212}$Bi alphas in bulk. Defining dissolved fraction as $N_{bulk}$ / $N_{cath}$, the dissolved fraction of $^{212}$Bi alphas for dataset A ($\approx$ 13~h livetime) is 0.035 $\pm$ 0.010, and for data set B ($\approx$ 25~h livetime) is 0.099 $\pm$ 0.020. 
 
 These results indicate that either $^{212}$Pb or $^{212}$Bi itself is soluble to a small degree in liquid xenon. 
 
@@ -400,12 +406,11 @@ The solubility is presented in the following units:
 
 %\centering
 \begin{equation*}
+\centering
 $$
 \frac{\displaystyle  \frac{\displaystyle Bq~(dissolved)}{\displaystyle kg~LXe} }{\displaystyle  \frac{\displaystyle Bq~(plated~out)}{\displaystyle cm^{2}~(detector~surface)} }
 $$
 \end{equation*}
-
-
 
 
 
@@ -478,9 +483,13 @@ The solubility found in dataset A is at worst 84 $\pm$ 26 Bq/kg/Bq/cm$^{2}$ and 
 
 These results are first evidence that the $^{220}$Rn daughters $^{212}$Pb and/or $^{212}$Bi are soluble in liquid xenon. The dissolved events are a small fraction of events that are plated-out on detector surfaces. These daughters are proxies for the isotopes $^{210}$Pb and/or $^{210}$Bi, which undergo naked beta decays in the $^{222}$Rn chain and pose a problem for liquid xenon dark matter detectors. Our study counts dissolved $^{212}$Bi alpha events as well as $^{212}$Bi alphas plated out on the cathode. We found 11 counts in dataset A and 20 counts in dataset B consistent with $^{212}$Bi decay in the bulk region; these counts are significantly above a background count of 1. The experimental apparatus is not characterized extensively. Regardless, we carried through the solubility calculation, taking into account uncertainties to arrive at a `best case' and `worst case' result. 
 
-The LUX limit (not a LUX publication, but in the LZ projected sensitivity paper) is 0.1$\mu$~Bq/kg LXe for $^{212}$Bi mobility, given 50nBq/cm$^{2}$ on PTFE panels. Our observed solubility is much greater than the limit from LUX. One explanation is that we are sensitive to the `stuck' radon daughters that wash off easily in the first few days of an experiment. Large TPCs may then expect an increased rate of radon daughter decays in the fiducial volume at the beginning of a search, but then a decreasing rate as these are removed by the getter or are implanted in detector materials. 
+The limit derived from LUX observations, stated in the LZ projected sensitivity paper \cite{LZ:Sensitivity}, is 0.1~$\mu$~Bq/kg LXe for $^{212}$Bi mobility, given 50~nBq/cm$^{2}$ on PTFE panels. Our observed solubility is much greater than this. One explanation is that we are sensitive to the `stuck' radon daughters that wash off easily in the first few days of an experiment due to the introduction of \ac{LXe}. Large TPCs may then expect an increased rate of radon daughter decays in the fiducial volume at the beginning of a search, but a decreasing rate as these are removed by the getter or are implanted in detector materials. 
 
-Further study, where a known amount of $^{220}$Rn daughters are plated out on a known area is necessary to measure dissolution rates. Additional studies that compare the solubility of radon daughters adsorbed on different materials, and under different conditions (e.g. temperature) would also be useful. And lastly, the effect of cleaning these surfaces before searching for dissolved daughters should be investigated. 
+Another, testable, explanation that would reconcile the different solubilities in the $^{220}$Rn and $^{222}$Rn chain is beta ejection. Referring to Figures $\ref{Rn220}$ and $\ref{Rn222}$, both bottleneck decays, $^{XXX}$Pb, are beta decays. However, $^{212}$Pb in the $^{220}$Rn chain has a beta decay endpoint of 570~keV, which about 10 times of the endpoint energy for $^{210}$Pb in the $^{222}$Rn chain. Daughter recoils from beta decay are indeed small; the endpoints are approximately 0.6~eV for the recoil from $^{212}$Pb decay in the $^{220}$Rn chain and  0.006~eV for the recoil from $^{210}Pb$ decay in the $^{222}$Rn chain. The physisorption potential in for both cases is expected to be below 1~eV. Depending on the exact value, which is unavailable, the $^{212}$Pb decay could provide enough energy to liberate the daughter $^{212}$Bi most of the time, where as $^{210}$Pb decay produces a maximum recoil value below the potential depth. 
+
+Further study, where a known amount of $^{220}$Rn daughters are plated out on a known area is necessary to measure dissolution rates. Additional studies that compare the solubility of radon daughters adsorbed on different materials, and under different conditions (e.g. temperature) would also be useful. The effect of cleaning these surfaces before searching for dissolved daughters should also be investigated. 
+
+If beta recoil, not `washing' by the \ac{LXe}, is the cause of radon daughter solubility, then the high rate seen by this study of $^{220}$Rn can be reconciled with the low rate of $^{222}$Rn  daughter dissolution seen in large experiments.
 
 
 %*****************************************
