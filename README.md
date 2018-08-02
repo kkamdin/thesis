@@ -1,6 +1,6 @@
 # A Search for Long-Lived, Charged, Supersymmetric Particles using Ionization with the ATLAS Detector
 
-Summary of four years on ATLAS, primarily a measurement of calorimeter response and a search for long-lived, massive, charged particles.
+Summary of four years on LUX/LZ. Detailing the instrumentation and operation of a small test bed for R&D and a search with the LUX detector for lightly ionizizing particles (LIPs).
 
 ## Progress
 <p align="center">
