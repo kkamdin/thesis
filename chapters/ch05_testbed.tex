@@ -1,13 +1,13 @@
 %************************************************
 \chapter{Research and Development For Future LXe TPCs}
 
-\label{ch:RandD} % $\mathbb{ZNR}$
+\label{ch:testbed} % $\mathbb{ZNR}$
 %************************************************
 
 A small test bed was built at Lawrence Berkeley National Laboratory to study various detector effects facing large \ac{LXe} \ac{TPC}s. The test bed was built and instrumented over the course of about two years, from 2015 through 2016. This chapter describes some of the details of that instrumentation.
 
-\section{Experimental Apparatus}
-The experimental apparatus consisted of an inner vessel, a vacuum outer vessel, and a xenon circulation system. The inner vessel was a \ac{SS} canister, topped with a 2.75~in Conflat-adaptable tower that allowed space for instrumentation cabling and \ac{HV} feedthroughs. The inner vessel was offset below a 7.09~in ISO K flange, which held the (removable) vacuum outer vessel in place. Several Mini-CF ports were welded to the ISO K flange for instrumentation cabling.
+\section{Test Bed Apparatus Overview}
+The experimental apparatus consisted of an inner vessel, a vacuum outer vessel, and a xenon circulation system. The inner vessel was a \ac{SS} canister, topped with a 2.75~in Conflat-adaptable tower that allowed space for instrumentation cabling and \ac{HV} feedthroughs. The inner vessel was offset below a 7.09~in ISO K flange, which held the (removable) vacuum outer vessel in place. Several Mini-CF ports were welded to the ISO K flange for instrumentation cabling. A large-scale overview is shown in Figure~\ref{fig:apparatus}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -17,7 +17,7 @@ The experimental apparatus consisted of an inner vessel, a vacuum outer vessel, 
 \end{center}
 \end{figure}
 
-The inner vessel contained the \ac{TPC}. A PTFE housing cylinder fastened a PMT in place. Above the PTFE housing, a series of interlocking PTFE rings held strung wire grids and a segmented anode in place. During data taking, the entire PMT and housing were immersed in \ac{LXe}. The liquid level was chosen depending on the experiment at hand, approximated by the S2 width. In some cases, the TPC was ``overfilled'' by allowing the liquid level to rise above the anode. The segmented anode was instrumented with charge amplifiers for direct charge readout. When the \ac{TPC} was overfilled, the charge amplifiers detected the ionization electrons directly from the liquid. During typical dual phase \ac{TPC} operation, the charge amplifiers provided a secondary measurement of the ionization electrons in addition to S2.
+The inner vessel contained the \ac{TPC}. A PTFE housing cylinder fastened a PMT in place. Above the PTFE housing, a series of interlocking PTFE rings held strung wire grids and a segmented anode in place. During data taking, the entire PMT and housing were immersed in \ac{LXe}. The liquid level was chosen depending on the experiment at hand, approximated by the S2 width. In some cases, the TPC was ``overfilled'' by allowing the liquid level to rise above the anode. The segmented anode was instrumented with charge amplifiers for direct charge readout. When the \ac{TPC} was overfilled, the charge amplifiers detected the ionization electrons directly from the liquid. During typical dual phase \ac{TPC} operation, the charge amplifiers provided a secondary measurement of the ionization electrons in addition to S2. Two typical arrangements of the inner vessel are shown in Figure~\ref{fig:internals}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -62,13 +62,13 @@ The shaper evaluation board produced gaussian pulses from raw charge signals as 
 \end{center}
 \end{figure}
 
-The charge amplifiers were originally placed inside the experimental vessel, mounted directly on the segmented anode. The functionality in \ac{LXe} conditions didn't deviate from manufacturer's specifications, however it was found that the CR-110 units generated enough heat to create a perpetual gas layer under the anode. In general this is not an issue, but for the purpose of the intended absolute electron extraction efficiency measurement, overfilling'the \ac{TPC} and using the charge amplifiers as a direct read-out of electrons in the liquid was required. The charge amplifiers were moved to the outer vessel space, surrounded by small Faraday cage made of copper mesh. See Figure~\ref{fig:chargeamp_mount} for the charge amplifier mounting configurations.
+The charge amplifiers were originally placed inside the experimental vessel, mounted directly on the segmented anode. The functionality in \ac{LXe} conditions didn't deviate from manufacturer's specifications, however it was found that the CR-110 units generated enough heat to create a perpetual gas layer under the anode. In general this is not an issue, but for the purpose of the intended absolute electron extraction efficiency measurement, overfilling the \ac{TPC} and using the charge amplifiers as a direct read-out of electrons in the liquid was required. The charge amplifiers were moved to the outer vessel space, surrounded by a small Faraday cage made of copper mesh. See Figure~\ref{fig:chargeamp_mount} for the charge amplifier mounting configurations.
 
  \begin{figure}[htbp]
 \begin{center}
 \includegraphics[height=2.5in, keepaspectratio]{figures/testbed/chargeamp_mount1.jpg}
 \includegraphics[height=2.5in, keepaspectratio]{figures/testbed/chargeamp_mount2.jpg}
-\caption{(Right) original mounting of CR-110 charge amplifiers inside the experimental vessel. (Left) Mounting in the outer vacuum reduced heat load on the TPC.}
+\caption{(Left) original mounting of CR-110 charge amplifiers inside the experimental vessel. (Right) Mounting in the outer vacuum reduced heat load on the TPC.}
 \label{fig:chargeamp_mount}
 \end{center}
 \end{figure}
@@ -86,7 +86,30 @@ Charge amplifiers have baseline RMS noise proportional to the attached capacitan
 
 Charge amplifiers also respond to acoustics. Tapping a finger near a charge amplifier will show as a baseline-jumping response on an oscilloscope. This additional source of noise makes \ac{LXe} \ac{TPC}s challenging places to use charge amplifiers for signal readout because any bubbles in the \ac{LXe} create micro-acoustic signals which the charge amplifiers pick up. By design, dual phase \ac{LXe} \ac{TPC}s are operated near the xenon liquid-gas boundary so the formation and dissipation of gas bubbles in the liquid is likely. Additional sources of acoustic noise like circulation of xenon into the experimental vessel also produce visible responses in charge amplifiers. The difference in micro-acoustic noise environment is illustrated in Figure~\ref{fig:amp_noise}.
 
-As \ac{TPC}s are large capacitors, any transients coupling to the ``TPC capacitor" may be picked up by the charge amplifiers. In particular, instabilities in the \ac{HV} chain induce a current in the ``TPC capacitor" that is picked up by the charge amps. Instabilities in \ac{HV} can come from many places. It was observed that for the characteristic capacitance and impedance of the the test bed, partial breakdowns in a length of R60 cabling caused a disruption in the functionality of the charge amplifiers. It was also found that a standard laboratory \ac{HV} supply, a Glassman 20~kV negative polarity unit, created pick-up in the charge amplifiers.  
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics[width = 0.32\textwidth, keepaspectratio]{figures/testbed/circ_off.png}
+\includegraphics[width = 0.32\textwidth, keepaspectratio]{figures/testbed/circ_noise.png}
+\includegraphics[width = 0.32\textwidth, keepaspectratio]{figures/testbed/circ_noise_zoom.png}
+\caption{(Left) Event showing charge amp with detector -100~C, 1.5~bar, gas only. (Middle) Effect of circulation pump on charge amp is to cause 500~Hz oscillation noise (-100~C, 1.5~bar, gas only). (Right) Same event as (middle), but zoomed-in time scale.}
+\label{fig:amp_noise}
+\end{center}
+\end{figure}
+
+
+
+
+As \ac{TPC}s are large capacitors, any transients coupling to the ``TPC capacitor" may be picked up by the charge amplifiers. In particular, instabilities in the \ac{HV} chain induce a current in the ``TPC capacitor" that is picked up by the charge amps. Instabilities in \ac{HV} can come from many places. It was observed that for the characteristic capacitance and impedance of the the test bed, partial breakdowns in a length of R60 cabling caused a disruption in the functionality of the charge amplifiers. It was also found that a standard laboratory \ac{HV} supply, a Glassman 20~kV negative polarity unit, created pick-up in the charge amplifiers (see Figure~\ref{fig:pickup_noise}).  
+
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics[width = 0.49\textwidth, keepaspectratio]{figures/testbed/glassman_noise.png}
+\includegraphics[width = 0.49\textwidth, keepaspectratio]{figures/testbed/partial_breakdown_pickup.png}
+\caption{(Left) Periodic noise from the Glassman 20~kV negative polarity voltage supply. (Right) Partial breakdown in R60 cable as picked up by charge amplifiers.}
+\label{fig:pickup_noise}
+\end{center}
+\end{figure}
+
 
 \section{PMT}
 The test bed was instrumented with an R8778 PMT, the same PMTs used in LUX. Both LUX and LZ PMT bases were used. The radon daughters study presented in Chapter~\ref{ch:radon} exclusively used the LUX PMT base, the electron trains studies first used the LUX base, and later used the LZ base. The LZ base was favored for its larger capacitors. Various shaping amplifiers were used when digitizing the PMT over the course of these studies because the 8~ns sampling interval of the data acquisition was subject to aliasing the fast-rising alpha S1 signals.
@@ -94,23 +117,29 @@ The test bed was instrumented with an R8778 PMT, the same PMTs used in LUX. Both
 %\subsection{PMT Saturation}
 
 \section{Slow Control}
-The inner experimental vessel was instrumented with a platinum RTD to monitor temperature and a capacitance manometer to monitor pressure. A flow meter in the circulation line determined the flow rate of xenon as it passed through the getter and returned to the inner vessel. The voltage applied to two 25~$\Omega$ resistors in parallel
+The slow control for the test bed consists of a few monitoring variables such as temperature and pressure, and a voltage supply that turns on heaters. The inner experimental vessel was instrumented with two platinum RTDs to monitor temperature and a capacitance manometer to monitor pressure. A flow meter in the circulation line determined the flow rate of xenon as it passed through the getter and returned to the inner vessel. These four variables are read using Omega i-series digital panel meters to provide a real-time display; two points of calibration are provided to the digital panel meters to translate voltage to human-readable pressure, temperature, etc. In addition, two 25~$\Omega$ resistors are mounted, in parallel, on the cold-head. Supplying to voltage to these resistors raises the temperature of the cold-head and decreases the cooling power delivered by the liquid nitrogen bath; the voltage supplied to the heaters was also recorded, but not shown with digital panel meters. The voltages for the monitoring variables and the heater voltages were fed into a USB Device from Measurement Computing, which interfaces with a computer. A slow control script on a lab computer recorded the monitoring variables and heater voltages. The script also determined if power should be supplied to the heaters and if text message and e-mail alarms should be sent for a variable out of expected range. A basic schematic of the slow control is shown in Figure~\ref{fig:sc}.
 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/testbed/slow_control.png}
+\caption{A diagram showing components of the slow control.}
+\label{fig:sc}
+\end{center}
+\end{figure}
 
 \section{Data Acquisition}
-Data were acquired with a Picoscope 5000a, a USB-compatible ``oscilloscope." The picoscope python library was used to write voltage records of PMT and charge signals to ROOT files, which were opened later for reprocessing into reduced quantities such as pulse area or pulse height. The picoscope was run as a 14~bit ADC with 125~MHz sampling. For special cases, when only one channel was desired, it was possible to increase the sampling rate to 500~MHZ (or 2~ns). 
+Data were acquired with a Picoscope 5000a, a USB-compatible ``oscilloscope." The picoscope python library was used to write voltage records of PMT and charge signals to ROOT files, which were opened later for reprocessing into reduced quantities such as pulse area or pulse height. The picoscope was run as a 14~bit ADC with 125~MHz (8~ns) sampling. For special cases, when only one channel was desired, it was possible to increase the sampling rate to 500~MHZ (2~ns). 
 
 
 \section{High Voltage Feedthrough Design}
 A significant amount of time was spent developing and testing \ac{HV} feedthroughs for the test bed. This section describes a few of the feedthroughs that were unsuccessful, leading to the final design, which is capable of delivering -11kV to the cathode with no observable breakdown or other effects. Extensive detail of the tests and procedures are not provided. Instead, the following vignettes are intended as an overview to be useful to a student tasked with designing a HV feedthrough. 
 
 \subsection{Implementing SHV Feed Throughs from Vacuum Suppliers}
-The first attempts at building feedthroughs were to use off-the-shelf products from typical vacuum supply vendors such as MDC and Kurt Lesker. Vacuum \ac{HV} feedthroughs are intended to for use from air to vacuum, not air to \ac{LXe}, so it is not surprising that these were not successful. Additionally, by combining ceramic and metal (typically aluminum, stainless steel, nickel, copper) they are especially prone to breakdown at the meeting of these different materials, known colloquially as ``triple points''. When there are interfaces between materials with different permittivities (dielectric constants), the electric fields are distorted.  Field is pushed out of the higher dielectric material into the lower dielectric material. This creates a field enhancement where peak fields can be much higher than average fields in the system. The field enhancement from "triple points" where there is in interface between a conductor and two dielectrics (e.g a plastic or ceramic feedthrough insulator and a gas or liquid) is a common source of breakdown along insulator surfaces. Good design practices, namely choices of geometry reduce the field enhancements in these regions.
+The first attempts at building feedthroughs were to use off-the-shelf products from typical vacuum supply vendors such as MDC and Kurt Lesker. Vacuum \ac{HV} feedthroughs are intended to for use from air to vacuum, not air to \ac{LXe}; we were attempting to operate them outside of their intended usage paramters. Additionally, by combining ceramic and metal (typically aluminum, stainless steel, nickel, copper) they are especially prone to breakdown at the meeting of these different materials, known colloquially as ``triple points''. When there are interfaces between materials with different permittivities (dielectric constants), the electric fields are distorted. Electric field is ``pushed'' out of the higher dielectric material into the lower dielectric material. This creates a field enhancement where peak fields can be much higher than average fields in the system. The field enhancement from triple points where there is in interface between a conductor and two dielectrics (e.g conductor, ceramic insulator, and gaseous Xe) is a common source of breakdown along insulator surfaces. Good design practices, namely choices of geometry, reduce the field enhancements in these regions. With commercial feedthroughs, the geometry choice is set and may not be sufficient for the task.
 
+Note that ceramic feedthroughs are not appropriate for low background experiments due to their high radioactivity, but for test beds, where low radioactivity is not a priority, they may be used.
 
-Note that ceramic feedthroughs are not appropriate for low background experiments due to high radioactivity, but for test beds, where low radioactivity is not a priority, they may be used.
-
-The first few feed throughs used a 12kV \ac{SHV} weldable feed though as shown in Figure~\ref{fig:12kV-SHV}. If used as operation is intended, the side indicated by A is used on the vacuum-side and B connects to the voltage supply. Instead, we trimmed the long B side and attached a copper, screw-port connector to make the 90 degree connection from vertical feed through to horizontal grid. This was done to avoid placing a conducting surface at high voltage (the tip of side A) in gaseous xenon, thereby increasing the risk of breakdown to the walls of the detector. The feed through's vertical placement is designed such that the copper connector is fully submersed in \ac{LXe}.
+The first few feed throughs used a 12kV \ac{SHV} weldable feed though as shown in Figure~\ref{fig:12kV-SHV}. If used as operation is intended, the side indicated by A is used on the vacuum-side and B connects to the voltage supply. Instead, we trimmed the long B side and attached a copper, screw-port connector to make the 90 degree connection from vertical feed through to horizontal grid. This was done to avoid placing a conducting surface at high voltage (the tip of side A) in gaseous xenon, thereby increasing the risk of breakdown to the walls of the detector. The feed through's vertical placement is designed such that the copper connector is fully submersed in \ac{LXe} (Figure~\ref{fig:f1}).
 
  
 \begin{figure}[htbp]
@@ -123,19 +152,20 @@ The first few feed throughs used a 12kV \ac{SHV} weldable feed though as shown i
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=3in]{figures/testbed/ft1_1.jpg}
-\caption{12kV SHV weldable connector, inverted, clipped, and attached with a machined copper connector. The connector uses a screw to capture the SHV feed though, and the same screw to capture a stranded wire, visible in this picture, which is then fed through a hole drilled in the PTFE to connect to the wire grid frames. The wire was wrapped around the grid frame.}
-\label{fig:ft1_1}
+\includegraphics[width=0.49\textwidth]{figures/testbed/ft1_2.jpg}
+\includegraphics[width=0.49\textwidth]{figures/testbed/ft1_1.jpg}
+\caption{(left) The copper tape in this picture is sitting on top of a 1/2~-in swage connector. The swage connector captures a 1/2~in pipe, which has the 12~kV SHV feedthrough welded to the end. (right) 12~kV SHV weldable connector, inverted, clipped, and attached with a machined copper connector. The connector uses a screw to capture the SHV feed though, and the same screw to capture a stranded wire, visible in this picture, which is then fed through a hole drilled in the PTFE to connect to the wire grid frames. The wire was wrapped around the grid frame. }
+\label{fig:ft1}
 \end{center}
 \end{figure}
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=3in]{figures/testbed/ft1_2.jpg}
-\caption{The copper tape in this picture is sitting on top of a 1/2~-in swage connector. The swage connector captures a 1/2~in pipe, which has the 12kV SHV feedthrough welded to the end.}
-\label{fig:ft1_2}
-\end{center}
-\end{figure}
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=\textwidth]{figures/testbed/ft1_2.jpg}
+%\caption{The copper tape in this picture is sitting on top of a 1/2~-in swage connector. The swage connector captures a 1/2~in pipe, which has the 12kV SHV feedthrough welded to the end.}
+%\label{fig:ft1_2}
+%\end{center}
+%\end{figure}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -147,7 +177,7 @@ The first few feed throughs used a 12kV \ac{SHV} weldable feed though as shown i
 \end{figure}
 
 
-Feed throughs were tested by performing a cool down, ramping the \ac{HV} supply slowly, and watching an oscilloscope for a higher than baseline photon rate Figure~\ref{fig:phog} or a full xenon breakdown Figure~\ref{fig:breakdown}. The effect of raising the voltage on the \ac{HV} supply at a specific rate was also tested, and it was determined that the extremely slow and steady rate of a computer program was not necessarily superior to the imperfect method of the human experimenter -- the construction of the feed through, itself, outweighed any gains from computer-supervised voltage ramping.  
+Feed throughs were tested by performing a cool down, ramping the \ac{HV} supply slowly, and watching an oscilloscope for a higher than baseline photon rate (Figure~\ref{fig:phog}) or a full xenon breakdown (Figure~\ref{fig:breakdown}). The effect of raising the voltage on the \ac{HV} supply at a specific rate was also tested, and it was determined that the extremely slow and steady rate of a computer program was not necessarily superior to the imperfect method of the human experimenter -- the construction of the feedthrough, itself, outweighed any gains from computer-supervised voltage ramping.  
 
 
 \begin{figure}[htbp]
@@ -170,17 +200,12 @@ Feed throughs were tested by performing a cool down, ramping the \ac{HV} supply 
 \end{center}
 \end{figure}
 
-Iterations of the 12kV SHV feed though were not able to reach more than about 9kV, and not more than about 7kV for extended periods of time like those that would be required for data acquisition. A summary of the issues with this type of feed through design is given below:
-\begin{itemize}
-\item Gas gaps
-\item Triple points
-\item Prone to aging
-\end{itemize}
+Iterations of the 12~kV SHV feed though were not able to reach and sustain more than about 7~kV for extended periods of time like those that would be required for data acquisition.
 
-We also tried a stock 20kV SHV feed through with a custom end cap designed by a \ac{HV} engineer, meant to smooth out typical triple point issues. This feed through was mounted on a CF flange far from the active region. A length of cable was stripped of grounding sheath for its entire length. A small section on one end was stripped of dielectric, this end was tied to the SHV feed though with copper wire, and the custom end cap was placed over this. The side of the cable making the connection to the cathode grid was drilled out for a short length on the bottom, leaving only a tube of dielectric with no conductor. A threaded rod was inserted into the cable, such that the rod made contact with the conductor. The cathode grid frame was screwed onto the threaded rod. The SHV-20 feed though is summarized in pictures in Figure~\ref{fig:shv20}, and was found to hold sufficient voltage (~10kV) for extended periods of time. However, it was found that the voltage capability of this feed though decreased over time; this is discussed in the next section.
+We also tried a stock 20~kV SHV feed through with a custom end cap designed by \ac{HV} engineer Will Waldron, meant to smooth out typical triple point issues. This feed through was mounted on a CF flange far from the active region. A length of cable was stripped of grounding sheath for its entire length. A small section on one end was stripped of dielectric, this end was tied to the SHV feed though with copper wire, and the custom end cap was placed over this. The side of the cable making the connection to the cathode grid was drilled out for a short length on the bottom, leaving only a tube of dielectric with no conductor. A threaded rod was inserted into the cable, such that the rod made contact with the conductor. The cathode grid frame was screwed onto the threaded rod. The SHV-20 feed though is summarized in pictures in Figure~\ref{fig:shv20}, and was found to hold sufficient voltage (10~kV) for extended periods of time. However, it was found that the voltage capability of this feed though decreased over time; this is discussed in the next section.
 
 \begin{figure}[htbp]
-\begin{minipage}{0.47\textwidth}
+\begin{minipage}{0.43\textwidth}
     \includegraphics[width=\linewidth]{figures/testbed/ft3_1.jpg}
     \end{minipage}
     \hspace{\fill} % note: no blank line here
@@ -194,7 +219,7 @@ We also tried a stock 20kV SHV feed through with a custom end cap designed by a 
     \includegraphics[width=\linewidth]{figures/testbed/ft3_3.jpg}
     \end{minipage}
     \hspace{\fill} % note: no blank line here
-    \begin{minipage}{0.47\textwidth}
+    \begin{minipage}{0.4\textwidth}
     \includegraphics[width=\linewidth]{figures/testbed/ft3_4.jpg}
     \end{minipage}
 \caption{Top: (left) cathode connection side (right) SHV-20 connection side Bottom: (left) an example showing how the cable was attached to the stock SHV-20 feed though end (right) a custom cap fit over the connection, smoothing out triple points.}
@@ -203,15 +228,22 @@ We also tried a stock 20kV SHV feed through with a custom end cap designed by a 
 
  \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=3in, angle=-90]{figures/testbed/ft3_5.jpg}
+\includegraphics[width=2in, angle=-90]{figures/testbed/ft3_5.jpg}
 \caption{Effect of holding the feed through in place with PEEK zip ties was explored, effects were minimal.}
 \label{fig:aging}
 \end{center}
 \end{figure}
 
+% A summary of the issues with building a \ac{LXe} feedthrough out of a stock \ac{SHV} connecter is given below:
+%\begin{itemize}
+%\item Gas gaps
+%\item Triple points
+%\item Prone to aging (more in Section \ref{sec:aging})
+%\end{itemize}
 
  
 \subsubsection{Feedthrough Aging}
+\label{sec:aging}
 It was noticed during subsequent operation that the SHV-20 feed through was subject to some sort of aging process (black line in Figure~\ref{fig:aging}). A month of use resulted in noticeably lower voltage capabilities. The issue could have been any point along the entire voltage chain: feed through - custom cap - connection to cable - cable - connection to grid - grid. Tests focusing on different parts of the voltage chain didn't reveal any weak points. Instead, it was found that the SHV-20 feed though, itself, was subject to aging (red line in Figure~\ref{fig:aging}). 
 
 
@@ -223,11 +255,11 @@ It was noticed during subsequent operation that the SHV-20 feed through was subj
 \end{center}
 \end{figure}
 
-Feedthrough aging can be the result of arcing and discharges which cause local heating and carbonization of an insulator surface. Once there is a carbon path, the insulator is considered "tracked" and then holds a much lower voltage than before.  Sophisticated \ac{HV} systems keep peak currents and fault energies to a minimum using series resistors. In this way, a breakdown event does not degrade system performance in the future. In addition to carbon tracks, there can also be insulator degradation from exposure to UV if there is ionization in the region. Xenon ionization is in the UV region of the spectrum, and so any ionization near a feed though insulator may degrade the feed through performance. In the case of this particular feed though, the high field which caused the breakdowns or ionization was likely a result of poor triple-point geometry. 
+Feedthrough aging can be the result of arcing and discharges which cause local heating and carbonization of an insulator surface. Once there is a carbon path, the insulator is considered ``tracked'' and then holds a much lower voltage than before.  Sophisticated \ac{HV} systems keep peak currents and fault energies to a minimum using series resistors. In this way, a breakdown event does not degrade system performance in the future. In addition to carbon tracks, there can also be insulator degradation from exposure to UV if there is ionization in the region. Xenon ionization is in the UV region of the spectrum, and so any ionization near a feed though insulator may degrade the feed through performance. In the case of this particular feed though, the high field which caused the breakdowns or ionization was likely a result of poor triple-point geometry. 
 
 
 \subsection{Custom Feedthroughs}
-To achieve better voltage performance, we moved away from typical feedthroughs composed of ceramic and metal. Figure~\ref{fig:ft4} shows a feed through made with a Swagelock reducing union. This blue and white PTFE piece connects 1/4~in \ac{SS} pipe to an 1/8~in PTFE tube, which then houses a \ac{SS} rod. The rod is screwed onto a connector, which holds a wire to connect to the grid. This feed through had stable voltage performance, but could not achieve sustained voltages higher than about 9~kV. A woven \ac{SS} shield was added to the feed though to reach higher voltages (Figure~\ref{fig:ft4} (left)) but this actually decreased the voltage performance to a maximum of about 5~kV.   
+To achieve better voltage performance, we moved away from typical, stock feedthroughs composed of ceramic and metal. Figure~\ref{fig:ft4} shows a feed through made with a Swagelock reducing union. This blue and white PTFE piece connects 1/4~in \ac{SS} pipe to an 1/8~in PTFE tube, which then houses a \ac{SS} rod. The rod is screwed onto a connector, which holds a wire to connect to the grid. This feed through had stable voltage performance, but could not achieve sustained voltages higher than about 9~kV. A woven \ac{SS} shield was added to the feed though to reach higher voltages (Figure~\ref{fig:ft4} (left)) but this actually decreased the voltage performance to a maximum of about 5~kV.   
 
 \begin{figure}[htbp]
 \begin{center}
@@ -248,66 +280,66 @@ There are two issues with the approach of adding a grounding braid in this metho
 \includegraphics[width=\textwidth]{figures/testbed/will_comsol_1.png}\\
 \includegraphics[width=\textwidth]{figures/testbed/will_comsol_2.png}
 
-\caption{A COMSOL model by high voltage engineer W. Waldron showing that peak fields arise when gaps exist between dielectric and grounding braid.}
+\caption{(top) Input to a COMSOL model simulating gaps between the grounding braid and dielectric of a high voltage feedthrough. (bottom) COMSOL output the model, showing that peak fields arise when gaps exist between dielectric and grounding braid.. Both images provided by high voltage engineer W. Waldron.}
 \label{fig:will_comsol}
 \end{center}
 \end{figure}
 
-To move away from stock SHV feedthroughs which were prone to aging, a feedthrough was built out of a \ac{SS} rod with \ac{PTFE} dielectric and no shield braid (Figure~\ref{fig:ssrodft}). The end is a copper rod bent into a U-shape which connects to the \ac{SS} conduction rod via a pin, and the other end, which is threaded, screws into to the cathode grid frame. The bare copper section is only exposed under the liquid level, elsewhere the \ac{PTFE} dielectric helps contain the electric field and prevent breakdown to the inner vessel wall. This feedthrough had good voltage performance, and there was no sign of aging. It was decided, however, that the charge amplifiers were more susceptible to detecting transients from an unshielded feedthrough, so another feedthrough with shielding was constructed (Figure~\ref{fig:cableft}).
+Due to the poor performance of custom feedthrough, and concerns about the cold connection, a feedthrough was built out of a \ac{SS} rod with \ac{PTFE} dielectric and no shield braid (Figure~\ref{fig:ssrodft}) that enters the inner vessel from the top of tall CF tower, where the connection is warm. The end is a copper rod bent into a U-shape which connects to the \ac{SS} conduction rod via a pin, and the other end, which is threaded, screws into to the cathode grid frame. The bare copper section is only exposed under the liquid level, elsewhere the \ac{PTFE} dielectric helps contain the electric field and prevent breakdown to the inner vessel wall. This feedthrough had good voltage performance, and there was no sign of aging. It was decided, however, that the charge amplifiers were more susceptible to detecting transients from an unshielded feedthrough, so another feedthrough with shielding was constructed (Figure~\ref{fig:cableft}). This feedthrough has an outer PTFE sheath to keep the shielding tight against the inner dielectric. This final feedthrough design was extremely successful, and has been in use for 2 years at the time of writing this thesis.  
 
 \begin{figure}[htbp]
 \begin{minipage}{0.47\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft5_1.jpg}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft5_1.jpg}
     \end{minipage}
     \hspace{\fill} % note: no blank line here
     \begin{minipage}{0.47\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft5_2.jpg}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft5_2.jpg}
     \end{minipage}
 
     \vspace*{1cm} % vertical separation
 
     \begin{minipage}{0.47\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft5_3.jpg}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft5_3.jpg}
     \end{minipage}
     \hspace{\fill} % note: no blank line here
     \begin{minipage}{0.47\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft5_4.jpg}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft5_4.jpg}
     \end{minipage}
-\caption{Top: (left) (right) . Bottom: (left) (right).}
+\caption{Top: (left) Close up showing the PTFE ferrules and notch. (right) Close up of the sealed top connection; epoxy was added to prevent leaks between the dielectric and conductor rod . Bottom: (left) Threaded U-bend cathode connector (right) Feed through assembled and installed.}
  \label{fig:ssrodft}
 \end{figure}
 
 
 
 \begin{figure}[htbp]
-\begin{minipage}{0.33\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft6_4.jpg}
+\begin{minipage}{0.32\textwidth}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft6_4.jpg}
     \end{minipage}
     \hspace{\fill} % note: no blank line here
-    \begin{minipage}{0.33\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft6_5.jpg}
+    \begin{minipage}{0.32\textwidth}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft6_5.jpg}
     \end{minipage}
         \hspace{\fill} % note: no blank line here
     \begin{minipage}{0.33\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft6_6.jpg}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft6_6.jpg}
     \end{minipage}
 
     \vspace*{1cm} % vertical separation
 
-    \begin{minipage}{0.33\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft6_1.jpg}
+    \begin{minipage}{0.32\textwidth}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft6_1.jpg}
     \end{minipage}
     \hspace{\fill} % note: no blank line here
-    \begin{minipage}{0.33\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft6_2.jpg}
+    \begin{minipage}{0.32\textwidth}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft6_2.jpg}
     \end{minipage}
         \hspace{\fill} % note: no blank line here
-    \begin{minipage}{0.33\textwidth}
-    \includegraphics[width=\linewidth]{figures/testbed/ft6_3.jpg}
+    \begin{minipage}{0.32\textwidth}
+    \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft6_3.jpg}
     \end{minipage}
     
     
-\caption{Top: (left) (middle) (right) . Bottom: (left) (middle) (right).}
+\caption{Top: (left) Sealed top connection with liberal epoxy use. A male Bendix pin was soldered to the cable conductor. (middle) SHV connector with female Bendix to mate with feedthrough (right) Grounded safety housing with SHV connector. Bottom: (left) Ends of the feedthrough were held in the Teflon stack. (middle) Close up showing cable conductor, PTFE dielectric, and grounding sheath pulled back (right) Grounding scheme for feedthrough cables.}
  \label{fig:cableft}
 \end{figure}
 
