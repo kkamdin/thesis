@@ -60,7 +60,6 @@ The S2 in a dual-phase \ac{TPC} plays two important roles: (i) internal amplific
 \end{figure}
 
 
-The \ac{LUX} detector is a dual-phase liquid xenon TPC.
 
 \subsection{Energy Reconstruction}
 Energy reconstruction in dual-phase xenon \ac{TPC}s comes from the measurable quantities, S1 and S2, but begins with the number of excitons $n_{ex}$  and electron-ions pairs $n_{i}$ generated at the interaction site. 
@@ -71,7 +70,7 @@ E = f W (n_{ex} + n_{i} )
 where $E$ is the deposited energy. $W$ is the average energy needed to produce a single excited or ionized atom, $W = 13.7 \pm 0.2$~eV \cite{Mock2014}. The quenching factor, $f$ is 1 for electronic recoils but $f \neq 1$ for nuclear recoils. For now, take the case of electronic recoils and set $f=1$. This equation can be rewritten:
 
 \begin{equation}
-E = W (1 + \frac{n_{ex}}{n_{i}} ) n_{i}
+E_{ER} = W (1 + \frac{n_{ex}}{n_{i}} ) n_{i}
 \end{equation}
 
 The ratio of excitons to ions is constant for electron recoils $n_{ex}/{n_{i}} = 0.2$ \cite{LUX:YieldsAndRecombination}. As discussed in Section \label{sec:signal_generation}, each exciton deexcites, emitting a 178~nm photon, some fraction $r$ of the initial electron-ion pairs recombine and form additional excitons. The total number of prompt scintillation photons created by the interaction is then:
@@ -86,22 +85,95 @@ And the total number of electrons created by interaction site (electrons escapin
 n_{e} = (1 - r ) n_{i}
 \end{equation}
 
-Thus, the effect of recombination is to ``trade-out'' electrons for photons, but the total number of quanta is conserved. These two quantities, $n_{\gamma}$  and $n_{e}$ relate directly to the observable S1 and S2 signals:
+Thus, the effect of recombination is to ``trade-out'' electrons for photons, but the total number of quanta is conserved (Figure~\ref{fig:recombination} (left)). The amount of recombination depends on applied electric field, \ac{LXe} density, and particle energy \cite{LUX:YieldsAndRecombination}. In the case of the 122~keV electron recoils in Figure~\ref{fig:recombination} (right): at low fields, most of the electron-ion pairs recombine, which results in more scintillation photons. As the applied electric field increases, more electrons are pulled away from the interaction site resulting in fewer scintillation photons and more ionization electrons. These amounts of photons and electrons are referred to as the scintillation and ionization yields. The two quantities, $n_{\gamma}$  and $n_{e}$ relate directly to the observable S1 and S2 signals:
 
  \begin{equation}
-E = W (n_{\gamma} + n_{e} )
+ \label{eq:energy}
+  \begin{split}
+E_{ER} = W (n_{\gamma} + n_{e} ) \\
    = W (\frac{S1}{g_{1}} + \frac{S2}{g_{2}})
+    \end{split}
 \end{equation}
 
-where S2 and S2 are in units of detected photons, and $g_{1}$ and $g_{2}$ are detector gains in units of detected photons (phd) / quanta. $g_{1}$ is the detection efficiency for the prompt scintillation photons: it is a product of the the average a geometrical light collection efficiency and the average \ac{PMT} \ac{QE}. Typical values for $g_{1}$ are in the range of 0.01-0.02. $g_{2}$ is the analogous quantity for S2 proportional scintillation light: it is a product of the \ac{EEE} and the average number of detected photons produced by one extracted electron. Typical values for $g_{2}$ are in the range 10-60.
+where $E_{ER}$ reminds us that we are taking the case of electronic recoils and set $f=1$ in Equation~\ref{eq:energy}. S1 and S2 are in units of detected photons (phd), and $g_{1}$ and $g_{2}$ are detector gains in units of phd / quanta. $g_{1}$ is the detection efficiency for the prompt scintillation photons: it is a product of the the average a geometrical light collection efficiency and the average \ac{PMT} \ac{QE}. Typical values for $g_{1}$ are in the range of 0.01-0.02. $g_{2}$ is the analogous quantity for S2 proportional scintillation light: it is a product of the \ac{EEE} and the average number of detected photons produced by one extracted electron. Typical values for $g_{2}$ are in the range 10-60.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\halffig]{figures/lxetpcs/recombination.png}
+\includegraphics[width=\halffig]{figures/lxetpcs/yields.png}
+\caption{(left) Plot illustrating the effect of recombination and detector effects on a line source (127Xe), courtesy of E. Pease. (right) Field dependence of scintillation and ionization yield in LXe for 122 keV electron recoils (ER), 56.5 keVr nuclear recoils (NR) and 5.5 MeV alphas, relative to the yield with no drift field from \cite{Aprile2010}}
+\label{fig:recombination}
+\end{center}
+\end{figure}
+
+To properly reconstruct the energy of nuclear recoils, we must revisit the quenching factor factor $f$. Equation~\ref{eq:energy} then becomes:
+
+ \begin{equation}
+  \label{eq:energy}
+ \begin{split}
+E_{NR} = f W (n_{\gamma} + n_{e} ) \\
+   = f W (\frac{S1}{g_{1}} + \frac{S2}{g_{2}})
+ \end{split}
+\end{equation}
+
+This equation can be rewritten:
+
+ \begin{equation}
+ \label{eq:combined_energy}
+E_{NR} = f E_{ER} = \frac{E_{ER}}{\mathcal{L}}
+\end{equation}
+
+where $\mathcal{L}$ is Lindhard's factor. Lindhard's factor accounts for the fraction of energy lost to atomic motion (heat) in nuclear recoils \cite{Lindhard1963}. An incoming particle interacts with a ``patient zero'' Xe atom, resulting a nuclear recoil. The patient zero Xe atom interacts with surrounding atoms in a cascade to produce S1 and S2; it is the energy partitioning in this cascade that results in different energy scales for \ac{ER} and \ac{NR}. Lindhard shows that the energy partitioned in nuclear interactions and electron interactions from a recoiling xenon nucleus is:
+
+ \begin{equation}
+ \label{eq:lindhard}
+\mathcal{L} = \frac{k g(\epsilon)}{1 + k g(\epsilon)}
+\end{equation}
+
+where $k = 0.133 Z^{2/3} A^{-1/2}$ is a proportionality constant that relates electronic stopping power and the velocity of the recoiling xenon atom, and $\epsilon = 11.5 (E_{NR}/keV) Z^{-7/3}$. Lindhard's calculation yields $k=0.166$, which is the commonly accepted value. Measurements of nuclear recoils in \ac{LXe} are used to fit for $k$. Several experiments were compared by Sorensen and Dahl to determine that nuclear recoil energy is well described by $0.110 < k < 0.166$ \cite{Sorensen2011}. Results from LUX yielded $k = 0.1735 \pm 0.0060$ \cite{LUX:DD}. 
+
+
+If it is not known \textit{a priori} whether an interaction is a nuclear recoil or electron recoil, the `electron equivalent' energy is given in units $keV_{ee}$. If it is known that the recoil is a nuclear recoil, Lindhard's factor is applied and the units are given $keV_{nr}$. Lindhard's factor allows us to combine nuclear recoils and electronic recoils on one scale by labelling contours of constant (S1 + S2) with both $keV_{ee}$ and $keV_{nr}$ (example in Figure~\ref{fig:e_contours}).
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\halffig]{figures/lxetpcs/E_contours.png}
+\caption{Plot showing combined energy contours in with typical axis units, for an example set of $g_{1}$ and $g_{2}$.}
+\label{fig:e_contours}
+\end{center}
+\end{figure}
+
+
 
 
 \section{Dual-Phase Xenon TPCs for Dark Matter Detection}
+Dual phase Xe \ac{TPC}s have been at the forefront of the hunt for dark matter in the last several decades. As described above, the xenon medium and detector technology make excellent low-background, rare-event searches with high signal yields. Dual phase Xe \ac{TPC}s also provide a few enhancements to WIMP dark matter searches, but other dark matter searches are also possible with the same detector.
+
 
 \subsection{Optimization for WIMPs}
+Dual-phase \ac{LXe} \ac{TPC}s are optimized for WIMP searches. They have been very successful in reaching large areas of WIMP parameter space. 
 
 \subsubsection{ER, NR Discrimination}
 \label{sec:er_nr_discrimination}
+One of the most powerful features of \ac{LXe} \ac{TPC}s, which has made the technology especially useful in the hunt for WIMP dark matter, is the ability to discriminate between electron recoils and nuclear recoils. \ac{WIMP} interactions are expected to be nuclear recoils, but most natural radioactivity ($\beta , \gamma$) are electron recoils. The amount of recombination for equal energy \ac{ER} and \ac{NR} is different, so for events with the same reconstructed energy $E$(keV$_{ee}$), the ratio of S2/S1 is characteristically different. A useful discrimination space is log$_{10}$(S2/S1) vs S1, as the distributions of log$_{10}$(S2/S1) for \ac{ER} and \ac{NR} events are Gaussian. Different calibration sources are used to develop a population of events known to be \ac{ER} and a population of events known to be \ac{NR}, these calibration sources reveal what is known as the \ac{ER} and \ac{NR} bands (Figure~\ref{fig:bands}).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{figures/lxetpcs/bands.png}
+\caption{Plot showing ER and NR bands from LUX. Solid lines are the ER and NR Gaussian means $\mu$, dotted lines are $\mu \pm 1 \sigma$. Figure from \cite{LUX:YieldsAndRecombination} }
+\label{fig:bands}
+\end{center}
+\end{figure}
+
+
+In the course of a \ac{WIMP} search, the experimentalists are tasked with keeping a stable detector operating for months or years. In this time, the detector will see events of natural radioactivity and perhaps \ac{WIMP}s. The natural radioactivity appears in the \ac{ER} band (location of bands is known from calibration), and nuclear recoil events appear in the \ac{NR} band. Due to band overlap, only events appearing below the \ac{NR} mean are considered \ac{WIMP} candidates. This restriction cuts signal acceptance to 50\%, but allows dual-phase \ac{TPC}s to reject background electronic recoils at $\gtrsim$99\%. The background acceptance rate is known as \ac{ER} leakage. It is the fraction of events appearing below the \ac{NR} mean from the \ac{ER} calibration source. For a background rejection rate of 99.99\%, the \ac{ER} leakage is 0.01\%, this number determines the sensitivity of the detector.
+
+
+
+
 
 \subsubsection{WIMP Rates and Cross section}
 
