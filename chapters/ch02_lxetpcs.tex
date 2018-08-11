@@ -73,7 +73,7 @@ where $E$ is the deposited energy. $W$ is the average energy needed to produce a
 E_{ER} = W (1 + \frac{n_{ex}}{n_{i}} ) n_{i}
 \end{equation}
 
-The ratio of excitons to ions is constant for electron recoils $n_{ex}/{n_{i}} = 0.2$ \cite{LUX:YieldsAndRecombination}. As discussed in Section \label{sec:signal_generation}, each exciton deexcites, emitting a 178~nm photon, some fraction $r$ of the initial electron-ion pairs recombine and form additional excitons. The total number of prompt scintillation photons created by the interaction is then:
+The ratio of excitons to ions is constant for electron recoils $n_{ex}/{n_{i}} = 0.2$ \cite{LUX:YieldsAndRecombination}. As discussed in Section \ref{sec:signal_generation}, each exciton deexcites, emitting a 178~nm photon, some fraction $r$ of the initial electron-ion pairs recombine and form additional excitons. The total number of prompt scintillation photons created by the interaction is then:
 
 \begin{equation}
 n_{\gamma} = (r + \frac{n_{ex}}{n_{i}} ) n_{i}
@@ -111,7 +111,6 @@ where $E_{ER}$ reminds us that we are taking the case of electronic recoils and 
 To properly reconstruct the energy of nuclear recoils, we must revisit the quenching factor factor $f$. Equation~\ref{eq:energy} then becomes:
 
  \begin{equation}
-  \label{eq:energy}
  \begin{split}
 E_{NR} &= f W (n_{\gamma} + n_{e} ) \\
    &= f W (\frac{S1}{g_{1}} + \frac{S2}{g_{2}})
@@ -248,7 +247,7 @@ Where $r$ is the kinematic factor:
 r = \frac{ 4 M_{\chi}M_{T} }{ (M_{\chi} + M_{T})^{2}}
 \end{equation}
 
-Note that the kinematic factor indicates that recoil energies are greatest for $M_{\chi} \approx M_{T}$. SUSY models favor \ac{WIMP} masses in the range 100GeV-1000GeV (Figure~\ref{fig:WIMPblobs}), which makes xenon ($M_{Xe} \approx$ 123 GeV) an excellent target. \ac{WIMP} scatters are assumed to be isotropic, so recoil energies are distributed uniformly in the range $0 < E_{R} < rE_{\chi}$ (i.e. Equation~\ref{eq:recoil} for $0 < cos\theta < 1$). We can put this together with Equation~\ref{rq:rate} to arrive at an differential rate per recoil energy in the detector -- i.e. the observable recoil spectrum for \ac{WIMP}-nucleus scattering. Note that equation Equation~\ref{rq:rate} is in terms of the \ac{WIMP} velocity $v$ and Equation~\ref{eq:recoil} is in terms of \ac{WIMP} energy $E_{\chi} = \frac{1}{2}M_{\chi}v^{2}$, so a change of variables is required. After the variable change, we can write:
+Note that the kinematic factor indicates that recoil energies are greatest for $M_{\chi} \approx M_{T}$. SUSY models favor \ac{WIMP} masses in the range 100GeV-1000GeV (Figure~\ref{fig:WIMPblobs}), which makes xenon ($M_{Xe} \approx$ 123 GeV) an excellent target. \ac{WIMP} scatters are assumed to be isotropic, so recoil energies are distributed uniformly in the range $0 < E_{R} < rE_{\chi}$ (i.e. Equation~\ref{eq:recoil} for $0 < cos\theta < 1$). We can put this together with Equation~\ref{eq:rate} to arrive at an differential rate per recoil energy in the detector -- i.e. the observable recoil spectrum for \ac{WIMP}-nucleus scattering. Note that equation Equation~\ref{eq:rate} is in terms of the \ac{WIMP} velocity $v$ and Equation~\ref{eq:recoil} is in terms of \ac{WIMP} energy $E_{\chi} = \frac{1}{2}M_{\chi}v^{2}$, so a change of variables is required. After the variable change, we can write:
 
 \begin{equation}
 \label{ref:dRdEr}
@@ -276,14 +275,14 @@ Where $\mu$ is the usual reduced mass, and the second line takes into account th
 \sigma_{SD} = \frac{32 G_{F} \mu^{2}}{\pi} \frac{J+1}{J} [\langle s_{n} \rangle a_{n} + \langle s_{p} \rangle a_{p}] ^{2}
 \end{equation}
 
-Where $G_{F}$ is the Fermi constant, $J$ is the total nuclear spin of the target, and $\langle s_{n,p} \rangle$ and $a_{n,p}$ represent values for neutron and proton spins and couplings, respectively. It should be noted that $\sigma_{SI}$ scales as $A^{2}$, which indicates a cross-section enhancement for larger targets. $\sigma_{SD}$ lacks the $A^{2}$ scaling, and is smaller $\sigma_{SI}$. This indicates that recoil-rates are dominated by spin-dependent interactions. The two cases are treated separately, with collaborations releasing both spin-independent and spin-dependent \ac{WIMP} limits. in liquid xenon detectors, the odd-numbered nuclei $^{129}Xe$ and $^{131}Xe$ contribute to the spin-dependent rate. 
+Where $G_{F}$ is the Fermi constant, $J$ is the total nuclear spin of the target, and $\langle s_{n,p} \rangle$ and $a_{n,p}$ represent values for neutron and proton spins and couplings, respectively. It should be noted that $\sigma_{SI}$ scales as $A^{2}$, which indicates a cross-section enhancement for larger targets. $\sigma_{SD}$ lacks the $A^{2}$ scaling, and is smaller $\sigma_{SI}$. This indicates that recoil-rates are dominated by spin-dependent interactions. The two cases are treated separately, with collaborations releasing both spin-independent and spin-dependent \ac{WIMP} limits. in liquid xenon detectors, the odd-numbered nuclei $^{129}Xe$ and $^{131}Xe$ contribute to the spin-dependent rate. The enhancements for the \ac{WIMP} recoil rate in Xe are illustrated in Figure~\ref{fig:wimp_rates}
 
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.65\textwidth]{figures/lxetpcs/wimp_rates.png}
 \caption{Plot showing spin-independent WIMP rates in common detector target materials, dots indicate typical thresholds for the targets. Xenon gains in favored SUSY parameter space ($M_{\chi} \gtrsim$ 100~GeV) due to a kinematic enhancement ($M_{\chi} \sim M_{Xe}$ ) and a cross-section enhancement ($\sigma_{SI} \propto A^{2}$). Figure from \cite{Chepel2013}}
-\label{fig:bands}
+\label{fig:wimp_rates}
 \end{center}
 \end{figure}
 
@@ -314,7 +313,7 @@ In 2011 the Xenon10 collaboration presented a search for low-mass (\~5 - 20 GeV)
 \end{figure}
 
 
-A few years later, Essig et al. used the information reported in \cite{Angle2011} and other Xenon10 publications to produce the first direct detection limits of sub-Gev dark matter \cite{Essig2012}. The detection threshold for \ac{WIMP}s in \ac{LXe} decreases sharply for $M_{WIMP} \lesssim 10~GeV$; however, this detection threshold is based on the assumption that the dark matter is interacting only with the xenon nucleus. If sub-GeV dark matter scatters with atomic \textit{electrons}, as opposed to nuclei, then it can produce observable signals of a few electrons; in \ac{LXe} \ac{TPC}s the S1 signal is lost due to light collection, and the few electron signals are observable as S2s. The approach in the paper is to follow approximately the same procedure as in Section~ \ref{sec:wimp_rates}, with a few but significant substitutions. The $E_{R}$ in Equation~\label{eq:recoil} must now account for the binding energy of the electron, and take a different form to refer to the recoil of the electron and not the nucleus. The cross section of interest is now $\sigma_{e}$, the sum over all of the differential ionization cross sections for electrons in the (n, l) shell. For a dark photon with mass $O$(MeV-GeV) coupled to the visible sector via kinetic mixing (a very generic class of standard model extensions discussed in $Chapter~\ref{darkphotons}$, Essig et al. set the exclusion limit in the $m_{DM}-\sigma_{e}$ plane in Figure~\ref{subGeV} (left). If there is some momentum-transfer enhancement due to e.g. scattering through an electric-dipole moment, $\sigma_{e} \longrightarrow \sigma_{e}F_{DM}(q) \equiv \bar{\sigma_{e}}$. Essig set exclusion limits for such dark matter candidates in Figure~\ref{subGeV} (right).
+A few years later, Essig et al. used the information reported in \cite{Angle2011} and other Xenon10 publications to produce the first direct detection limits of sub-Gev dark matter \cite{Essig2012}. The detection threshold for \ac{WIMP}s in \ac{LXe} decreases sharply for $M_{WIMP} \lesssim 10~GeV$; however, this detection threshold is based on the assumption that the dark matter is interacting only with the xenon nucleus. If sub-GeV dark matter scatters with atomic \textit{electrons}, as opposed to nuclei, then it can produce observable signals of a few electrons; in \ac{LXe} \ac{TPC}s the S1 signal is lost due to light collection, and the few electron signals are observable as S2s. The approach in the paper is to follow approximately the same procedure as in Section~ \ref{sec:wimp_rates}, with a few but significant substitutions. The $E_{R}$ in Equation~\ref{eq:recoil} must now account for the binding energy of the electron, and take a different form to refer to the recoil of the electron and not the nucleus. The cross section of interest is now $\sigma_{e}$, the sum over all of the differential ionization cross sections for electrons in the (n, l) shell. For a dark photon with mass $O$(MeV-GeV) coupled to the visible sector via kinetic mixing (a very generic class of standard model extensions discussed in $Chapter~\ref{ch1 darksector section}$, Essig et al. set the exclusion limit in the $m_{DM}-\sigma_{e}$ plane in Figure~\ref{fig:subGeV} (left). If there is some momentum-transfer enhancement due to e.g. scattering through an electric-dipole moment, $\sigma_{e} \longrightarrow \sigma_{e}F_{DM}(q) \equiv \bar{\sigma_{e}}$. Essig set exclusion limits for such dark matter candidates in Figure~\ref{fig:subGeV} (right).
 
 
 \begin{figure}[htbp]
