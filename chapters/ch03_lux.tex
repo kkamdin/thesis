@@ -4,6 +4,14 @@
 \label{ch:LUX} % $\mathbb{ZNR}$
 %************************************************
 
+%\begin{flushright}{\slshape    
+%   I'm the hottest in the street \\
+%   Know you prolly heard of me } \\ \medskip
+%    --- {Cardi B, \textit{Bodak Yellow}, 2017}
+%\end{flushright}
+
+
+
 \section{LUX Overview}
 The \ac{LUX} detector was an ultra-low background dual-phase liquid xenon \ac{TPC} that set world-leading limits on \ac{WIMP} interactions.
  
@@ -50,13 +58,13 @@ The \ac{LUX} cryogenic system was based on thermosyphons, which deliver ``coolin
 \end{center}
 \end{figure}
 
-The spillover liquid xenon from the liquid-level-setting weir mentioned above was directed into a circulation system through a series of heat exchangers that helped thermalize clean, incoming xenon gas. The xenon circulation was driven by one twin-head KNF double-diaphragm pump, which pushed dirty xenon from the spillover weir through a SAES MonoTorr heated zirconium getter to remove non-noble impurities before returning the clean xenon gas into the detector. A sampling system was able to pull xenon gas samples from different parts of the circulation system and measure impurity content, as well as test for the presence of $^{85}$Kr \cite{Dobi2011}, a troublesome beta emitter which must be removed from the xenon prior to carrying out a successful \ac{WIMP} search.
+The spillover liquid xenon from the liquid-level-setting weir mentioned above was directed into a circulation system through a series of heat exchangers that helped cool clean, incoming xenon gas. The xenon circulation was driven by one twin-head KNF double-diaphragm pump, which pushed liquid xenon from the spillover weir through a SAES MonoTorr heated zirconium getter to remove non-noble impurities before returning the clean xenon gas into the detector. A sampling system was able to pull xenon gas samples from different parts of the circulation system and measure impurity content, as well as test for the presence of $^{85}$Kr \cite{Dobi2011}, a troublesome beta emitter which must be removed from the xenon prior to carrying out a successful \ac{WIMP} search.
 
-The circulation pump was installed in parallel with a backup pump, which could be switched on immediately in case of a pump outage. Flow was regulated to the system by two high-flow Brooks \ac{MFC}s. Additional low-flow \ac{MFC}s controlled purge flow through the cabling conduits in Figure~\ref{fig:luxcryo} to ensure gas flow was away from the detector and prevent any contaminants from diffusing into the active xenon space.
+The circulation pump was installed in parallel with a backup pump, which could be switched on immediately in case of a pump outage. Flow was regulated to the system by two high-flow \ac{MFC}s. Additional low-flow \ac{MFC}s controlled purge flow through the cabling conduits in Figure~\ref{fig:luxcryo} to ensure gas flow was away from the detector and prevent any contaminants from diffusing into the active xenon space.
 
-Internal calibration sources were plumbed in to alternate flow paths of the circulation system. Xenon gas could be directed through a substrate source, such as the $^{83m}$Kr source described below, to pull $^{83m}$Kr into the detector volume. A bottle containing a source such as the CH$_{3}$T source described below, could be used to deposit the gaseous source in an evacuated section of pipe. Xenon could then be directed through the section of pipe containing the source, to sweep it into the detector volume. 
+Internal calibration sources were plumbed in to alternate flow paths of the circulation system. Xenon gas could be directed through a substrate source, such as the $^{83m}$Kr source described below, to pull $^{83m}$Kr into the detector volume. A bottle containing a source such as the CH$_{3}$T source described below could be used to deposit the gaseous source in an evacuated section of pipe. Xenon could then be directed through the section of pipe containing the source, sweeping it into the detector volume. 
 
-Lastly, \ac{LUX} was placed in a 7.6~m diameter, 6.1~m high water tank (Figure~\ref{fig:luxwatertank}). The shielding provided by the water tank attenuated the $\gamma$ background from the cavern walls and thermalized neutrons from cavern background radioactivity and muon spallation neutrons. The water tank provided superior shielding from cavern radioactivity such that the detector backgrounds were dominated by the radioactivity of internal detector components, which in turn were controlled through a strict campaign of cleanliness and choice of detector materials \cite{LUXDetectorPaper}, \cite{LUXRun03Backgrounds}. Vertical tubes visible in Figure~\ref{fig:luxwatertank} were used to deploy external calibration sources at different heights, such as $^{137}$Cs, which were directed into the detector via a collimating source assembly.
+Lastly, \ac{LUX} was placed in a 7.6~m diameter, 6.1~m high water tank (Figure~\ref{fig:luxwatertank}). The shielding provided by the water tank attenuated the $\gamma$ background from the cavern walls and thermalized neutrons from cavern background radioactivity and muon spallation. The water tank provided superior shielding from cavern radioactivity such that the detector backgrounds were dominated by the radioactivity of internal detector components, which in turn were controlled through a strict campaign of cleanliness and choice of detector materials \cite{LUXDetectorPaper}, \cite{LUXRun03Backgrounds}. Vertical tubes visible in Figure~\ref{fig:luxwatertank} were used to deploy external calibration sources at different heights, such as $^{137}$Cs, which were directed into the detector via a collimating source assembly.
 
 
 \begin{figure}[htbp]
@@ -67,7 +75,7 @@ Lastly, \ac{LUX} was placed in a 7.6~m diameter, 6.1~m high water tank (Figure~\
 \end{center}
 \end{figure}
 
-The \ac{LUX} detector water tank and material screening achieved the low background in the \ac{WIMP} search energy range shown in Figure~\ref{fig:luxrun03bkg}
+The \ac{LUX} detector water tank and material screening achieved a very low background in the \ac{WIMP} search energy range shown in Figure~\ref{fig:luxrun03bkg}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -79,7 +87,7 @@ The \ac{LUX} detector water tank and material screening achieved the low backgro
 
 
 \section{Trigger and Data Acquisition}
-Cabling for PMTs and other monitoring instrumentation were routed from the inner detector volume to the outside via conduits illustrated in in Figure~\ref{fig:luxcryo}. The \ac{PMT} signals are amplified Figure~\ref{fig:luxdaq}
+Cabling for PMTs and other monitoring instrumentation were routed from the inner detector volume to the outside via conduits illustrated in in Figure~\ref{fig:luxcryo}. A flow char illustrating the signal path is shown in Figure~\ref{fig:luxdaq}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -90,23 +98,46 @@ Cabling for PMTs and other monitoring instrumentation were routed from the inner
 \end{figure}
 
 
+The \ac{PMT} signals were shaped and amplified by two sets of amplifiers. These analog voltage waveforms were then digitized by Struck \ac{ADC}s, with 14 bit, 100~MHz sampling (1 sample every 10~ns). A copy of the analog \ac{PMT} voltage waveforms passed through the \ac{LUX} \ac{FPGA} trigger system, which signaled the data acquisition computer to save the waveforms when they passed above a certain threshold, and stop when they fell below the threshold. Each of the 122 \ac{PMT}s was dedicated its own channel in the recorded data, so recording only the channels that passed threshold allowed for a great amount of data reduction. This technique is called \ac{POD}. A \ac{POD} threshold of 1.5~mV was used for \ac{LUX}, which resulted in a single photoelectron efficiency of > 95\% \cite{LUX:Run03Comprehensive}. A figure showing the \ac{POD} threshold and example waveform are shown in Figure~\ref{fig:waveforms}. 
+
+
+\begin{figure}[htbp]
+\begin{center}
+%\includegraphics[width=0.29\textwidth]{figures/lux/pod_detect.png}
+\includegraphics[width=\textwidth]{figures/lux/sample_waveform.png}
+\caption{An example recorded event. Channels that do not pass the POD threshold are not recorded. The waveforms are summed over all channels to produce the S1 and S2 \cite{LUXTrigger}. }
+\label{fig:waveforms}
+\end{center}
+\end{figure}
+
+The channel-wise \ac{POD} data is written continuously to disk as the \ac{ADC} memory buffer fills; this is the rawest and least filtered form the \ac{LUX} data that is saved in binary format with the \textbf{.dat} extension. The Event Builder takes the takes the raw data and extracts portions located in a pre-trigger and post-trigger window. A additional hold-off time is applied after the post-trigger window to assure \ac{POD}s are not duplicated the subsequent event. The pre- and post- trigger windows for Run03 were set to be 500~$\mu$s, chosen to ensure both S1 and S2 pulses were contained in the same event. The maximum electron drift time in Run03 was 322~$\mu$s, so a pre- and post- trigger time of 500~$\mu$s ensured no S2 would appear without its partner S1. Both types can pass the \ac{POD} threshold and signal the \ac{DAQ} computer to save the waveforms, but some small S1s are may not cross the threshold and must are ``found'' only at the event-building stage.
+The Event Builder then saved the waveform data in binary format with the \textbf{.evt} extension.
+
+
 \section{Data Processing}
+After event-building, the waveform \textbf{.evt}-files were sent off site for additional processing. The \ac{LUX} \ac{DPF} extracts essential information from the waveforms and produces \ac{RQ} files with the \textbf{.rq} extension. The \ac{DPF} is modular, and can be applied repeatedly to the same \textbf{.evt} data with different settings if desired. \ac{RQ} files include event-level information (e.g. trigger timestamp), pulse-level quantities (e.g. pulse type, pulse area), and some channel-level quantities (e.g. pulse area recorded by each \ac{PMT}). The \ac{DPF} classifies pulses as one of five types: S1, S2, \ac{SPHE}, \ac{SE}, and Else (for pulses that do not fit one of the previous four types). The pulse-finding and classification algorithm was designed and optimized for the \ac{WIMP} search, and is crucial in identifying \ac{WIMP} ``golden events'', which are single-scatter interactions with only one S1 and one S2 in the event. Detector backgrounds such as gammas often scatter more than once in the active volume, producing an event with one S1 and multiple S2s. The pulse-finder and classifier also play a large role in \ac{LIP} search, which is discussed more in Chapter~{ch:lips}. 
+
+Following identification of S1 and S2 pulses, the \ac{DPF} position reconstruction module is run. This module uses the Mercury algorithm, originally developed for the ZEPLIN-III \ac{LXe} \ac{TPC} \cite{Currie2012}, which is based on maximum-likelihood to find the best (x,y) position of the event. Mercury uses \ac{LRF}s, obtained for each \ac{PMT}, to predict the response of the \ac{PMT} to interactions at some arbitrary position of the \ac{PMT}. The \ac{LRF}s were obtained using calibration data, of which $^{83m}$Kr was the most important for position reconstruction. The position reconstruction method and \ac{LRF}s are discussed in more detail in \cite{LUXPositionReconstruction}.
+
+
+The \ac{DPF} also applies calibration constants to the data. Calibration constants, many of which change over time, are tracked and recorded in the \ac{LUG}, which produces date-specific record files in XML format, which in turn determine the settings for some of the \ac{DPF} modules. For example, the $^{83m}$Kr calibration (see Section~\ref{sec:krypton}) was used to normalize S1 pulse areas. The photon detection efficiency for S1s varies with z-position, with events occuring near the bottom \ac{PMT}s \~50\% more likely to be detected than those near the liquid-gas boundary. The \ac{DPF} applies corrections like this to several RQs, and both the corrected and uncorrected versions are kept. 
 
 
 \section{Calibrations}
+Several novel calibration methods were developed by the \ac{LUX} Collaboration to fully characterize the detector. The superior self-shielding ability of \ac{LXe} detectors also makes them difficult to calibrate. Sources placed external to the detector cannot penetrate the fiducial volume very effectively; since high-statistics are desired for calibration data, relying on external sources becomes untenable. The solution, then, is counterintuitive: purposely introduce radioactive material into painstakingly developed, ultra low-background, fiducial volume of the detector. For such a source to not destroy the ability to carry out a \ac{WIMP} search, it must either (i) be short lived or (ii) be effectively removed by getter on a short timescale. \ac{LUX} demonstrated that $^{83m}$Kr fit the former \cite{LUXKr} requirement and tritiated methane (CH$_{3}$T) fit the latter \cite{LUXTritium}.
+
 \subsection{Energy}
-Recall from Section~\ref{sec:energy_reconstruction} that the electron-equivalent energy of an event in a dual phase xenon \ac{TPC} is reconstructed as follows:
+This section covers the energy calibration of \ac{LUX}. Recall from Section~\ref{sec:energy_reconstruction} that the electron-equivalent energy of an event in a dual phase xenon \ac{TPC} is reconstructed as follows:
 
 \begin{equation}
 E = W (\frac{S1}{g_{1}} + \frac{S2}{g_{2}})
 \end{equation}
 
- 
-Two or more calibration line sources of different energies are required to fit for the detector gains $g_{1}$ and $g_{2}$. The \ac{LUX} experiment uses a suite of sources to calibrate the energy response of the detector, shown in \ref{fig:calib_sources}.
+Two or more calibration line sources of different energies are required to fit for the detector gains $g_{1}$ and $g_{2}$. The \ac{LUX} experiment used a suite of sources to calibrate the energy response of the detector, shown in \ref{fig:calib_sources}. The $^{83m}$Kr is an injected source distributed in the entire internal volume. The $^{137}Cs$ is an external source lowered at different heights into the source tubes. The xenon lines, $^{131}$Xe, $^{129}$Xe $^{127}$Xe, are of cosmogenic origin and were only present early in Run03.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=\halffig]{figures/lux/calibration_sources.png}
+\includegraphics[width=\textwidth]{figures/lux/calibration_sources.png}
 \caption{Plot showing calibration sources (Figure from \cite{LUX:Run03Comprehensive}. The axis label subscript $c$ denotes corrected variables with calibration for geometrical effects and electron lifetime (these corrections are discussed in Section~\ref{sec:krypton}.}
 \label{fig:calib_sources}
 \end{center}
@@ -118,27 +149,102 @@ The average S1 and S2 of each calibration source is normalized to the true energ
 (S1, S2) \longrightarrow \Big(\frac{\langle S1 \rangle}{E}, \frac{\langle S2 \rangle}{E}\Big)
 \end{equation}
 
-and a line $y = mx + b$ is fit to the transformed variables, where the slope is $m = -g_{1} / g_{2}$ and the y-intercept is $b = g_{1} / W$. 
+and a line $y = mx + b$ is fit to the transformed variables, where the slope is $m = -g_{1} / g_{2}$ and the y-intercept is $b = g_{1} / W$. Such a plot is called a Doke plot. The sources from figure Figure~\ref{fig:calib_sources} are shown normalized in a Doke plot in Figure~\ref{fig:doke}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=\halffig]{figures/lux/doke.png}
+\includegraphics[width=\textwidth]{figures/lux/doke.png}
 \caption{ Doke plot used to fit $g_{1}$ and $g_{2}$ for LUX Run03 (Figure from \cite{LUX:Run03Comprehensive}}
 \label{fig:doke}
 \end{center}
 \end{figure}
 
-From the fit in Figure~\ref{fig:doke}, the \ac{LUX} gains for Run03 were measured to be $g_{1} = 0.117 \pm 0.003$~phd/photon and $g_{2} = 12.1 \pm 0.8$~phd/electron. Single electrons are periodically emitted into the gas and undergo proportional scintillation. This phenomenon is well known in liquid xenon detectors and is discussed further in Chapter~\ref{ch:etrains}. A sample of pure single electrons was collected to find the average number of S2 photons produced by one electron, referred to the single electron size. The single electron size in Run03 was a skew-gaussian with mean 24.66 phd and a 1-$\sigma$ width of 5.95 phd. Combing this with $g_{2}$ gives an \ac{EEE} of $49\% \pm 3\%$ \cite{LUX:Run03Comprehensive}.
+From the fit in Figure~\ref{fig:doke}, the \ac{LUX} gains for Run03 were measured to be $g_{1} = 0.117 \pm 0.003$~phd/photon and $g_{2} = 12.1 \pm 0.8$~phd/electron. $g_{2}$ depends on a combination of the \ac{EEE} and the number of photons produced by a single extracted electron -- it is useful to know both values. Single electrons are periodically emitted into the gas and undergo proportional scintillation. This phenomenon is well known in liquid xenon detectors and is discussed further in Chapter~\ref{ch:etrains}. A sample of pure single electrons was collected to find the average number of S2 photons produced by one electron, referred to the single electron size. The single electron size in Run03 was a skew-gaussian with mean 24.66 phd and a 1-$\sigma$ width of 5.95 phd. Combing this with $g_{2}$ gives an \ac{EEE} of $49\% \pm 3\%$ \cite{LUX:Run03Comprehensive}.
 
+\subsection{$^{83m}$Kr}
+\label{sec:krypton}
+The $^{83m}$Kr source used by \ac{LUX} was $^{83}$Rb deposited on a charcoal substrate. Gaseous xenon within the circulation system was diverted over the charcoal substrate, where it could sweep $^{83m}$Kr on a flow path through the getter, and then into the detector. 
+
+$^{83m}$Kr decays by two steps releasing a total energy of 41.5~keV. The two branching ratios that dominate are first the internal conversion and subsequent Auger emission of a 32.1~keV $\beta$ followed by another internal conversion and Auger emission of a 9.4~keV $\beta$, with an intervening half-life of 154~ns. The time structure of the decay sometimes yields two S1s, called S1a and S1b. If the second 9.4~keV $\beta$ is prompt (i.e within the timing resolution of the detector), then only one S1 is observed. The S2s are always merged because (1) the low energy of the decays made the energy depositions O(10~$\mu$m) from each other, smaller than the position resolution of the detector O(1~mm) (2) the close timing of the two decays was smaller than the typical electron diffusion distances during drift O(1~mm), merging the two electron bunches together into one S2 \cite{LUXKr}.
+
+$^{83m}$Kr was a workhorse calibration source for \ac{LUX}, with $^{83m}$Kr injections performed weekly at activities ranging from ~10~Bq to hundreds of Bq, depending on the specific calibration goal.  $^{83m}$Kr was found to mix uniformly in the detector within \~10~min of the injection, and would decay (half life 1.83~hours) back to an acceptable \ac{WIMP} search background rate within a day, or few days, depending on the injected activity. The combined energy of the $^{83m}$Kr was well out of the \ac{WIMP} search energy range, so no long-term pollution, though unlikely, was risked. $^{83m}$Kr was used for two main calibrations, described below.
+
+\textbf{Pulse Area Corrections} Detector efficiencies and gains can vary over time and position within the detector. $^{83m}$Kr served as a ``standard candle'', which produced monoenergetic signals with uniform initial light and charge yields distributed uniformly throughout the active volume. The efficiency for detecting the initial light yield as an S1 was dominated by spatially varying geometrical light detection efficiency. The areas of the S1s were binned in 3D, and the averages were found for each bin. A correction map was then constructed as the inverse of the S1 areas, normalized to the S1 amplitude at the center of the detector. The map of relative S1 amplitudes in Figure~\ref{fig:kr_1} (left) shows the strong $z$-dependance for S1 light collection. The corrections for S2 areas were more complex, as detection efficiency for the initial charge yield as an S2 depends on a the presence of electronegative impurities, electron extraction efficiency, production of proportional scintillation photons, and then detection of those photons in PMTs. The $xy$- and $z$- dependence for S2s are corrected in two separate maps. The electronegative impurities caused a strong z-dependence in S2 size -- events originating at the bottom of the detector must drift longer and so were more likely to encounter and lose electrons to impurities. The $z$-dependent S2 area correction map was an exponential function of drift time, normalized to unity at the liquid surface. The $xy$-dependence was from detector conditions such as pressure, liquid level, and electric field deflection from the grid. The $xy$-correction map for S2s was normalized to (0,0) in the x-y plane. Examples of both the $z$ and $xy$ S2 area correction maps can be seen in Figure~\ref{fig:kr_1} (right).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/lux/kr_1.png}
+\caption{ Spatial dependence of pulse area corrections for S1 (left) and S2 (right) from an example $^{83m}$Kr calibration. The red circle indicates normalization point. (Figure from \cite{LUXKr}}
+\label{fig:kr_1}
+\end{center}
+\end{figure}
+
+\textbf{Position Corrections} 3D position reconstruction depends on a full understanding of the path electrons take from an interaction site to the position observed after extraction at the surface. The reconstructed position of the proportional scintillation signal in the xy-plane, based on the Mercury algorithm, is referred to ``S2 coordinates", often with subscripts (x$_{S2}$, y$_{S2}$). The real coordinates may be displaced from (x$_{S2}$, y$_{S2}$) due to, for example, a radial field pushing electrons inwards deep in the detector. In fact, there was a small radially inward component to the electric fields in \ac{LUX} Run03 due to the geometry of the field cage and grids (Figure~\ref{fig:kr_pos1}). The spatial distribution of reconstructed $^{83m}$Kr events was used to verify a COMSOL multiphysics electric field model of the detector by drifting electrons in simulation under the electric field model conditions. This field model could then be used to transform events from S2 coordinates to real (x,y) coordinates, however this was not done for Run03. Instead, the $^{83m}$Kr data itself was found to be more precise in for position corrections, since it didn't rely on the accuracy of the field model or electron drift simulation (Figure~\ref{fig:kr_pos2}). The electric field conditions were very different in Run04, and so extensive calibrations and field maps were used to map S2 coordinates to real coordinates \cite{LUXFields}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=.8\textwidth]{figures/lux/kr_pos1.png}
+%\includegraphics[width=\halffig]{figures/lux/kr_pos2.png}
+\caption{ (Left) A simplified 2D COMSOL model showing electric field lines and equipotentials for the \ac{LUX} detector in Run03. A radially inward component is seen. (Right) The resulting edge S2 coordinates of a uniform distribution of electrons drifted under the electric field model is shown in solid blue. The edge S2 coordinates of from $^{83m}$Kr data is in dashed red; it is consistent with the field model prediction. Figure from \cite{LUXKr}}
+\label{fig:kr_pos1}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+%\includegraphics[width=\halffig]{figures/lux/kr_pos1.png}
+\includegraphics[width=.8\textwidth]{figures/lux/kr_pos2.png}
+\caption{ The effect of radial position mapping between S2 coordinates (left) and real coordinates (right). The top panels show a thin horizontal slice of the detector and the bottom panels show a thin vertical slide. The red and blue colors are to made the effect of the mapping visible. Note that squared radius in the bottom panels exaggerates the scale of the effect. Figure from \cite{LUXKr} }
+\label{fig:kr_pos2}
+\end{center}
+\end{figure}
+
+
+In addition to the small radial dependence, the electric fields illustrated in Figure~\ref{fig:kr_pos1} also vary in magnitude. The two decays of $^{83m}$Kr can be leveraged to directly probe the magnitude of the field, as they exhibit different field dependence. The ratio of S1a to S1b increases with field, and provide a measure the spatial dependence of the magnitude of the electric field. A highly variant electric field would affect recombination, and cause different light and charge yields at different positions in the detector. The fields measured via this method in Run03 would only cause corrections on the order of a percent and so no field-dependent corrections were applied. However, in Run04 the ratio technique was of central importance (see \cite{LUXCombinedExposure} \cite{LUXFields} \cite{LUXKr} for more detail). The result of the ratio method for measuring electric field magnitude is shown in Figure~\ref{fig:kr_3} for Run03 fields.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.69\textwidth]{figures/lux/kr_3.png}
+\caption{Field map of Run03 produced by $^{83m}$Kr S1a:S1b ratio. Because only a fraction of $^{83m}$Kr produce separate S1a and S1b, the bins are large to accomidate reduced statistics. Figure from \cite{LUXKr} }
+\label{fig:kr_3}
+\end{center}
+\end{figure}
 
 \subsection{Tritium - ER Band and Yields}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\halffig]{figures/lux/lux_tritium1a.png}
+\includegraphics[width=\halffig]{figures/lux/lux_tritium1b.png}
+\caption{ Figure from \cite{LUXTritium}}
+\label{fig:tritium1}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\halffig]{figures/lux/lux_tritium3a.png}
+\includegraphics[width=\halffig]{figures/lux/lux_tritium3b.png}
+\caption{ Figure from \cite{LUXTritium}}
+\label{fig:tritium1}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\halffig]{figures/lux/lux_tritium2a.png}
+\includegraphics[width=\halffig]{figures/lux/lux_tritium2b.png}
+\caption{ Figure from \cite{LUXTritium}}
+\label{fig:tritium1}
+\end{center}
+\end{figure}
 
 
 \subsection{DD - NR Band and Yields}
 
 
-\subsection{Kr - Geometrical Light Collection Corrections}
-\label{sec:krypton}
+
 
 
 
