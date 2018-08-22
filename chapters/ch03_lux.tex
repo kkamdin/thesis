@@ -53,7 +53,7 @@ The \ac{LUX} cryogenic system was based on thermosyphons, which deliver ``coolin
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=\textwidth]{figures/lux/lux_cryostats.png}
-\caption{A simplified diagram of the LUX cryogenic system. \cite{NicolesThesis}}
+\caption{A simplified diagram of the LUX cryogenic system. \cite{Larsen2016}}
 \label{fig:luxcryo}
 \end{center}
 \end{figure}
@@ -115,7 +115,16 @@ The Event Builder then saved the waveform data in binary format with the \textbf
 
 
 \section{Data Processing}
-After event-building, the waveform \textbf{.evt}-files were sent off site for additional processing. The \ac{LUX} \ac{DPF} extracts essential information from the waveforms and produces \ac{RQ} files with the \textbf{.rq} extension. The \ac{DPF} is modular, and can be applied repeatedly to the same \textbf{.evt} data with different settings if desired. \ac{RQ} files include event-level information (e.g. trigger timestamp), pulse-level quantities (e.g. pulse type, pulse area), and some channel-level quantities (e.g. pulse area recorded by each \ac{PMT}). The \ac{DPF} classifies pulses as one of five types: S1, S2, \ac{SPHE}, \ac{SE}, and Else (for pulses that do not fit one of the previous four types). The pulse-finding and classification algorithm was designed and optimized for the \ac{WIMP} search, and is crucial in identifying \ac{WIMP} ``golden events'', which are single-scatter interactions with only one S1 and one S2 in the event. Detector backgrounds such as gammas often scatter more than once in the active volume, producing an event with one S1 and multiple S2s. The pulse-finder and classifier also play a large role in \ac{LIP} search, which is discussed more in Chapter~{ch:lips}. 
+After event-building, the waveform \textbf{.evt}-files were sent off site for additional processing. The \ac{LUX} \ac{DPF} extracts essential information from the waveforms and produces \ac{RQ} files with the \textbf{.rq} extension. The \ac{DPF} is modular, and can be applied repeatedly to the same \textbf{.evt} data with different settings if desired. \ac{RQ} files include event-level information (e.g. trigger timestamp), pulse-level quantities (e.g. pulse type, pulse area), and some channel-level quantities (e.g. pulse area recorded by each \ac{PMT}). The \ac{DPF} classifies pulses as one of five types: S1, S2, \ac{SPHE}, \ac{SE}, and Else (for pulses that do not fit one of the previous four types). The pulse-finding and classification algorithm was designed and optimized for the \ac{WIMP} search, and is crucial in identifying \ac{WIMP} ``golden events'', which are single-scatter interactions with only one S1 and one S2 in the event. Detector backgrounds such as gammas often scatter more than once in the active volume, producing an event with one S1 and multiple S2s. The pulse-finder and classifier also play a large role in \ac{LIP} search, which is discussed more in Chapter~{ch:lips}. An example of pulse identification for a multiscatter event is shown in Figure~\ref{fig:lux_pulses}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/lux/lux_pulses.png}
+\caption{An example of \ac{LUX} pulse classification showing individual pulses. }
+\label{fig:lux_pulses}
+\end{center}
+\end{figure}
+
 
 Following identification of S1 and S2 pulses, the \ac{DPF} position reconstruction module is run. This module uses the Mercury algorithm, originally developed for the ZEPLIN-III \ac{LXe} \ac{TPC} \cite{Currie2012}, which is based on maximum-likelihood to find the best (x,y) position of the event. Mercury uses \ac{LRF}s, obtained for each \ac{PMT}, to predict the response of the \ac{PMT} to interactions at some arbitrary position of the \ac{PMT}. The \ac{LRF}s were obtained using calibration data, of which $^{83m}$Kr was the most important for position reconstruction. The position reconstruction method and \ac{LRF}s are discussed in more detail in \cite{LUXPositionReconstruction}.
 
@@ -161,13 +170,13 @@ and a line $y = mx + b$ is fit to the transformed variables, where the slope is 
 
 From the fit in Figure~\ref{fig:doke}, the \ac{LUX} gains for Run03 were measured to be $g_{1} = 0.117 \pm 0.003$~phd/photon and $g_{2} = 12.1 \pm 0.8$~phd/electron. $g_{2}$ depends on a combination of the \ac{EEE} and the number of photons produced by a single extracted electron -- it is useful to know both values. Single electrons are periodically emitted into the gas and undergo proportional scintillation. This phenomenon is well known in liquid xenon detectors and is discussed further in Chapter~\ref{ch:etrains}. A sample of pure single electrons was collected to find the average number of S2 photons produced by one electron, referred to the single electron size. The single electron size in Run03 was a skew-gaussian with mean 24.66 phd and a 1-$\sigma$ width of 5.95 phd. Combing this with $g_{2}$ gives an \ac{EEE} of $49\% \pm 3\%$ \cite{LUX:Run03Comprehensive}.
 
-\subsection{$^{83m}$Kr}
+\subsection{Metastable Krypton-83 ($^{83m}$Kr): A Multifunction Calibration}
 \label{sec:krypton}
 The $^{83m}$Kr source used by \ac{LUX} was $^{83}$Rb deposited on a charcoal substrate. Gaseous xenon within the circulation system was diverted over the charcoal substrate, where it could sweep $^{83m}$Kr on a flow path through the getter, and then into the detector. 
 
 $^{83m}$Kr decays by two steps releasing a total energy of 41.5~keV. The two branching ratios that dominate are first the internal conversion and subsequent Auger emission of a 32.1~keV $\beta$ followed by another internal conversion and Auger emission of a 9.4~keV $\beta$, with an intervening half-life of 154~ns. The time structure of the decay sometimes yields two S1s, called S1a and S1b. If the second 9.4~keV $\beta$ is prompt (i.e within the timing resolution of the detector), then only one S1 is observed. The S2s are always merged because (1) the low energy of the decays made the energy depositions O(10~$\mu$m) from each other, smaller than the position resolution of the detector O(1~mm) (2) the close timing of the two decays was smaller than the typical electron diffusion distances during drift O(1~mm), merging the two electron bunches together into one S2 \cite{LUXKr}.
 
-$^{83m}$Kr was a workhorse calibration source for \ac{LUX}, with $^{83m}$Kr injections performed weekly at activities ranging from ~10~Bq to hundreds of Bq, depending on the specific calibration goal.  $^{83m}$Kr was found to mix uniformly in the detector within \~10~min of the injection, and would decay (half life 1.83~hours) back to an acceptable \ac{WIMP} search background rate within a day, or few days, depending on the injected activity. The combined energy of the $^{83m}$Kr was well out of the \ac{WIMP} search energy range, so no long-term pollution, though unlikely, was risked. $^{83m}$Kr was used for two main calibrations, described below.
+$^{83m}$Kr was a workhorse calibration source for \ac{LUX}, with $^{83m}$Kr injections performed weekly at activities ranging from ~10~Bq to hundreds of Bq, depending on the specific calibration goal. $^{83m}$Kr was found to mix uniformly in the detector within \~10~min of the injection, and would decay (half life 1.83~hours) back to an acceptable \ac{WIMP} search background rate within a day, or few days, depending on the injected activity \cite{LUXKr}. The combined energy of the $^{83m}$Kr was well out of the \ac{WIMP} search energy range, so no long-term pollution, though unlikely, was risked. $^{83m}$Kr was used for two main calibrations, described below.
 
 \textbf{Pulse Area Corrections} Detector efficiencies and gains can vary over time and position within the detector. $^{83m}$Kr served as a ``standard candle'', which produced monoenergetic signals with uniform initial light and charge yields distributed uniformly throughout the active volume. The efficiency for detecting the initial light yield as an S1 was dominated by spatially varying geometrical light detection efficiency. The areas of the S1s were binned in 3D, and the averages were found for each bin. A correction map was then constructed as the inverse of the S1 areas, normalized to the S1 amplitude at the center of the detector. The map of relative S1 amplitudes in Figure~\ref{fig:kr_1} (left) shows the strong $z$-dependance for S1 light collection. The corrections for S2 areas were more complex, as detection efficiency for the initial charge yield as an S2 depends on a the presence of electronegative impurities, electron extraction efficiency, production of proportional scintillation photons, and then detection of those photons in PMTs. The $xy$- and $z$- dependence for S2s are corrected in two separate maps. The electronegative impurities caused a strong z-dependence in S2 size -- events originating at the bottom of the detector must drift longer and so were more likely to encounter and lose electrons to impurities. The $z$-dependent S2 area correction map was an exponential function of drift time, normalized to unity at the liquid surface. The $xy$-dependence was from detector conditions such as pressure, liquid level, and electric field deflection from the grid. The $xy$-correction map for S2s was normalized to (0,0) in the x-y plane. Examples of both the $z$ and $xy$ S2 area correction maps can be seen in Figure~\ref{fig:kr_1} (right).
 
@@ -199,8 +208,7 @@ $^{83m}$Kr was a workhorse calibration source for \ac{LUX}, with $^{83m}$Kr inje
 \end{center}
 \end{figure}
 
-
-In addition to the small radial dependence, the electric fields illustrated in Figure~\ref{fig:kr_pos1} also vary in magnitude. The two decays of $^{83m}$Kr can be leveraged to directly probe the magnitude of the field, as they exhibit different field dependence. The ratio of S1a to S1b increases with field, and provide a measure the spatial dependence of the magnitude of the electric field. A highly variant electric field would affect recombination, and cause different light and charge yields at different positions in the detector. The fields measured via this method in Run03 would only cause corrections on the order of a percent and so no field-dependent corrections were applied. However, in Run04 the ratio technique was of central importance (see \cite{LUXCombinedExposure} \cite{LUXFields} \cite{LUXKr} for more detail). The result of the ratio method for measuring electric field magnitude is shown in Figure~\ref{fig:kr_3} for Run03 fields.
+In addition to the small radial dependence, the electric fields illustrated in Figure~\ref{fig:kr_pos1} also vary in magnitude. The two decays of $^{83m}$Kr can be leveraged to directly probe the magnitude of the field, as they exhibit different field dependence. The ratio of S1a to S1b increases with field, and provides a measure the spatial dependence of the magnitude of the electric field. A highly variant electric field would affect recombination, and cause different light and charge yields at different positions in the detector, in turn affecting sensitivity. The fields measured via this method in Run03 were found to only cause corrections on the order of a percent and so no field-dependent corrections were applied \cite{LUXKr}. However, in Run04 the ratio technique was of central importance (see \cite{LUXCombinedExposure} \cite{LUXFields} \cite{LUXKr} for more detail). The result of the ratio method for measuring electric field magnitude is shown in Figure~\ref{fig:kr_3} for Run03 fields.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -210,41 +218,85 @@ In addition to the small radial dependence, the electric fields illustrated in F
 \end{center}
 \end{figure}
 
-\subsection{Tritium - ER Band and Yields}
+\subsection{Tritium Beta Decay: Calibration of the ER Band and Yields}
+In order to calibrate the \ac{ER} band of \ac{LUX} a $\beta$ source in the \ac{WIMP} energy range was needed. \ac{LUX} used a gaseous tritiated methane (CH$_{3}$T) source to deliver tritium uniformly into the active volume. Tritiated methane was chosen over the molecular tritium (T$_{2}$) because it does not adsorb onto surfaces like the smaller T$_{2}$ molecule and it does not interfere with charge transport in \ac{LXe} \cite{LUXTritium}. Tritium has a Q-value of 18.6~keV, but the spectrum peaks at 2.5~keV, with 64.2\% of the decays occurring in the \ac{WIMP} search energy range of 1 to 8~keV \cite{LUXTritium}. The half-life of tritium is 12.3~years, so efficient removal was essential. \ac{LUX} demonstrated that once deployed, CH$_{3}$T was removed with a 6~hour time constant, returning the detector back to acceptable \ac{WIMP} search rates. CH$_{3}$T was shipped to site in a bottle, mixed with purified xenon and released into the circulation system after the getter, to be swept into the inner volume. 
+
+The tritium energy spectrum from data is shown with the theoretical energy spectrum convoluted with the detector energy resolution in Figure~\ref{fig:tritium1} (left). The ratio of the the two is shown in Figure~\ref{fig:tritium1} (right), demonstrating a 50\% effective energy threshold for \ac{ER} events at 1.24 $\pm$ 0.026~keV. The agreement between data and theory shows powerful support for the energy model E = W (S1/g$_{1}$ + S1/g$_{2}$). 
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=\halffig]{figures/lux/lux_tritium1a.png}
 \includegraphics[width=\halffig]{figures/lux/lux_tritium1b.png}
-\caption{ Figure from \cite{LUXTritium}}
+\caption{ (Left) Plot showing the theoretical tritium beta spectrum with the spectrum obtained from data, and residuals. (Right) The ratio of data to theory convoluted with the detector energy resolution. Figure from \cite{LUXTritium}}
 \label{fig:tritium1}
 \end{center}
 \end{figure}
+
+Tritium was also used to measure the light and charge yields over a wide energy range. Figure~\ref{fig:tritium3} (left) shows the detected number of quanta, $n_{\gamma}$ and $n_{e}$. Recall that is this is not necessarily the number of initial quanta $n_{ex}$ and $n_{ion}$ that are produced, as some number of $n_{ion}$ undergo recombination to produce additional scintillation photons.  Figure~\ref{fig:tritium3} (right) shows the effect that event energy has on recombination. For \ac{ER} events $n_{ex} / n_{ion} = 0.2$ is assumed to be constant \cite{LUXYieldsAndRecombination}, but the observed ratio $n_{\gamma} / n_{e}$ is clearly energy dependent.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=\halffig]{figures/lux/lux_tritium3a.png}
 \includegraphics[width=\halffig]{figures/lux/lux_tritium3b.png}
-\caption{ Figure from \cite{LUXTritium}}
-\label{fig:tritium1}
+\caption{ (Left) The measured quanta yields shown with lines of equal energy. (Right) A plot depicting the expected initial quanta yields, $N_{ion}$ and $N_{ex}$, compared with the measured yield of photons and electrons. The difference is causes by the energy dependence of recombination. Figure from \cite{LUXTritium}}
+\label{fig:tritium3}
 \end{center}
 \end{figure}
 
+Lastly, as is tritium was used to construct the \ac{ER} band (Figure~\ref{fig:tritium2} (left)), which is necessary for \ac{WIMP} search. The width of the \ac{ER} band is of significant interest, as it determines the nuclear recoil discrimination of the detector. The number of \ac{ER} events from the tritium calibration that occur below the nuclear recoil band mean is known as leakage fraction ($f$), and is shown as a function of energy in (Figure~\ref{fig:tritium2} (right)). The average \ac{ER} discrimination efficiency ($1-f$) for Run03 was 99.81\% $\pm$ 0.02\%(stat) $\pm$ 0.1\%(sys), where the systematic error comes from the error on $g_{1}$ and $g_{2}$. This measurement of discrimination efficiency relies on knowing the mean and width of the \ac{NR} band, which is discussed in the next section.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=\halffig]{figures/lux/lux_tritium2a.png}
 \includegraphics[width=\halffig]{figures/lux/lux_tritium2b.png}
-\caption{ Figure from \cite{LUXTritium}}
-\label{fig:tritium1}
+\caption{ (Left) The \ac{ER} band for in \ac{WIMP} search energy range obtained from the tritium calibration. (Right) Leakage fraction of \ac{ER} events below the \ac{NR} mean in the \ac{WIMP} search energy range. Knowledge of the \ac{NR} band comes from the DD calibration detailed in Section~\ref{sec:DD}. Figure from \cite{LUXTritium}}
+\label{fig:tritium2}
 \end{center}
 \end{figure}
 
+\subsection{Low-energy nuclear recoils from Deuterium-Deuterium (DD) Neutrons: NR Band and Yields}
+\label{sec:DD}
+A \ac{DD} generator was used to calibrate the \ac{NR} response and signal yields for \ac{LUX} in the \ac{WIMP} search energy range. A photo and diagram of the calibration scheme are shown in Figure~\ref{fig:dd_gen}. Following Run03, \ac{LUX} employed the \ac{DD} generator to deliver a collimated beam of 2.45~MeV neutrons into the \ac{TPC}. As Figure~\ref{fig:dd_gen} shows, the generator was positioned outside the water tank, but when aligned with the neutron conduit (a \ac{PVC} tube of air), deposited neutrons into the \ac{LXe} space. The \ac{DD} calibration leverages known kinematics of neutron scattering, the known incoming neutron energies, and the known detector gains $g_{1}$ and $g_{2}$ to develop a complete characterization of low-engergy \ac{NR} in \ac{LUX}. The method is summarized here, but details are available in \cite{LUXDD}.
 
-\subsection{DD - NR Band and Yields}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/lux/lux_ddgenerator.png}
+\caption{(Right) Photo of the water tank interior showing the neutron conduit, which is raised during \ac{DD} calibration. (Left) Diagram of the \ac{DD} generator and water tank neutron conduit during \ac{DD} operation. Figure courtesy of E. Pease.}
+\label{fig:dd_gen}
+\end{center}
+\end{figure}
+
+First, charge yield was derived from a population of multiscatter events: those with one S1 (the S1s are merged due to simultaneous collection of S1s) and two S2s (separated in space and z-position/drift time). Neutron scattering kinematics allow for the reconstruction of energy at the first scatter site, so the unknown first S1 is not needed to ascertain the energy deposition. The charge yield is then obtained from the first S2 and the energy of the first scatter from kinematics. 
+
+Once the charge yield was obtained, a population of single scatter events was collected: one S1 and one S2. These events were from neutrons that scattered once the detector, and then exited. Here, the second scatter is not available to kinematically reconstruct energy, so instead the charge yield is employed to infer the energy of the single scatter. The light yield is then obtained from the S1 and the energy deposition inferred from charge yield. 
+
+It should be noted that though the \ac{DD} generator produced monoenergetic neutrons of initial energy $E_{i}$, the energy deposited $E_{d}$ by a neutron scatter is
+
+\begin{equation}
+E_{d} = E_{i} \frac{m_{n} M_{Xe}}{m_{n} + M_{Xe}} sin^{2}\theta_{CM}
+\end{equation}
+
+Where $m_{n}$ in the neutron mass, $M_{Xe}$ is the xenon mass, and $\theta_{CM}$ is the scattering angle relative to the neutron conduit in the center of mass frame. The deposited energy, $E_{d}$ then covers a range of energies, allowing for calibration of the \ac{NR} band and yields over a range of energies. After determination of the light yield, the single scatter events were used to construct the \ac{NR} band in Figure~\ref{fig:lux_nrband}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/lux/lux_nrband.png}
+\caption{Calibration showing the \ac{NR} band mean and width from the \ac{DD} calibration. Figure from \cite{LUXDD}}
+\label{fig:lux_nrband}
+\end{center}
+\end{figure}
+
+\subsection{Power of LUX Calibrations}
+Although this thesis is concerned mainly with a search for \ac{LIP}s, it should be noted that the extensive \ac{LUX} calibrations allowed for excellent understanding of the detector, resulting in a world-leading \ac{WIMP} limit. In particular, the \ac{DD} calibration (carried out after Run03) yielded a much better understanding of the \ac{NR} band and yields, and therefore detector thresholds, than the initial \ac{AmBe} neutron calibration which was carried out in the early days of \ac{LUX}. The power of the \ac{DD} calibration can be seen in the difference between the first \ac{LUX} result \cite{LUXFirstResults} and the Run03 re-analysis \cite{LUXReanalysis} shown in Figure~\ref{fig:lux_reanalysis}. In particular, improved knowledge of the scintillation yields allowed a re-analysis threshold down to 1.1~keV$_{nr}$ where the initial \ac{WIMP} search adopted the more conservative threshold of 3.0~keV$_{nr}$. This improvement allowed \ac{LUX} to exclude new spin-independent parameter space below a \ac{WIMP} mass of 10~GeV. 
 
 
-
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/lux/lux_reanalysis.png}
+\caption{Improved spin-independent \ac{WIMP} limit of the Run03 exposure following the \ac{DD} calibration of \ac{LUX}. The first Run03 limit is the gray line labelled ``LUX~2014'', the improved Run03 observed limit is the black line labelled ``This Result''.  Figure from \cite{LUXReanalysis}}
+\label{fig:lux_reanalysis}
+\end{center}
+\end{figure}
 
 
 
