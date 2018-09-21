@@ -1,4 +1,4 @@
-# A Search for Long-Lived, Charged, Supersymmetric Particles using Ionization with the ATLAS Detector
+# A Search for Lightly Ionizing Particles in LUX and R&D for Future Liquid Xenon TPCs
 
 Summary of four years on LUX/LZ. Detailing the instrumentation and operation of a small test bed for R&D and a search with the LUX detector for lightly ionizizing particles (LIPs).
 

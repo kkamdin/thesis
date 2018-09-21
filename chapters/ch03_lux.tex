@@ -135,14 +135,14 @@ The \ac{DPF} also applies calibration constants to the data. Calibration constan
 \section{Calibrations}
 Several novel calibration methods were developed by the \ac{LUX} Collaboration to fully characterize the detector. The superior self-shielding ability of \ac{LXe} detectors also makes them difficult to calibrate. Sources placed external to the detector cannot penetrate the fiducial volume very effectively; since high-statistics are desired for calibration data, relying on external sources becomes untenable. The solution, then, is counterintuitive: purposely introduce radioactive material into painstakingly developed, ultra low-background, fiducial volume of the detector. For such a source to not destroy the ability to carry out a \ac{WIMP} search, it must either (i) be short lived or (ii) be effectively removed by getter on a short timescale. \ac{LUX} demonstrated that $^{83m}$Kr fit the former \cite{LUXKr} requirement and tritiated methane (CH$_{3}$T) fit the latter \cite{LUXTritium}.
 
-\subsection{Energy}
+\subsection{Energy Reconstruction}
 This section covers the energy calibration of \ac{LUX}. Recall from Section~\ref{sec:energy_reconstruction} that the electron-equivalent energy of an event in a dual phase xenon \ac{TPC} is reconstructed as follows:
 
 \begin{equation}
 E = W (\frac{S1}{g_{1}} + \frac{S2}{g_{2}})
 \end{equation}
 
-Two or more calibration line sources of different energies are required to fit for the detector gains $g_{1}$ and $g_{2}$. The \ac{LUX} experiment used a suite of sources to calibrate the energy response of the detector, shown in \ref{fig:calib_sources}. The $^{83m}$Kr is an injected source distributed in the entire internal volume. The $^{137}Cs$ is an external source lowered at different heights into the source tubes. The xenon lines, $^{131}$Xe, $^{129}$Xe $^{127}$Xe, are of cosmogenic origin and were only present early in Run03.
+Two or more calibration line sources of different energies are required to fit for the detector gains $g_{1}$ and $g_{2}$. The \ac{LUX} experiment used a suite of sources to calibrate the energy response of the detector, shown in \ref{fig:calib_sources}. The $^{83m}$Kr is an injected source distributed in the entire internal volume. The $^{137}Cs$ is an external source lowered at different heights into the source tubes. The xenon lines, $^{131}$Xe, $^{129}$Xe $^{127}$Xe, are internal sources of cosmogenic origin and were only present early in Run03.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -254,9 +254,9 @@ Lastly, as is tritium was used to construct the \ac{ER} band (Figure~\ref{fig:tr
 \end{center}
 \end{figure}
 
-\subsection{Low-energy nuclear recoils from Deuterium-Deuterium (DD) Neutrons: NR Band and Yields}
+\subsection{Deuterium-Deuterium (DD) Neutrons: Calibration of the NR Band and Yields}
 \label{sec:DD}
-A \ac{DD} generator was used to calibrate the \ac{NR} response and signal yields for \ac{LUX} in the \ac{WIMP} search energy range. A photo and diagram of the calibration scheme are shown in Figure~\ref{fig:dd_gen}. Following Run03, \ac{LUX} employed the \ac{DD} generator to deliver a collimated beam of 2.45~MeV neutrons into the \ac{TPC}. As Figure~\ref{fig:dd_gen} shows, the generator was positioned outside the water tank, but when aligned with the neutron conduit (a \ac{PVC} tube of air), deposited neutrons into the \ac{LXe} space. The \ac{DD} calibration leverages known kinematics of neutron scattering, the known incoming neutron energies, and the known detector gains $g_{1}$ and $g_{2}$ to develop a complete characterization of low-engergy \ac{NR} in \ac{LUX}. The method is summarized here, but details are available in \cite{LUXDD}.
+Low energy neutrons from a \ac{DD} generator was used to calibrate the \ac{NR} response and signal yields for \ac{LUX} in the \ac{WIMP} search energy range. A photo and diagram of the calibration scheme are shown in Figure~\ref{fig:dd_gen}. Following Run03, \ac{LUX} employed the \ac{DD} generator to deliver a collimated beam of 2.45~MeV neutrons into the \ac{TPC}. As Figure~\ref{fig:dd_gen} shows, the generator was positioned outside the water tank, but when aligned with the neutron conduit (a \ac{PVC} tube of air), deposited neutrons into the \ac{LXe} space. The \ac{DD} calibration leverages known kinematics of neutron scattering, the known incoming neutron energies, and the known detector gains $g_{1}$ and $g_{2}$ to develop a complete characterization of low-engergy \ac{NR} in \ac{LUX}. The method is summarized here, but details are available in \cite{LUXDD}.
 
 \begin{figure}[htbp]
 \begin{center}
