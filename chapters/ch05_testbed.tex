@@ -1,5 +1,5 @@
 %************************************************
-\chapter{Research and Development For Future LXe TPCs}
+\chapter{Research and Development For Future Liquid Xenon TPCs}
 
 \label{ch:testbed} % $\mathbb{ZNR}$
 %************************************************
@@ -23,21 +23,21 @@ The experimental apparatus consisted of an inner vessel, a vacuum outer vessel, 
 \end{center}
 \end{figure}
 
-The inner vessel contained the \ac{TPC}. A PTFE housing cylinder fastened a PMT in place. Above the PTFE housing, a series of interlocking PTFE rings held strung wire grids and a segmented anode in place. During data taking, the entire PMT and housing were immersed in \ac{LXe}. The liquid level was chosen depending on the experiment at hand, approximated by the S2 width. In some cases, the TPC was ``overfilled'' by allowing the liquid level to rise above the anode. The segmented anode was instrumented with charge amplifiers for direct charge readout. When the \ac{TPC} was overfilled, the charge amplifiers detected the ionization electrons directly from the liquid. During typical dual phase \ac{TPC} operation, the charge amplifiers provided a secondary measurement of the ionization electrons in addition to S2. Two typical arrangements of the inner vessel are shown in Figure~\ref{fig:internals}.
+The inner vessel contained the \ac{TPC}. A \ac{PTFE} housing cylinder fastened a \ac{PMT} in place. Above the \ac{PTFE} housing, a series of interlocking \ac{PTFE} rings held strung wire grids and a segmented anode in place. During data taking, the entire \ac{PMT} and housing were immersed in \ac{LXe}. The liquid level was chosen depending on the experiment at hand, approximated by the S2 width. In some cases, the TPC was ``overfilled'' by allowing the liquid level to rise above the anode. The segmented anode was instrumented with charge amplifiers for direct charge readout. When the \ac{TPC} was overfilled, the charge amplifiers detected the ionization electrons directly from the liquid. During typical dual phase \ac{TPC} operation, the charge amplifiers provided a secondary measurement of the ionization electrons in addition to S2. Two typical arrangements of the inner vessel are shown in Figure~\ref{fig:internals}.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=\textwidth]{figures/testbed/internals_1and2.png}
 %\includegraphics[width=\halffig]{figures/testbed/internals1.png}
 %\includegraphics[width=\halffig]{figures/testbed/internals2.png}
-\caption{Diagrams of two often used internal arrangements. }
+\caption{Diagrams of two often used internal arrangements. The configuration (left) has both a drift and extraction region. The configuration (right) is ``extraction region only''. }
 \label{fig:internals}
 \end{center}
 \end{figure}
 
 
 \section{Circulation System}
-The xenon circulation system in shown in Figure~\ref{fig:circ}. A stainless steel capillary extending into the liquid drew xenon from the inner vessel during operation to be purified. Purified xenon that was returned to the vessel was directed into the liquid via a PTFE tube so it could condense quickly. A gas purge was added to the \ac{CF} tower above the inner vessel to continually renew the gas column. 
+The xenon circulation system in shown in Figure~\ref{fig:circ}. A stainless steel capillary extending into the liquid drew xenon from the inner vessel during operation to be purified. Purified xenon that was returned to the vessel was directed into the liquid via a \ac{PTFE} tube so it could condense quickly. A gas purge was added to the \ac{CF} tower above the inner vessel to continually renew the gas column. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -47,7 +47,50 @@ The xenon circulation system in shown in Figure~\ref{fig:circ}. A stainless stee
 \end{center}
 \end{figure}
 
+
+\section{Slow Control}
+The slow control for the test bed consists of a few monitoring variables such as temperature and pressure, and a voltage supply that turns on heaters. The inner experimental vessel was instrumented with two platinum RTDs to monitor temperature and a capacitance manometer to monitor pressure. A flow meter in the circulation line determined the flow rate of xenon as it passed through the getter and returned to the inner vessel. These four variables are read using Omega i-series digital panel meters to provide a real-time display; two points of calibration are provided to the digital panel meters to translate voltage to human-readable pressure, temperature, etc. In addition, two 25~$\Omega$ resistors are mounted, in parallel, on the cold-head. Supplying to voltage to these resistors raises the temperature of the cold-head and decreases the cooling power delivered by the liquid nitrogen bath; the voltage supplied to the heaters was also recorded, but not shown with digital panel meters. The voltages for the monitoring variables and the heater voltages were fed into a USB Device from Measurement Computing, which interfaces with a computer. A slow control script on a lab computer recorded the monitoring variables and heater voltages. The script also determined if power should be supplied to the heaters and if text message and e-mail alarms should be sent for a variable out of expected range. A basic schematic of the slow control is shown in Figure~\ref{fig:sc}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/testbed/slow_control.png}
+\caption{A diagram showing components of the slow control.}
+\label{fig:sc}
+\end{center}
+\end{figure}
+
+
+\section{\ac{PMT}}
+The test bed was instrumented with an R8778 \ac{PMT}, the same \ac{PMT}s used in \ac{LUX}. Both \ac{LUX} and LZ \ac{PMT} bases were used. The radon daughters study presented in Chapter~\ref{ch:radon} exclusively used the \ac{LUX} \ac{PMT} base, the electron trains studies presented in Chapter~\ref{ch:etrains} first used the \ac{LUX} base, and later used the LZ base. The LZ base was favored for its larger capacitors. Various shaping amplifiers were used when digitizing the \ac{PMT} over the course of these studies because the 8~ns sampling interval of the data acquisition was subject to aliasing the fast-rising alpha S1 signals.
+
+
+
 \section{Charge Amplifiers}
+The \ac{TPC} diagram in Figure~\ref{fig:internals} includes a segmented anode, the largest segment of which is held at ground. The anode is pictured in Figure~\ref{fig:anode} and relevant dimensions are included in Table~\ref{T:anode_segs}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\halffig]{figures/testbed/anode.png}
+\includegraphics[width=\halffig]{figures/testbed/anode2.png}
+\caption{(left) Segmented anode showing the xenon-facing anode segments. (right) The wires on the top of the anode which lead to the charge amplifiers.}
+\label{fig:anode}
+\end{center}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rcccc}
+\hline
+%& \multicolumn{3}{c}{\bf Datasets}\\[-5pt]
+ Anode Segments & 1 & 2 & 3 & Full \\
+\hline
+Radius (mm) & 3  & 6 & 9 & 24 \\
+Cumulative Area (mm$^{2}$) & 28 &  113 & 255 & 1810 \\
+\end{tabular}
+\caption{Dimensions of the of the anode segments. 1 refers to the inner-most segment or ``bullseye'', 2 refers to the inner ring, 3 to the outer ring and full to the entire anode, which includes inactive area that is not instrumented with charge amplifiers.}
+\label{T:anode_segs}
+\end{table}
+
 The segmented anode was instrumented with three CR-110 charge amplifiers from Cremat (Figure~\ref{fig:cr110}). The raw charge amplifier signals were each fed into a CR-160-R7 shaper evaluation board, also from Cremat. The evaluation board houses two more modules: one CR-200-X shaping amplifier and one CR-110 baseline restorer. The CR-200-X shaping amplifier is an X-$\mu$s gaussian shaping amplifier; it was determined that 1~$\mu$s was most appropriate for the test bed signals.
 
 \begin{figure}[htbp]
@@ -68,7 +111,7 @@ The shaper evaluation board produced gaussian pulses from raw charge signals as 
 \end{center}
 \end{figure}
 
-The charge amplifiers were originally placed inside the experimental vessel, mounted directly on the segmented anode. The functionality in \ac{LXe} conditions didn't deviate from manufacturer's specifications, however it was found that the CR-110 units generated enough heat to create a perpetual gas layer under the anode. In general this is not an issue, but for the purpose of the intended absolute electron extraction efficiency measurement, overfilling the \ac{TPC} and using the charge amplifiers as a direct read-out of electrons in the liquid was required. The charge amplifiers were moved to the outer vessel space, surrounded by a small Faraday cage made of copper mesh. See Figure~\ref{fig:chargeamp_mount} for the charge amplifier mounting configurations.
+The charge amplifiers were originally placed inside the experimental vessel, mounted directly on the segmented anode. The functionality in \ac{LXe} conditions didn't deviate from manufacturer's specifications\footnote{A test was done in a cryogenic fridge to ensure the behavior of the charge amps did not deviate when they were kept at -100~C. There was no change in pulse height (for a fixed input charge), or rise and decay times of the raw signals. This test was not possible in-situ, and so excludes the noise behavior described below, because the manufacturer's test board (CR-150-R5 evaluation board) was necessary to inject charge (via a square wave to an on-board 1~pF capacitor) into the amplifiers.}, however it was found that the CR-110 units generated enough heat to create a perpetual gas layer under the anode. In general this is not an issue, but for the purpose of the intended absolute electron extraction efficiency measurement, overfilling the \ac{TPC} and using the charge amplifiers as a direct read-out of electrons in the liquid was required. The charge amplifiers were moved to the outer vessel space, surrounded by a small Faraday cage made of copper mesh. See Figure~\ref{fig:chargeamp_mount} for the charge amplifier mounting configurations.
 
  \begin{figure}[htbp]
 \begin{center}
@@ -90,7 +133,7 @@ Charge amplifiers have baseline RMS noise proportional to the attached capacitan
 \end{center}
 \end{figure}
 
-Charge amplifiers also respond to acoustics. Tapping a finger near a charge amplifier will show as a baseline-jumping response on an oscilloscope. This additional source of noise makes \ac{LXe} \ac{TPC}s challenging places to use charge amplifiers for signal readout because any bubbles in the \ac{LXe} create micro-acoustic signals which the charge amplifiers pick up. By design, dual phase \ac{LXe} \ac{TPC}s are operated near the xenon liquid-gas boundary so the formation and dissipation of gas bubbles in the liquid is likely. Additional sources of acoustic noise like circulation of xenon into the experimental vessel also produce visible responses in charge amplifiers. The difference in micro-acoustic noise environment is illustrated in Figure~\ref{fig:amp_noise}.
+Charge amplifiers also respond to acoustics. Tapping a finger near a charge amplifier will show as a baseline-jumping response on an oscilloscope. This additional source of noise makes \ac{LXe} \ac{TPC}s challenging places to use charge amplifiers for signal readout because any bubbles in the \ac{LXe} create micro-acoustic signals which the charge amplifiers pick up. By design, dual phase \ac{LXe} \ac{TPC}s are operated near the xenon liquid-gas boundary so the formation and dissipation of gas bubbles in the liquid is likely. Additional sources of acoustic noise like circulation of xenon into the experimental vessel also produce visible responses in charge amplifiers. The difference in micro-acoustic noise environments (gas phase but with/without the circulation pump) is illustrated in Figure~\ref{fig:amp_noise}. The baseline restorer can be seen functioning on the gaussian shaped and amplified signals, but the raw charge signals are subject to baseline wandering (Figure~\ref{fig:amp_noise2}). Figure~\ref{fig:amp_noise2} was taken in a liquid environment during filling, so the effect of bubbles, pressure changes, and other vibrations are visible. 
 
  \begin{figure}[htbp]
 \begin{center}
@@ -102,10 +145,17 @@ Charge amplifiers also respond to acoustics. Tapping a finger near a charge ampl
 \end{center}
 \end{figure}
 
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics[width = \halffig, keepaspectratio]{figures/testbed/baseline_wander.jpg}
+\includegraphics[width = \halffig, keepaspectratio]{figures/testbed/baseline_wander_zoom.jpg}
+\caption{An event with the detector at  -100~C, 1.5~bar, with liquid condensed to a level between extraction grid and anode. (left) is a long time trace view the raw and shaped charge amplifier signals. (right) is the same event, but zoomed in. The baseline restorer on the shaped charge signal allowed it to be used as a trigger.}
+\label{fig:amp_noise2}
+\end{center}
+\end{figure}
 
 
-
-As \ac{TPC}s are large capacitors, any transients coupling to the ``TPC capacitor" may be picked up by the charge amplifiers. In particular, instabilities in the \ac{HV} chain induce a current in the ``TPC capacitor" that is picked up by the charge amps. Instabilities in \ac{HV} can come from many places. It was observed that for the characteristic capacitance and impedance of the the test bed, partial breakdowns in a length of R60 cabling caused a disruption in the functionality of the charge amplifiers. It was also found that a standard laboratory \ac{HV} supply, a Glassman 20~kV negative polarity unit, created pick-up in the charge amplifiers (see Figure~\ref{fig:pickup_noise}).  
+As \ac{TPC}s are large capacitors, any transients coupling to the ``\ac{TPC} capacitor" may be picked up by the charge amplifiers. In particular, instabilities in the \ac{HV} chain induce a current in the \ac{TPC} capacitor that is picked up by the charge amps. Instabilities in \ac{HV} can come from many places. It was observed that for the characteristic capacitance and impedance of the the test bed, partial breakdowns in a length of R60 cabling caused a disruption in the functionality of the charge amplifiers. It was also found that a standard laboratory \ac{HV} supply, a Glassman 20~kV negative polarity unit, created pick-up in the charge amplifiers (see Figure~\ref{fig:pickup_noise}).  
 
  \begin{figure}[htbp]
 \begin{center}
@@ -117,31 +167,86 @@ As \ac{TPC}s are large capacitors, any transients coupling to the ``TPC capacito
 \end{figure}
 
 
-\section{PMT}
-The test bed was instrumented with an R8778 PMT, the same PMTs used in LUX. Both LUX and LZ PMT bases were used. The radon daughters study presented in Chapter~\ref{ch:radon} exclusively used the LUX PMT base, the electron trains studies first used the LUX base, and later used the LZ base. The LZ base was favored for its larger capacitors. Various shaping amplifiers were used when digitizing the PMT over the course of these studies because the 8~ns sampling interval of the data acquisition was subject to aliasing the fast-rising alpha S1 signals.
 
-%\subsection{PMT Saturation}
+%\subsection{\ac{PMT} Saturation}
 
-\section{Slow Control}
-The slow control for the test bed consists of a few monitoring variables such as temperature and pressure, and a voltage supply that turns on heaters. The inner experimental vessel was instrumented with two platinum RTDs to monitor temperature and a capacitance manometer to monitor pressure. A flow meter in the circulation line determined the flow rate of xenon as it passed through the getter and returned to the inner vessel. These four variables are read using Omega i-series digital panel meters to provide a real-time display; two points of calibration are provided to the digital panel meters to translate voltage to human-readable pressure, temperature, etc. In addition, two 25~$\Omega$ resistors are mounted, in parallel, on the cold-head. Supplying to voltage to these resistors raises the temperature of the cold-head and decreases the cooling power delivered by the liquid nitrogen bath; the voltage supplied to the heaters was also recorded, but not shown with digital panel meters. The voltages for the monitoring variables and the heater voltages were fed into a USB Device from Measurement Computing, which interfaces with a computer. A slow control script on a lab computer recorded the monitoring variables and heater voltages. The script also determined if power should be supplied to the heaters and if text message and e-mail alarms should be sent for a variable out of expected range. A basic schematic of the slow control is shown in Figure~\ref{fig:sc}.
 
-\begin{figure}[htbp]
+
+\section{Data Acquisition and Processing}
+Data were acquired with a Picoscope 5000a, a USB-compatible ``oscilloscope." The open source picoscope Python library was used to write voltage records of \ac{PMT} and charge signals to ROOT files, which were opened later for reprocessing into reduced quantities such as pulse area or pulse height. The picoscope was run as a 14~bit ADC with 125~MHz (8~ns) sampling. For special cases, when only one channel was desired, it was possible to increase the sampling rate to 500~MHZ (2~ns). 
+
+\subsection{Estimating Picoscope Dead Time}
+Each event was written to disk as it was acquired, which led to large a large dead time percentage. The manufacturer provided no information about dead time, but in general, dead times can be estimated in lab using the following method. Trigger the DAQ externally with, e.g., a square wave. Vary the rate of the external trigger, counting how many events are actually recorded by the DAQ in 1 minute. The number of events actually recorded gives the record rate. The record rate will level off at high external trigger rates because it is limited by transfer speed, write time, etc. Subtracting the actual event length from the real total time it takes to record an event gives the dead time per event. When estimates dead times, use the same conditions in data taking, e.g. if 4 channels are used for real data taking, use 4 channels when measuring the record rate. The dead time per acquisition is then the number of events in the acquisition multiplied by the dead time per event. This method is illustrated in Figure~\ref{fig:deadtime}. Such a dead time estimate is used in Chapter~\ref{ch:radon} to calculate the rate in Bq of radon daughters observed.
+
+ \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/testbed/slow_control.png}
-\caption{A diagram showing components of the slow control.}
-\label{fig:sc}
+\includegraphics[width =\textwidth ]{figures/testbed/deadtime_plot.png}
+\includegraphics[width =\textwidth]{figures/testbed/deadtime_math.png}
+\caption{(top) Laboratory method to find the maximum \ac{DAQ} record time time. (bottom) Calculating dead time from maximum record rate.}
+\label{fig:deadtime}
 \end{center}
 \end{figure}
 
-\section{Data Acquisition}
-Data were acquired with a Picoscope 5000a, a USB-compatible ``oscilloscope." The picoscope python library was used to write voltage records of PMT and charge signals to ROOT files, which were opened later for reprocessing into reduced quantities such as pulse area or pulse height. The picoscope was run as a 14~bit ADC with 125~MHz (8~ns) sampling. For special cases, when only one channel was desired, it was possible to increase the sampling rate to 500~MHZ (2~ns). 
 
+\subsection{PMT Signal Processing}
+A simple pulse finder was written in Python. Instead of searching for pulses left-to-right along a signal trace, the algorithm found the maximum of the trace, and then searched left and right until the trace went below a threshold. The trace was set to zero for the duration of the pulse, and then the next pulse was sought. Pulses were found until there were no more, or the number found was equal to some user-defined number of pulses. Thus, pulse starts and stops were acquired for each \ac{PMT} trace. These pulse starts and stops were then used to calculate useful \ac{RQ}s such as pulse area, width, prompt fraction, etc. S1 and S2 identification was done later, based on these \ac{RQ}s. The definitions of S1, S2, and other high-level \ac{PMT} \ac{RQ}s often changed because the internals of the test bed were typically changed on a weekly basis during development. A stable data processing framework was not maintained.
+
+\subsection{Charge Amplifier Signal Processing}
+\label{sec:charge_amp_processing}
+The shaped charge amplifier signals were used primarily as a trigger throughout the studies in Chapter~\ref{ch:radon} and Chapter~\ref{ch:etrains}. They were originally acquired and implemented because the raw charge signals were small and difficult to process. This was due to field strength, purity, and grid transparency; these issues are described in more detail in Chapter~\ref{ch:etrains}, but were all essentially solved by removing the grid to produce an ``extraction region only'' configuration (Figure~\ref{fig:internals} (right)). Various methods were explored to process the raw signals into the relevant charge \ac{RQ}: step height (mV), which could then be translated to charge (Coulombs, then number of electrons) per the manufacturer's specifications. For small, raw charge signals a fit function was found to out-perform a simple step algorithm; for larger raw signals the step algorithm was fast and robust. Both methods are illustrated below, the fit function in Figure~\ref{fig:charge_fit} and the step algorithm in Figure~\ref{fig:charge_algorithm}. The fit function was a piece-wise defined linear function plus a falling exponential. The linear function was defined to be zero before some offset time $t_{o}$, and after the offset time plus rise time of the charge trace ($t_{o} + t_{r}$). The exponential was zero before $t_{o} + t_{r}$, and the two functions had equal values at $t_{o} + t_{r}$. The step algorithm produces a new trace with peak instead of a step by averaging $n_{samples}$ of the original charge amp voltage trace from [$i$+$n_{samples}$,$i$+$2n_{samples}$] and subtracting the average of the waveform from a previous section, [$i$,$i$+$n_{samples}$]. If $n_{samples}$ is chosen to be the rise time of the trace, then the maximum of the new trace is equal to the step height. See Figure~\ref{fig:nsamp_choice} for examples of two different choices of $n_{samples}$. In practice, the choice is complicated by charge amp noise, and so it was easier instead to find the peak of the new trace to locate the approximate step position of the original trace, and take the average of several samples as the step height ( Figure~\ref{fig:charge_algorithm}).
+
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics[width =\textwidth ]{figures/testbed/charge_fit.png}
+\caption{Fitting the charge traces with a piece-wise defined linear rise and exponential fall. .}
+\label{fig:charge_fit}
+\end{center}
+\end{figure}
+
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics[width =\halffig ]{figures/testbed/figure_q20.png}
+\includegraphics[width =\halffig ]{figures/testbed/figure_q50.png}
+\caption{(left) A choice of }
+\label{fig:nsamp_choice}
+\end{center}
+\end{figure}
+
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics[width =\textwidth ]{figures/testbed/charge_algorithm.png}
+\caption{}
+\label{fig:charge_algorithm}
+\end{center}
+\end{figure}
+
+
+For the gaussian shaping amplifiers, the Shockley-Ramo effect is more evident, and can be corrected for by adjusting the maximum for any following dip. Shockley-Ramo effect refers to the Shockley-Ramo theorem, which says the instantaneous current $i$ and charge $Q$ induced on a given electrode due to the motion of a charge is
+
+\begin{equation}
+i = q\vec{v} \cdot \vec{E_{0}(\vec{x})} \\
+Q = -q V_{0}((\vec{x}))
+\end{equation}
+
+where $q$ is the charge, $\vec{v}$ is the instantaneous velocity of the charge, and $\vec{E_{0}(\vec{x})}$ and $V_{0}((\vec{x}))$ are the electric field and potential that would exist at $q$'s instantaneous position $\vec{x}$ under the following circumstances: the electrode of interest is at 1~V, all others are at 0~V, and all charges are removed. A helpful review of Shockley-Ramo and a discussion about its effect on charge sensing techniques can be found in \cite{He2001}. The charge amplifiers are an integrator circuit, and the Shockley-Ramo theorem implies that even if a charge isn't directly underneath a given anode segment, that anode segment has field lines terminating on it as a result of the motion of the charge, and therefore an induced current. When an electron terminates on an anode segment, the other segments ``see'' the field change and register it as a positive charge, or an electron moving in the opposite direction; the response is a dip in the trace. These dips are present in the raw traces, but in general much less visible and aren't corrected for. In the amplified and gaussian-shaped traces, the dip is more visible, as in Figure~\ref{fig:shockley_ramo}.
+
+
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics[width =\textwidth ]{figures/testbed/shockley_ramo.png}
+\caption{An alpha event showing the Shockley-Ramo effect on the inner and outer ring segments of the anode.}
+\label{fig:shockley_ramo}
+\end{center}
+\end{figure}
+
+
+The gains of the gaussian shaping amplifiers were not extensively characterized because they were never used to reconstruct a physical quantity. The shaping amplifiers were used primarily as a trigger because the unit had a baseline restorer, which the raw charge amplifiers did not (see Figure~\ref{fig:amp_noise} and Figure~\ref{fig:amp_noise2} for the noise conditions on shaped and raw charge amplifiers).
 
 \section{High Voltage Feedthrough Design}
 A significant amount of time was spent developing and testing \ac{HV} feedthroughs for the test bed. This section describes a few of the feedthroughs that were unsuccessful, leading to the final design, which is capable of delivering -11kV to the cathode with no observable breakdown or other effects. Extensive detail of the tests and procedures are not provided. Instead, the following vignettes are intended as an overview to be useful to a student tasked with designing a HV feedthrough. 
 
-\subsection{Implementing SHV Feed Throughs from Vacuum Suppliers}
-The first attempts at building feedthroughs were to use off-the-shelf products from typical vacuum supply vendors such as MDC and Kurt Lesker. Vacuum \ac{HV} feedthroughs are intended to for use from air to vacuum, not air to \ac{LXe}; we were attempting to operate them outside of their intended usage paramters. Additionally, by combining ceramic and metal (typically aluminum, stainless steel, nickel, copper) they are especially prone to breakdown at the meeting of these different materials, known colloquially as ``triple points''. When there are interfaces between materials with different permittivities (dielectric constants), the electric fields are distorted. Electric field is ``pushed'' out of the higher dielectric material into the lower dielectric material. This creates a field enhancement where peak fields can be much higher than average fields in the system. The field enhancement from triple points where there is in interface between a conductor and two dielectrics (e.g conductor, ceramic insulator, and gaseous Xe) is a common source of breakdown along insulator surfaces. Good design practices, namely choices of geometry, reduce the field enhancements in these regions. With commercial feedthroughs, the geometry choice is set and may not be sufficient for the task.
+\subsection{Off The Shelf Feedthroughs}
+The first attempts at building feedthroughs were to use off-the-shelf products from typical vacuum supply vendors such as MDC and Kurt Lesker. Vacuum \ac{HV} feedthroughs are intended to for use from air to vacuum, not air to \ac{LXe}; we were attempting to operate them outside of their intended usage parameters. Additionally, by combining ceramic and metal (typically aluminum, stainless steel, nickel, copper) they are especially prone to breakdown at the meeting of these different materials, known colloquially as ``triple points''. When there are interfaces between materials with different permittivities (dielectric constants), the electric fields are distorted. Electric field is ``pushed'' out of the higher dielectric material into the lower dielectric material. This creates a field enhancement where peak fields can be much higher than average fields in the system. The field enhancement from triple points where there is in interface between a conductor and two dielectrics (e.g conductor, ceramic insulator, and gaseous Xe) is a common source of breakdown along insulator surfaces. Good design practices, namely choices of geometry, reduce the field enhancements in these regions. With commercial feedthroughs, the geometry choice is set and may not be sufficient for the task.
 
 Note that ceramic feedthroughs are not appropriate for low background experiments due to their high radioactivity, but for test beds, where low radioactivity is not a priority, they may be used.
 
@@ -160,7 +265,7 @@ The first few feed throughs used a 12kV \ac{SHV} weldable feed though as shown i
 \begin{center}
 \includegraphics[width=0.49\textwidth]{figures/testbed/ft1_2.jpg}
 \includegraphics[width=0.49\textwidth]{figures/testbed/ft1_1.jpg}
-\caption{(left) The copper tape in this picture is sitting on top of a 1/2~-in swage connector. The swage connector captures a 1/2~in pipe, which has the 12~kV SHV feedthrough welded to the end. (right) 12~kV SHV weldable connector, inverted, clipped, and attached with a machined copper connector. The connector uses a screw to capture the SHV feed though, and the same screw to capture a stranded wire, visible in this picture, which is then fed through a hole drilled in the PTFE to connect to the wire grid frames. The wire was wrapped around the grid frame. }
+\caption{(left) The copper tape in this picture is sitting on top of a 1/2~-in swage connector. The swage connector captures a 1/2~in pipe, which has the 12~kV SHV feedthrough welded to the end. (right) 12~kV SHV weldable connector, inverted, clipped, and attached with a machined copper connector. The connector uses a screw to capture the SHV feed though, and the same screw to capture a stranded wire, visible in this picture, which is then fed through a hole drilled in the \ac{PTFE} to connect to the wire grid frames. The wire was wrapped around the grid frame. }
 \label{fig:ft1}
 \end{center}
 \end{figure}
@@ -201,7 +306,7 @@ Feed throughs were tested by performing a cool down, ramping the \ac{HV} supply 
 \includegraphics[width=\halffig]{figures/testbed/breakdown.jpg}
 \includegraphics[width=\halffig]{figures/testbed/ft_1and2_gasgaps.png}
 
-\caption{(Left) Full xenon breakdown as visible on the PMT trace. The large, saturated pulse is caused by the high intensity of light. This type of breakdown was often accompanied by an audible buzz, and a rise in current that would initiate a trip of the high voltage supply. (Right) a close up of the xenon-facing side of the feedthrough. Visible gaps where xenon gas is exposed to high fields are particularly problematic for breakdowns.}
+\caption{(Left) Full xenon breakdown as visible on the \ac{PMT} trace. The large, saturated pulse is caused by the high intensity of light. This type of breakdown was often accompanied by an audible buzz, and a rise in current that would initiate a trip of the high voltage supply. (Right) a close up of the xenon-facing side of the feedthrough. Visible gaps where xenon gas is exposed to high fields are particularly problematic for breakdowns.}
 \label{fig:breakdown}
 \end{center}
 \end{figure}
@@ -265,7 +370,7 @@ Feedthrough aging can be the result of arcing and discharges which cause local h
 
 
 \subsection{Custom Feedthroughs}
-To achieve better voltage performance, we moved away from typical, stock feedthroughs composed of ceramic and metal. Figure~\ref{fig:ft4} shows a feed through made with a Swagelock reducing union. This blue and white PTFE piece connects 1/4~in \ac{SS} pipe to an 1/8~in PTFE tube, which then houses a \ac{SS} rod. The rod is screwed onto a connector, which holds a wire to connect to the grid. This feed through had stable voltage performance, but could not achieve sustained voltages higher than about 9~kV. A woven \ac{SS} shield was added to the feed though to reach higher voltages (Figure~\ref{fig:ft4} (left)) but this actually decreased the voltage performance to a maximum of about 5~kV.   
+To achieve better voltage performance, we moved away from typical, stock feedthroughs composed of ceramic and metal. Figure~\ref{fig:ft4} shows a feed through made with a Swagelock reducing union. This blue and white \ac{PTFE} piece connects 1/4~in \ac{SS} pipe to an 1/8~in \ac{PTFE} tube, which then houses a \ac{SS} rod. The rod is screwed onto a connector, which holds a wire to connect to the grid. This feed through had stable voltage performance, but could not achieve sustained voltages higher than about 9~kV. A woven \ac{SS} shield was added to the feed though to reach higher voltages (Figure~\ref{fig:ft4} (left)) but this actually decreased the voltage performance to a maximum of about 5~kV.   
 
 \begin{figure}[htbp]
 \begin{center}
@@ -273,7 +378,7 @@ To achieve better voltage performance, we moved away from typical, stock feedthr
 \includegraphics[width=0.3\textwidth, angle=-90]{figures/testbed/ft4_2.jpg}
 \includegraphics[width=0.3\textwidth, angle=-90]{figures/testbed/ft4_3.jpg}
 
-\caption{First attempt at a custom feed through built out of Swagelock parts combined with basic materials like PTFE and stainless steel rods. The orientation shown (left) was later inverted due to concerns of temperature stress and pressure stress on the PTFE ferrules. The feedthrough as assembled (center) was functional, but higher voltage capability was desired. The effect of adding a grounding braid (right) was found to decrease the voltage capability instead of increasing it.  }
+\caption{First attempt at a custom feed through built out of Swagelock parts combined with basic materials like \ac{PTFE} and stainless steel rods. The orientation shown (left) was later inverted due to concerns of temperature stress and pressure stress on the \ac{PTFE} ferrules. The feedthrough as assembled (center) was functional, but higher voltage capability was desired. The effect of adding a grounding braid (right) was found to decrease the voltage capability instead of increasing it.  }
 \label{fig:ft4}
 \end{center}
 \end{figure}
@@ -285,13 +390,12 @@ There are two issues with the approach of adding a grounding braid in this metho
 \begin{center}
 \includegraphics[width=\textwidth]{figures/testbed/will_comsol_1.png}\\
 \includegraphics[width=\textwidth]{figures/testbed/will_comsol_2.png}
-
-\caption{(top) Input to a COMSOL model simulating gaps between the grounding braid and dielectric of a high voltage feedthrough. (bottom) COMSOL output the model, showing that peak fields arise when gaps exist between dielectric and grounding braid.. Both images provided by high voltage engineer W. Waldron.}
+\caption{(top) Input to a COMSOL model simulating gaps between the grounding braid and dielectric of a high voltage feedthrough. (bottom) COMSOL output of the model, showing that peak fields arise when gaps exist between dielectric and grounding braid. Both images provided by W. Waldron.}
 \label{fig:will_comsol}
 \end{center}
 \end{figure}
 
-Due to the poor performance of custom feedthrough, and concerns about the cold connection, a feedthrough was built out of a \ac{SS} rod with \ac{PTFE} dielectric and no shield braid (Figure~\ref{fig:ssrodft}) that enters the inner vessel from the top of tall CF tower, where the connection is warm. The end is a copper rod bent into a U-shape which connects to the \ac{SS} conduction rod via a pin, and the other end, which is threaded, screws into to the cathode grid frame. The bare copper section is only exposed under the liquid level, elsewhere the \ac{PTFE} dielectric helps contain the electric field and prevent breakdown to the inner vessel wall. This feedthrough had good voltage performance, and there was no sign of aging. It was decided, however, that the charge amplifiers were more susceptible to detecting transients from an unshielded feedthrough, so another feedthrough with shielding was constructed (Figure~\ref{fig:cableft}). This feedthrough has an outer PTFE sheath to keep the shielding tight against the inner dielectric. This final feedthrough design was extremely successful, and has been in use for 2 years at the time of writing this thesis.  
+Due to the poor performance of custom feedthrough, and concerns about the cold connection, a feedthrough was built out of a \ac{SS} rod with \ac{PTFE} dielectric and no shield braid (Figure~\ref{fig:ssrodft}) that enters the inner vessel from the top of tall CF tower, where the connection is warm. The end is a copper rod bent into a U-shape which connects to the \ac{SS} conduction rod via a pin, and the other end, which is threaded, screws into to the cathode grid frame. The bare copper section is only exposed under the liquid level, elsewhere the \ac{PTFE} dielectric helps contain the electric field and prevent breakdown to the inner vessel wall. This feedthrough had good voltage performance, and there was no sign of aging. It was decided, however, that the charge amplifiers were more susceptible to detecting transients from an unshielded feedthrough, so another feedthrough with shielding was constructed (Figure~\ref{fig:cableft}). This feedthrough has an outer \ac{PTFE} sheath to keep the shielding tight against the inner dielectric. This final feedthrough design was extremely successful, and has been in use for 2 years at the time of writing this thesis.  
 
 \begin{figure}[htbp]
 \begin{minipage}{0.47\textwidth}
@@ -311,7 +415,7 @@ Due to the poor performance of custom feedthrough, and concerns about the cold c
     \begin{minipage}{0.47\textwidth}
     \includegraphics[width=\linewidth, angle=270]{figures/testbed/ft5_4.jpg}
     \end{minipage}
-\caption{Top: (left) Close up showing the PTFE ferrules and notch. (right) Close up of the sealed top connection; epoxy was added to prevent leaks between the dielectric and conductor rod . Bottom: (left) Threaded U-bend cathode connector (right) Feed through assembled and installed.}
+\caption{Top: (left) Close up showing the \ac{PTFE} ferrules and notch. (right) Close up of the sealed top connection; epoxy was added to prevent leaks between the dielectric and conductor rod . Bottom: (left) Threaded U-bend cathode connector (right) Feed through assembled and installed.}
  \label{fig:ssrodft}
 \end{figure}
 
@@ -345,11 +449,33 @@ Due to the poor performance of custom feedthrough, and concerns about the cold c
     \end{minipage}
     
     
-\caption{Top: (left) Sealed top connection with liberal epoxy use. A male Bendix pin was soldered to the cable conductor. (middle) SHV connector with female Bendix to mate with feedthrough (right) Grounded safety housing with SHV connector. Bottom: (left) Ends of the feedthrough were held in the Teflon stack. (middle) Close up showing cable conductor, PTFE dielectric, and grounding sheath pulled back (right) Grounding scheme for feedthrough cables.}
+\caption{Top: (left) Sealed top connection with liberal epoxy use. A male Bendix pin was soldered to the cable conductor. (middle) SHV connector with female Bendix to mate with feedthrough (right) Grounded safety housing with SHV connector. Bottom: (left) Ends of the feedthrough were held in the Teflon stack. (middle) Close up showing cable conductor, \ac{PTFE} dielectric, and grounding sheath pulled back (right) Grounding scheme for feedthrough cables.}
  \label{fig:cableft}
 \end{figure}
 
 
+\section{Electric Fields in Test Bed}
+Both peak fields, which occur on the grid wires, and fields at the liquid-gas boundary are important to understand. Peak fields are often at a ``weak link'' in the voltage chain where breakdown is most likely to occur. The field in the liquid near the gas boundary extracts electrons, making it important for \ac{TPC} function. The electric field changes as a function of liquid height, and can be calculated analytically following the McDonald lecture notes \cite{McDonald2003}. A COMSOL model with the test bed geometry and materials was also developed by E. Mizrachi, and the analytic calculation was found to agree. Figure~\ref{fig:fields_on_wires} provides a summary of the electric fields on the grids wires for a case where there is only a cathode and anode, separated by 5~cm. The color scale on the COMSOL is misleading, The peak fields, which occur on the cathode wires, are $\sim$130~kV/cm, which appears the same color as 20~kV/cm.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\halffig]{figures/testbed/COMSOL.png}
+\includegraphics[width=\halffig]{figures/testbed/FieldsOnWires_withCOMSOL.png}
+\caption{(left) COMSOL model with specific cathode voltage and liquid level. (right) Analytic calculation following the McDonald notes \cite{McDonald2003}, which shows how the peak fields vary with change in liquid level and cathode voltage. The voltages in the legend refer to the cathode voltage; the anode is held at ground.}
+\label{fig:fields_on_wires}
+\end{center}
+\end{figure}
+
+The COMSOL model shows that the fields in the liquid and gas do not vary very much with position, once there is sufficient distance from the wires. The fields do, however, vary with liquid level. Figure~\ref{fig:fields_in_liquid_and_gas} shows how the liquid and gas electric fields vary with liquid level and cathode voltage; the \ac{TPC} configuration is cathode and anode only, separated by 0.5~cm. The calculation is straightforward: the \ac{TPC} is a essentially a capacitor with a dielectric. Cathode and anode provide boundary conditions on the voltage, and continuity of the derivatives at the liquid-gas boundary is the remaining boundary condition to solve Poisson's equation.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/testbed/fields_in_xaber.png}
+\caption{Ranges for the electric fields in gas and liquid for different cathode voltages and liquid levels.}
+\label{fig:fields_in_liquid_and_gas}
+\end{center}
+\end{figure}
 
 
 %*****************************************
