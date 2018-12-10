@@ -63,7 +63,7 @@
 
 %\include{frontback/Titleback} % Back of the title page
 
-%\cleardoublepage\include{frontback/Signatures} % Signature Page
+% \cleardoublepage\include{frontback/Signatures} % Signature Page
 
 \pagenumbering{arabic}
 \setcounter{page}{1}
@@ -113,7 +113,7 @@
 
 %----------------------------------------------------------------------------------------
 
-\ctparttext{This section describes research done with the \acs{LUX} Detector. The \acs{LUX} program is discussed in detail, including key detector components and calibrations. This is followed by a search for \acs{LIP}s. } % Text on the Part 2 page describing the content in Part 2
+\ctparttext{This section describes research done with the \acs{LUX} Detector. The \acs{LUX} program is discussed in detail, including key detector components and calibrations. This is followed by a search for cosmogenic \acs{LIP}s. } % Text on the Part 2 page describing the content in Part 2
 
 \part{Big Science}
 \label{part:lux}
@@ -123,7 +123,7 @@
 
 \cleardoublepage % Empty page before the start of the next part
 %----------------------------------------------------------------------------------------
-\ctparttext{This section describes research with a small test bed at Lawrence Berkeley National Lab. The details of test bed construction and operation are discussed, with particular attention to construction of high voltage feed throughs. Two studies affecting the sensitivity of future \acs{LXe} \acs{TPC}s are described. One study investigates the solubility of radon daughters, and another furthers understanding of delayed electron noise phenomenon.} % Text on the Part 2 page describing the content in Part 2
+\ctparttext{This section describes research with a small test bed at Lawrence Berkeley National Lab. The details of test bed construction and operation are discussed, with particular attention to construction of high voltage feed throughs. Two studies affecting the sensitivity of future \acs{LXe} \acs{TPC}s are described. One study investigates the solubility of radon daughters, and another furthers understanding of delayed electron noise phenomena.} % Text on the Part 2 page describing the content in Part 2
 
 \part{Little Science}
 \label{part:labwork}
@@ -132,7 +132,14 @@
 \include{chapters/ch06_radon}
 \include{chapters/ch07_etrain}
 
+
 \cleardoublepage % Empty page before the start of the next part
+%\ctparttext{} % Text on the Part 2 page describing the content in Part 2
+
+\part{Conclusions}
+\label{part:conclusion}
+
+\include{chapters/ch08_conclusion}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES

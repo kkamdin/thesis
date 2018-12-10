@@ -2,7 +2,7 @@
 %************************************************
 \chapter{Solubility of Radon Daughters in Liquid Xenon}\label{ch:radon} % $\mathbb{ZNR}$
 %************************************************
-Rare-event searches are very sensitive to backgrounds from radioactivity in and on detector materials. Some of the most omnipresent and troublesome are $^{222}$Rn and its daughters. Decay products from $^{222}$Rn plate out on detector surfaces and have typically been assumed to be fixed there (plate out is further defined in Section~\ref{sec:plateout}). In this chapter, a series of experiments is described; the results provide evidence that radon daughters are mobile in liquid xenon.
+Rare-event searches are very sensitive to backgrounds from radioactivity in and on detector materials. Some of the most omnipresent and troublesome are $^{222}$Rn and its daughters. Decay products from $^{222}$Rn plate out on detector surfaces and have typically been assumed to be fixed there (plate out is further defined in Section~\ref{sec:plateout}). In this chapter, a series of experiments is described; the results provide evidence that radon daughters are mobile in liquid xenon after having been fixed to a surface.
 
 \section{Motivation}
 Radon and radon daughters produce problematic backgrounds for rare-event searches \cite{LUXFirstResults}. Of particular concern for liquid xenon dark matter detectors are ``naked'' beta decays. These ground-state to ground-state decays have no accompanying gammas and cannot be rejected via coincidence tagging. Rejection of these backgrounds in WIMP search experiments relies solely on being able to discriminate electron recoils from nuclear recoils. For example, the \ac{ER} leakage fraction from the LUX Run03 tritium calibration is on the order of 2/1000 over the WIMP search region \cite{LUXTritium} (See Chapter~\ref{ch:lux} for more details about tritium calibration).  The $^{222}$Rn chain contains $^{210}$Pb ($T_{1/2} = $~22.23~y), effectively splitting the decay chain into a ``fast chain'' and ``slow chain'' (Figure~\ref{fig:Rn222}). Radon can be introduced via two pathways: (1) during detector construction and (2) during detector operation (see Figure~\ref{fig:flow_chart}). Great care is taken to ensure minimal contamination via pathway 2 because the fast chain naked betas, $^{214}$Pb and $^{214}$Bi, may decay in the fiducial volume before the purification system can remove them or before they can plate out on detector surfaces. In pathway 1, $^{222}$Rn and daughters plate out onto detector surfaces during construction of parts, and construction of the detector itself. Models for the plate out process can be found in \cite{Guiseppe:2011mj} and \cite{Knutson:1988}. Typically it is assumed that once $^{222}$Rn and daughters plate out, they remain fixed at that position, and can be rejected by a fiducial volume cut. This means that the slow chain naked betas of $^{210}$Pb and $^{210}$Bi from initial exposure during construction are assumed to occur outside the fiducial volume. However, evidence of $^{210}$Bi mobility has been observed in the liquid scintillator environment of KamLAND  \cite{Takemoto:2015gta}, \cite{Gando:2014wjd} and Borexino \cite{Bellini:2013lnn}. If radon daughters are soluble in liquid xenon, the late chain naked betas (from both pathway 1 and 2) pose a serious background distributed throughout the fiducial volume.
@@ -11,14 +11,14 @@ Radon and radon daughters produce problematic backgrounds for rare-event searche
 \begin{figure}[ht]
     \centering
     %\includegraphics[width=5.0in]{figures/radon/222Rn_simple_fastslowchains.png}
-    \includegraphics[width=5.0in]{figures/radon/222Rn_simple_poster.png}
+    \includegraphics[width=\textwidth]{figures/radon/222Rn_simple_poster.png}
     \caption{The $^{222}$Rn decay scheme. The fast and slow chains are indicated. Data from \cite{LNHB}, image provided by K. Lesko and modified for this thesis.}
     \label{fig:Rn222}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=6.0in]{figures/radon/Rnpathways.png}
+    \includegraphics[width=\textwidth]{figures/radon/Rnpathways.png}
     \caption{Pathways to radon and radon daughter contamination.}
     \label{fig:flow_chart}
 \end{figure}
@@ -26,7 +26,7 @@ Radon and radon daughters produce problematic backgrounds for rare-event searche
 
 %While $^{222}$Rn has a half-life of 3.8~d, the long-lived daughter $^{210}$Pb ($T_{1/2} \approx$~22.3~y) can be a source of background events in even the longest running searches. Of particular concern for liquid xenon dark matter detectors are the ``naked'' beta decays of $^{210}$Pb and $^{210}$Bi. These ground-state to ground-state decays have no accompanying gammas and cannot be rejected via coincidence tagging. Rejection of these backgrounds in WIMP search experiments relies solely on being able to discriminate electron recoils from nuclear recoils. Typically it is assumed that once $^{222}$Rn and daughters plate out, they remain stuck to the surface, and can be rejected by a fiducial volume cut. However, evidence of $^{210}$Bi mobility has been observed in the liquid scintillator environment of KamLAND  \cite{Takemoto:2015gta}, \cite{Gando:2014wjd} and Borexino \cite{Bellini:2013lnn}. If radon daughters are soluble in liquid xenon, the naked beta decays of $^{210}$Pb and $^{210}$Bi pose a serious background distributed throughout the fiducial volume.
 
-In order to investigate the mobility of radon daughters in liquid xenon, a $^{220}$Rn source was employed (see Figure~\ref{fig:Rn220}). The analogous long lived daughter in this chain, $^{212}$Pb, has a half-life of 10.6~h, making it appropriate for a laboratory test. Investigating pathway 2 in the laboratory by introducing radon in a \ac{LXe} environment will necessarily yield inconclusive results, because it is impossible to tell if the daughter decay of interest plated out before decaying. Therefore, we required the radon daughters to be on a surface.
+In order to investigate the mobility of radon daughters in liquid xenon, a $^{220}$Rn source was employed instead of $^{222}$Rn (see Figure~\ref{fig:Rn220}). The analogous long lived daughter in the $^{220}$Rn chain, $^{212}$Pb, has a half-life of 10.6~h, making it appropriate for a laboratory test. Investigating pathway 2 in the laboratory by introducing radon in a \ac{LXe} environment will necessarily yield inconclusive results, because it is impossible to tell if the daughter decay of interest plated out before decaying. Therefore, we required the radon daughters to be on a surface.
 
 Xenon gas was circulated through the $^{220}$Rn source and detector components for a period of $>$24~h. The detector was then evacuated, thereby assuring the initial position of radon daughters on a detector surface. The study makes the assumption that any radon daughters subsequently observed in the bulk region after condensing liquid xenon must therefore have dissolved.
 
@@ -44,16 +44,15 @@ Xenon gas was circulated through the $^{220}$Rn source and detector components f
 The term ``plate out'' is used above but not defined. The literature indicates that there two known types of radon daughter plate out \cite{Samuelsson1996}. The following terms are used in \cite{Samuelsson1996} to identify each type.
 
 \begin{enumerate}
-\item \textit{implantation} Alpha recoil implantation of a daughter nucleus
-\item \textit{sticking} Daughters are sitting on the surface of a material; it is possible to wash a percentage of these off with various surface cleaning methods.
+\item \textit{implantation:} Alpha recoil implantation of a daughter nucleus.
+\item \textit{sticking:} Daughters are sitting on the surface of a material; it is possible to wash a percentage of these off with various surface cleaning methods.
 \end{enumerate}
 
-The percentages of daughters plated out in these different modes are not indicated, but \cite{Samuelsson1996} relates a story of researchers being unable to remove $^{214}$Po from glass samples, whereas $^{218}$Po was easily removed with surface cleaning methods. This is explained by the fact that further down the $^{222}$Rn chain, more alpha decays have occurred, so a late-stage daughter has had more chances to be implanted. It is also noted that the durability of the implanted activity is subject to change under different conditions, as is the implant integrity. The author cites factors such as humidity and temperature affecting whether daughters implant, and whether they remain implanted; since the conditions for plate out are different in pathways 1 and 2 and it logical to infer that implantation functions differently in these two environments for \ac{LXe} \ac{TPC}s. 
+The percentages of daughters plated out in these different modes are not indicated, but \cite{Samuelsson1996} relates a story of researchers being unable to remove $^{214}$Po from glass samples, whereas $^{218}$Po was easily removed with surface cleaning methods. This is explained by the fact that further down the $^{222}$Rn chain, more alpha decays have occurred, so a late-stage daughter has had more chances to be implanted. It is also noted that the durability of the implanted activity is subject to change under different conditions, as is the implant integrity. The author cites factors such as humidity and temperature affecting whether daughters implant, and whether they remain implanted; since the conditions for plate out are different in pathways 1 and 2 it logical to infer that implantation functions differently in these two environments for \ac{LXe} \ac{TPC}s. 
 
 The chemistry of radon has been studied as well, and may provide some context to the plate-out discussion. Radon is frequently regarded as a totally inert element. It is, however, classified as a ``metalloid", and exhibits some of the characteristics of both true metals and nonmetals  \cite{stein1987}. For example, it is known to react chemically with fluorine, halogen fluorides, dioxygenyl salts, fluoro-nitrogen salts, and halogen fluoride-metal fluoride complexes to form ionic compounds \cite{stein1982}. It is also known to co-crystalize with hydrogen chloride, hydrogen sulfide, sulfur dioxide and carbon dioxide \cite{stein1987}. In the latter case, the author notes that the radon is not forming true chemical bonds, but rather is held in place by weak Van der Waals forces. These chemical experiments found radon to be readily reactive at ``room temperature and lower", but the low temperate range is not stated. It is clear that chemical / Van der Waals bonds formed by radon belong in the `sticking' class of radon plate out, as opposed to implantation.
 
-If we look to surface physics, the plate-out term `sticking' is well defined by the terms physisorption and chemisorption. Physisorption is distinct from chemisorption in that it is a general phenomenon occurring between the adsorbed atom and surface, where chemisorption involves a chemical reaction between surface and adsorbate, and is characterized by higher bond strengths. Chemisorption potentials have been calculated for many atoms and surfaces \cite{HammerNorskov} and are generally greater than 1~eV. Physisorption potentials, such as the well-known Van der Waals potential, are less than 1~eV and as low as 10~meV. 
-
+If we look to surface physics, the plate-out term `sticking' is well defined by the terms physisorption and chemisorption. Physisorption is distinct from chemisorption in that it is a general phenomenon occurring between the adsorbed atom and surface, while chemisorption involves a chemical reaction between surface and adsorbate, and is characterized by higher bond strengths. Chemisorption potentials have been calculated for many atoms and surfaces \cite{HammerNorskov} and are generally greater than 1~eV. Physisorption potentials, such as the well-known Van der Waals potential, are less than 1~eV and as low as 10~meV. 
 
 Plate out occurs with different rates on different materials \cite{Bigu1987}, and can be an order of magnitude larger on \ac{PTFE} than stainless steel, likely due to \ac{PTFE} tendency to accumulate negative static charge \cite{Morrison2017}. Plate out of radon daughters can be reduced by employing a nitrogen gas purge or an electric field (approximately 90\% of radon daughters are charged) \cite{Bruemmer2015}. However, \cite{Bigu1987}, \cite{Morrison2017}, and \cite{Bruemmer2015} do not distinguish between implantation and sticking, and only use the term ``plate out''. 
 
@@ -61,7 +60,7 @@ Plate out occurs with different rates on different materials \cite{Bigu1987}, an
 \section{Experimental Configuration and Method}
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=3.0in]{figures/radon/internals.png}
+    \includegraphics[width=0.6\textwidth]{figures/radon/internals.png}
     \caption{Diagram of the test bed. For this study, the cathode is held at -6.0~kV, and the grid is held at -4.0~kV. E$_{1}^{liq} \approx $5.0~kV/cm, E$_{1}^{gas} \approx $10.0~kV/cm E$_{2}$ = 1.0~kV/cm. E$_{3}$ = 2.7~kV/cm. The large gray regions represent the structural rings of \acs{PTFE}. The line between the grid and anode represents the liquid xenon level. The xenon inlet pipes incoming gas directly into the liquid region, and the liquid outlet pulls from the level of the active region. A gas outlet (not pictured) also draws xenon gas into the circulation system to be purified.}
     \label{fig:anode_and_grids}
 \end{figure}
@@ -84,7 +83,8 @@ The \ac{TPC} was filled with 1.5~bar of xenon gas at room temperature. The gas w
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=5.0in]{figures/radon/Rn_Circulation_Path.png}
+    %\includegraphics[width=\textwidth]{figures/radon/Rn_Circulation_Path.png}
+        \includegraphics[width=\textwidth]{figures/radon/Rncircpath.pdf}
     \caption{An example a circulation path used for plate out is shown on the pumping and instrumentation diagram. During data-taking the radon source was bypassed. The typical liquid level is indicated on the diagram to show that the outlet drew from the liquid via a capillary, ensuring purification of the liquid xenon. A gas purge also purified the gas column in the detector.}
     \label{fig:p_and_id}
 \end{figure}
@@ -96,7 +96,7 @@ The procedure to plate out $^{220}$Rn daughters on the inner surfaces of the det
 \begin{figure}[ht]
     \centering
  %   \includegraphics[width=5.0in]{figures/radon/220Rn_simple_fastslowchains.png}
-     \includegraphics[width=5.0in]{figures/radon/220Rn_simple_poster.png}
+     \includegraphics[width=\textwidth]{figures/radon/220Rn_simple_poster.png}
     \caption{The $^{220}$Rn decay scheme. The fast and slow chains are indicated. Events in the plate out data sets are from the slow chain. Data from \cite{LNHB}, image provided by K. Lesko and modified for this thesis.}
     \label{fig:Rn220}
 \end{figure}
@@ -118,7 +118,7 @@ Dataset ID & A &B & C & D \\
 %\multirow{3}{*}{Plate-Out} & Circ thur $^{220}$Rn Source & yes & yes & no & - \\
 \textbf{Plate-Out} & & & & \\
 Circ thru $^{220}$Rn  & yes & yes & no & - \\
-Circulation  (h) & 24 & 48 & 24 & - \\
+Circ time  (h) & 24 & 48 & 24 & - \\
 Cathode  (kV) & -1 & 0 & 0 &  - \\
 \\[-5pt]
 
@@ -158,8 +158,7 @@ In order to identify a signal region for bulk radon daughters, the flow though $
 The central anode segment was assumed to select events from the central column with 100\% efficiency. Events occurring under one of the outer concentric segments can produce a signal on the central anode, but the signal was largest at the anode segment nearest the charge. It was not required that there be zero signal on the outer segments, so the (x,y) position of the event is treated as a source of uncertainty, which is taken into account in the calculation of fiducial volume. The drift time of the events was calculated from the time difference between the S1 and S2 pulses, and a linear scaling of 2~mm/us was applied using the electron drift velocity in \ac{LXe} measurements in \cite{Aprile2010}. 
 
 \subsection{Fiducial Volume}
-Different values for the fiducial volume are presented below. Since there was no calibration to determine the efficiency at which the central anode segment to selected events from the central column, it is unclear what the true fiducial volume is. We fold in this uncertainty by calculating several possible fiducial volumes. If the central anode segment only detects events directly underneath it and no where else, then the fiducial volume is 0.39$\pm$0.03~mL. However, if the central anode segment reacted to events near the walls, the fiducial volume is the entire active region, 25.3$\pm$1.8~mL.
-
+Different values for the fiducial volume are presented below. Since there was no calibration to determine the efficiency at which the central anode segment responds to selected events from the central column, it is unclear what the true fiducial volume is.  In the future, a calibration scheme could be devised with the $^{210}$Po source discussed in the next chapter. The $^{210}$Po can be deposited on small segments of the grid wire. Depositions could be made at desired locations, i.e. radial distances from the central anode segment, and the response of the anode to a source at different locations could be characterized. For this study measurement, we fold in the uncertainty by calculating several possible fiducial volumes. If the central anode segment only detects events directly underneath it and no where else, then the fiducial volume is 0.39$\pm$0.03~mL. However, if the central anode segment reacted to events near the walls, the fiducial volume is the entire active region, 25.3$\pm$1.8~mL.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccccc}
@@ -181,7 +180,7 @@ Mass (g) & 1.1 $\pm$ 0.1 & 4.6 $\pm$ 0.3 & 10 $\pm$ 1 & 73.4 $\pm$ 5.2  \\
 
 \hline
 \end{tabular}
-\caption{Calculations of fiducial volume. Liquid level is taken to be 14 $\pm$ 1~mm. Density of \acs{LXe} near boiling point is 2.9~g/mL.}
+\caption{Calculations of fiducial volume. The liquid level is taken to be 14 $\pm$ 1~mm. The density of \acs{LXe} near its boiling point is taken to be 2.9~g/mL.}
 \label{T:fiducial}
 \end{table}
 
@@ -190,7 +189,7 @@ Mass (g) & 1.1 $\pm$ 0.1 & 4.6 $\pm$ 0.3 & 10 $\pm$ 1 & 73.4 $\pm$ 5.2  \\
 \section{Analysis}
 \label{S:3}
 \subsection{Number of $^{220}$Rn daughters in the TPC}
-As described in Section~\ref{plateout}, the rate of $^{220}$Rn in the \ac{TPC} was measured to be 4.5$\pm$0.5~Hz during  plate out. From this, the number of daughter atoms $^{212}$Pb and $^{212}$Bi present in the \ac{TPC} just prior to filling the liquid xenon were calculated. The number of daughter atoms as a function of the plate out time is shown in Figure~\ref{fig:plate_out} along with the data acquisition periods for each dataset. This calculation assumes that the diffusion time in the \ac{PTFE} walls was less than removal time via the capillary, so the daughter of any decay that occurs in the \ac{TPC} remains in the \ac{TPC}.
+As described in Section~\ref{plateout}, the rate of $^{220}$Rn in the \ac{TPC} was measured to be 4.5$\pm$0.5~Hz during  plate out. From this, the number of daughter atoms $^{212}$Pb and $^{212}$Bi present in the \ac{TPC} just prior to filling the liquid xenon were calculated. The number of daughter atoms as a function of the plate out time is shown in Figure~\ref{fig:plate_out} along with the data acquisition periods for each dataset. This calculation assumes that the diffusion time in the \ac{PTFE} walls was less than the removal time via the capillary, so the daughter of any decay that occurs in the \ac{TPC} remains in the \ac{TPC}.
 
 %, and is an upper bound because some of the daughters are swept with the gaseous xenon through the circulation system and removed by the getter, or similarly removed with the pump out step prior to data taking. There is no way to accurately estimate the number of $^{212}$Bi atoms deposited on detector surfaces, so we use the upper bound in the calculation of percent of dissolved $^{212}$Bi below.  
 
@@ -209,7 +208,7 @@ As described in Section~\ref{plateout}, the rate of $^{220}$Rn in the \ac{TPC} w
 \subfloat[]{\includegraphics[width=\fullfig]{figures/radon/livetime_a.png}}\\
 \subfloat[]{ \includegraphics[width=\fullfig]{figures/radon/livetime_b.png}}\\
 \subfloat[]{   \includegraphics[width=\fullfig]{figures/radon/livetime_c.png}}
-\caption{a) and (b) and (c) show the plateout conditions of datasets A, B, and C, respectively. The gray bands indicate time when data was being acquired. Dataset D (calibration) was taken following dataset A and consisted of a few hours.}
+\caption{(a) and (b) and (c) show the plate out conditions of datasets A, B, and C, respectively. The gray bands indicate time when data was being acquired. Dataset D (calibration) was taken following dataset A and consisted of a few hours.}
 \label{fig:plate_out}
 \end{figure}
 
@@ -266,7 +265,7 @@ The trigger described in Section~\ref{datacollection} captured the slow chain de
 The aim of this analysis was to reconstruct the z-position of radon daughter alpha decays via the timing difference between the S1 and S2 of an event. Therefore, Bi-Po events were rejected, as the two S2s presented a timing ambiguity. The focus was instead on identifying $^{212}$Bi alpha decays. All events were expected to take place on detector surfaces, so $^{212}$Bi alpha decays in the drift region indicate mobility of plated-out daughters $^{212}$Pb and/or $^{212}$Bi; it was not possible to determine whether the original position was on the cathode wires, \ac{PTFE} walls, or other detector surface.
 
 %Because many of the events take place on the cathode grid wires, decreased light collection caused by the wires (shadowing) and high, non-uniform fields complicate the light and charge yields, and therefore accurate energy reconstruction of events on the cathode wires is is hampered (discussed further below). Therefore, b
-The software cuts used to select $^{212}$Bi alphas and reject all. other slow chain decays are described below: 
+The software cuts used to select $^{212}$Bi alphas and reject all other $^{220}$Rn slow chain decays are described below: 
 \begin{enumerate}
 \item \textbf{Data Cleaning} Remove events with any railed charge channel.
 \item \textbf{Fiducialization} Require more signal in the central anode segment than the other two concentric anode segments.
@@ -282,9 +281,9 @@ The software cuts used to select $^{212}$Bi alphas and reject all. other slow ch
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[]{\includegraphics[width=\fullfig]{figures/radon/oct_alpha_s1_hist.png}}\\
-\subfloat[]{ \includegraphics[width=\fullfig]{figures/radon/jan_alpha_s1_hist.png}}
-\caption[]{The S1 areas of events that were tagged using topological features. These distributions were then used to employ the cuts in Step 3. The branching ratio for $^{212}Bi$ is 36:64 for $\alpha$:Bi-Po. Dataset (a) showed 10:90 and dataset (b) showed 35:65. It is unclear why the branching ratios for dataset (a) deviate so much from expectation. The trigger is more efficient for Bi-Po events because those decays would produce more a larger charge signal. It's possible that the cathode being left on during the plate out procedure had some effect on the geometrical distribution of daughters on the cathode wires, which further biased the trigger.}
+\subfloat[]{\includegraphics[width=\textwidth]{figures/radon/oct_alpha_s1_hist.png}}\\
+\subfloat[]{ \includegraphics[width=\textwidth]{figures/radon/jan_alpha_s1_hist.png}}
+\caption[]{The S1 areas of events that were tagged using topological features. These distributions were then used to employ the cuts in Step 3. The branching ratio for $^{212}$Bi is 36:64 for $\alpha$:Bi-Po. Dataset (a) showed 10:90 and dataset (b) showed 35:65. It is unclear why the branching ratios for dataset (a) deviate so much from expectation. The trigger is more efficient for Bi-Po events because those decays produce a larger charge signal. It's possible that the cathode being left on during the plate out procedure had some effect on the geometrical distribution of daughters on the cathode wires, which further biased the trigger in the case of dataset (a).}
 \label{fig:area_cut}
 \end{figure}
 
@@ -342,16 +341,20 @@ The $z$ position cut separating cathode from bulk was then defined to be $z_{cut
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.59\textwidth]{figures/radon/hist_a_label.png} \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_a_label.png}\\
-\includegraphics[width=0.59\textwidth]{figures/radon/hist_b_label.png} \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_b_label.png}\\
+%\includegraphics[width=0.59\textwidth]{figures/radon/hist_a_label.png} \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_a_label.png}\\
+%\includegraphics[width=0.59\textwidth]{figures/radon/hist_b_label.png} \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_b_label.png}\\
+\includegraphics[width=4.3in]{figures/radon/hist_a_label.png} \includegraphics[width=2.1in]{figures/radon/signalregion_a_label.png}\\
+\includegraphics[width=4.3in]{figures/radon/hist_b_label.png} \includegraphics[width=2.1in]{figures/radon/signalregion_b_label.png}\\
 \caption{For datasets A and B: (left) Distribution of events in $z$. (right)  The same events distributed in the S1-S2 plane, showing selection criteria for candidate $^{212}$Bi alpha events in the bulk liquid xenon.} 
 \label{fig:all_plots_AB}
 \end{figure}
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.59\textwidth]{figures/radon/hist_bkg_label.png} \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_bkg_label.png}\\
-\includegraphics[width=0.59\textwidth]{figures/radon/hist_calib_label.png}\includegraphics[width=0.4\textwidth]{figures/radon/signalregion_calib_label.png}\\
+%\includegraphics[width=0.59\textwidth]{figures/radon/hist_bkg_label.png} \includegraphics[width=0.4\textwidth]{figures/radon/signalregion_bkg_label.png}\\
+%\includegraphics[width=0.59\textwidth]{figures/radon/hist_calib_label.png}\includegraphics[width=0.4\textwidth]{figures/radon/signalregion_calib_label.png}\\
+\includegraphics[width=4.3in]{figures/radon/hist_bkg_label.png} \includegraphics[width=2.1in]{figures/radon/signalregion_bkg_label.png}\\
+\includegraphics[width=4.3in]{figures/radon/hist_calib_label.png}\includegraphics[width=2.1in]{figures/radon/signalregion_calib_label.png}\\
 \caption{For datasets C and D: (left) Distribution of events in $z$. (right) The same events distributed in the S1-S2 plane, showing selection criteria for candidate $^{212}$Bi alpha events in the bulk liquid xenon. The calibration cut shown for dataset D (bottom right) selected events within the region indicated at 98\% efficiency. That is, all the gray points passed the cuts to identify a bulk  $^{220}$Rn alpha decay, and the circle restricts the signal region further, keeping 98\% of the gray points. } 
 \label{fig:all_plots_CD}
 \end{figure}
@@ -364,9 +367,9 @@ One feature that merits further discussion from Figure $\ref{fig:all_plots_AB}$ 
 \FloatBarrier
 \section{Results}
 \label{results}
-We observed 11 bulk $^{212}$Bi alphas for dataset A, 20 for dataset B, and 1 background event in the signal region from dataset C. The counts of cathode region $^{212}$Bi alphas are presented in Table $\ref{T:3}$. There was only one background event observed in the signal region, so with 95\% confidence the true background count is at most 4.74. The observed counts for dataset A and B lie far above the 95\% confidence limit for background, indicating they are true observations of  $^{212}$Bi alphas in bulk. Defining dissolved fraction as $N_{bulk}$ / $N_{cath}$, the dissolved fraction of $^{212}$Bi alphas for dataset A ($\approx$ 13~h livetime) is 0.035 $\pm$ 0.010, and for data set B ($\approx$ 25~h livetime) is 0.099 $\pm$ 0.020. 
+We observed 11 bulk $^{212}$Bi alphas for dataset A, 20 for dataset B, and 1 background event in the signal region from dataset C. The counts of cathode region $^{212}$Bi alphas are presented in Table $\ref{T:3}$. There was only one background event observed in the signal region, so with 95\% confidence the true background count is at most 4.74. The observed counts for dataset A and B lie far above the 95\% confidence limit for background, indicating they are true observations of  $^{212}$Bi alphas in bulk. Defining the dissolved fraction as $N_{bulk}$ / $N_{cath}$, the dissolved fraction of $^{212}$Bi alphas for dataset A ($\approx$ 13~h livetime) is 0.035 $\pm$ 0.010, and for data set B ($\approx$ 25~h livetime) is 0.099 $\pm$ 0.020. 
 
-These results indicate that either $^{212}$Pb or $^{212}$Bi itself is soluble to a small degree in liquid xenon. 
+These results indicate that either $^{212}$Pb or $^{212}$Bi itself is soluble (i.e. mobile once plated out) to a small degree in liquid xenon. 
 
 %Furthermore, the dissolved fraction per livetime for data set A being less than that of data set B may indicate that daughters adsorbed on Teflon are more likely to dissolve than daughters adsorbed on stainless steel. The rate of $^{220}$Rn entering the detector during the plate-out step was the same for both datasets A and B, but for data set A charged daughters were attracted preferentially to the cathode.
 %The 95\% confidence intervals for dataset A (observed 11 counts) are [4.50, 17.50] and dataset B (observed 20 counts) are [11.23,28.76] 
@@ -399,10 +402,14 @@ Cathode Events & 300 & 183 & 4 \\
 The solubility is presented in the following units:
 
 %\centering
+%\begin{equation}
+%$$
+%\frac{\displaystyle  \frac{\displaystyle Bq~(dissolved)}{\displaystyle kg~LXe} }{\displaystyle  \frac{\displaystyle Bq~(plated~out)}{\displaystyle cm^{2}~(detector~surface)} }
+%$$
+%\end{equation}
+
 \begin{equation}
-$$
-\frac{\displaystyle  \frac{\displaystyle Bq~(dissolved)}{\displaystyle kg~LXe} }{\displaystyle  \frac{\displaystyle Bq~(plated~out)}{\displaystyle cm^{2}~(detector~surface)} }
-$$
+\frac{   \mathrm{Bq~(dissolved)/ kg~LXe} }{ \mathrm{Bq~(plated~out) / cm}^{2}~\mathrm{(detector~surface)} }
 \end{equation}
 
 
@@ -451,7 +458,7 @@ Bq (plated) / cm$^{2}$ max & 0.069  $\pm$ 0.007 & 0.089  $\pm$ 0.009  \\
 %\hline
 %dataset ID: & A &B \\
 Solubility min & 0.091 $\pm$ 0.030 & 0.064 $\pm$ 0.021\\
-Solubility max & 84. $\pm$ 26. & 58. $\pm$ 18. \\
+Solubility max & 84 $\pm$ 26 & 58 $\pm$ 18 \\
 
 %& Dissolved Fraction of $^{212}$Bi $\alpha$ & 0.035 $\pm$ 0.010 & 0.099 $\pm$ 0.020 & 0.02 $\pm$ 0.18  \\
 %quote in results section
@@ -474,18 +481,18 @@ The solubility calculation is subject to errors from the following factors. Wher
 \item Live time calculation (uncertainty included)
 \end{enumerate}
 
-Folding in all of these assumptions and errors, we find a best and worst case for datasets A and B. The solubility found in dataset A is at worst 84 $\pm$ 26 Bq/kg/Bq/cm$^{2}$ and at best 0.091 $\pm$ 0.030 Bq/kg/Bq/cm$^{2}$. For dataset B, the worst case is 58. $\pm$ 18. Bq/kg/Bq/cm$^{2}$ and the best case is 0.064 $\pm$ 0.021 Bq/kg/Bq/cm$^{2}$. The largest factor in the best versus worst case is what volume to identify as the fiducial volume. The worst case assumes the central anode segment only selects events directly beneath it, this leads to the highest solubility. The best case assumes the central anode segment may pick up events anywhere in the active region so the fiducial volume is much larger; this leads to the lowest solubility.
+Folding in all of these assumptions and errors, we find a best and worst case for datasets A and B. The solubility found in dataset A is at worst 84 $\pm$ 26 Bq/kg/Bq/cm$^{2}$ and at best 0.091 $\pm$ 0.030 Bq/kg/Bq/cm$^{2}$. For dataset B, the worst case is 58 $\pm$ 18 Bq/kg/Bq/cm$^{2}$ and the best case is 0.064 $\pm$ 0.021 Bq/kg/Bq/cm$^{2}$. The largest factor in the best versus worst case is what volume to identify as the fiducial volume. The worst case assumes the central anode segment only selects events directly beneath it, this leads to the highest solubility. The best case assumes the central anode segment may pick up events anywhere in the active region so the fiducial volume is much larger; this leads to the lowest solubility.
 
 \section{Discussion}
 These results are first evidence that the $^{220}$Rn daughters $^{212}$Pb and/or $^{212}$Bi are soluble in liquid xenon (i.e. mobile once plated-out). The dissolved events are a small fraction of events that are plated-out on detector surfaces. These daughters are proxies for the isotopes $^{210}$Pb and/or $^{210}$Bi, which undergo naked beta decays in the $^{222}$Rn chain and pose a problem for liquid xenon dark matter detectors. Our study counts dissolved $^{212}$Bi alpha events as well as $^{212}$Bi alphas plated out on the cathode. We found 11 counts in dataset A and 20 counts in dataset B consistent with $^{212}$Bi decay in the bulk region; these counts are significantly above a background count of 1. The experimental apparatus is not characterized extensively. Regardless, we carried through the solubility calculation, taking into account uncertainties to arrive at a `best case' and `worst case' result. After carrying out the calculations, the range of solubility observed by our method is 0.1 to 84~Bq/kg/Bq/cm$^{2}$
 
-The limit derived from \ac{LUX} observations, stated in the \ac{LZ} projected sensitivity paper \cite{LZ:Sensitivity}, is 0.1~$\mu$~Bq/kg LXe for $^{212}$Bi mobility, given 50~nBq/cm$^{2}$ on \ac{PTFE} panels. Our observed solubility is much greater than this. One explanation is that we are sensitive to the `stuck' radon daughters that wash off easily in the first few days of an experiment due to the introduction of \ac{LXe}. Our experiment only tests the initial introduction of \ac{LXe}. Large \ac{TPC}s may then expect an increased rate of radon daughter decays in the fiducial volume at the beginning of a search, but a decreasing rate as these are removed by the getter or are implanted in detector materials. 
+The limit derived from \ac{LUX} observations, stated in the \ac{LZ} projected sensitivity paper \cite{LZ:Sensitivity}, is 0.1~$\mu$~Bq/kg/Bq/cm for $^{212}$Bi mobility, given 50~nBq/cm$^{2}$ on \ac{PTFE} panels. Our observed solubility is much greater than this. One explanation is that we are sensitive to the `stuck' radon daughters that wash off easily in the first few days of an experiment due to the introduction of \ac{LXe}. Our experiment only tests the initial introduction of \ac{LXe}. Large \ac{TPC}s may then expect an increased rate of radon daughter decays in the fiducial volume at the beginning of a search, but a decreasing rate as these are removed by the getter or are implanted in detector materials. 
 
-Another, testable, explanation that would reconcile the different solubilities in the $^{220}$Rn and $^{222}$Rn chain is beta ejection. Referring to Figure~\ref{fig:Rn220} and Figure~\ref{fig:Rn222}, both bottleneck decays, $^{XXX}$Pb, are beta decays. However, $^{212}$Pb in the $^{220}$Rn chain has a beta decay endpoint of 570~keV, which about 10 times the endpoint energy for $^{210}$Pb in the $^{222}$Rn chain. Daughter recoils from beta decay are indeed small; the endpoints are approximately 0.6~eV for the recoil from $^{212}$Pb decay in the $^{220}$Rn chain and  0.006~eV for the recoil from $^{210}Pb$ decay in the $^{222}$Rn chain. As discussed in Section~\ref{sec:plateout}, the physisorption potential for both cases is expected to be below 1~eV. Depending on the exact value, which is unavailable, the $^{212}$Pb decay could provide enough energy to liberate the daughter $^{212}$Bi most of the time, where as $^{210}$Pb decay produces a maximum recoil value below the potential depth. 
+Another, testable, explanation that would reconcile the different solubilities in the $^{220}$Rn and $^{222}$Rn chain is beta ejection. Referring to Figure~\ref{fig:Rn220} and Figure~\ref{fig:Rn222}, both bottleneck decays, $^{XXX}$Pb, are beta decays. However, $^{212}$Pb in the $^{220}$Rn chain has a beta decay endpoint of 570~keV, which about 10 times the endpoint energy for $^{210}$Pb in the $^{222}$Rn chain. Daughter recoils from beta decay are indeed small; the endpoints are approximately 0.6~eV for the recoil from $^{212}$Pb decay in the $^{220}$Rn chain and  0.006~eV for the recoil from $^{210}$Pb decay in the $^{222}$Rn chain. As discussed in Section~\ref{sec:plateout}, the physisorption potential for both cases is expected to be below 1~eV. Depending on the exact value, which is unavailable, the $^{212}$Pb decay could provide enough energy to liberate the daughter $^{212}$Bi most of the time, whereas $^{210}$Pb decay produces a maximum recoil value below the potential depth. 
 
 Further study, where a known amount of $^{220}$Rn daughters are plated out on a known area is necessary to measure dissolution rates. Additional studies that compare the solubility of radon daughters adsorbed on different materials, and under different conditions (e.g. temperature) would also be useful. The effect of cleaning these surfaces before searching for dissolved daughters should also be investigated. 
 
-If beta recoil, not `washing' by the \ac{LXe}, is the cause of radon daughter solubility, then the high rate seen by this study of $^{220}$Rn can be reconciled with the low rate of $^{222}$Rn daughter dissolution seen in large \ac{LXe} experiments.
+If beta recoil, not `washing' by the \ac{LXe}, is the cause of radon daughter solubility, then the high rate seen by this study of $^{220}$Rn can be reconciled with the low rate of $^{222}$Rn daughter dissolution seen in \ac{LUX}.
 
 
 %*****************************************
