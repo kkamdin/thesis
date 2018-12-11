@@ -22,15 +22,36 @@ Milhay Novak of Geant4 also provided a different set of optical constants, which
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/app/pai_different_consts.png}
-\caption{ (left) Plot of the \acs{PAI} cross section divided by the Rutherford cross section for Si. Comparing the different sources for optical constants and calculation method shows that (1) the EPICS constants and the Palik/CXRO match and (2) my code that calculates the \acs{PAI} cross section does not have any obvious errors. (right) Plot of the \acs{PAI} cross section divided by the Rutherford cross section, showing the EPICS and Palik/CXRO constants do not match for Xe.}
+%\includegraphics[width=\textwidth]{figures/app/pai_different_consts.png}
+\includegraphics[width=\halffig]{figures/app/si_different_consts.png}
+\includegraphics[width=\halffig]{figures/app/xe_different_consts.png}
+\caption{ (left) Plot of the \acs{PAI} cross section divided by the Rutherford cross section for Si. Comparing the different sources for optical constants and calculation method shows that (1) the EPICS constants and the Palik/CXRO match and (2) my code that calculates the \acs{PAI} cross section does not have any obvious errors. (right) Plot of the \acs{PAI} cross section divided by the Rutherford cross section for Xe. The EPICS and Palik/CXRO constants do not match exactly for Xe.}
 \label{fig:pai_different_consts}
 \end{center}
 \end{figure}
 
-The 1D base straggling Monte Carlo described in Chapter~\ref{ch:lips} was compared for both the EPICS and Palik/CXRO versions of the Xe cross section. There wasn't a measurable difference in the $\langle dE/dx \rangle$, and the same 13\% error when compared to \cite{PDG} was present.
+The 1D base straggling Monte Carlo described in Chapter~\ref{ch:lips} was compared for both the EPICS and Palik/CXRO versions of the Xe cross section. There was not a measurable difference in the $\langle dE/dx \rangle$, and the same 13\% error when compared to \cite{PDG} was present.
 
-Both the Palik/CXRO and EPICS versions of the cross section for Xe are tabulated below.
+Both the Palik/CXRO and EPICS versions of the cross section for Xe are shown below.
 
 \section{PAI Cross Section}
-Need to figure out if I can attach a data file to the thesis. 
+The \ac{PAI} cross section is shown below for different constants (it is not normalized to the Rutherford cross section).
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/app/full_fvp_xe.png}
+\caption{\acs{PAI} cross section for xenon used in this thesis.  }
+\label{fig:full_fvp_me}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/app/full_fvp_xe_epics.png}
+\caption{\acs{PAI} cross section for xenon calculated with optical constants from the EPICS database (provided over email correspondence with M. Novak) }
+\label{fig:full_fvp_epics}
+\end{center}
+\end{figure}
+
