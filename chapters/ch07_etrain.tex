@@ -164,8 +164,7 @@ While \ac{PMT} saturation was the main challenge for selecting a monoenergetic s
 \label{eq:bune}
 \frac{V_{A} - V_{G}}{V_{G} - V_{C}} \cdot \frac{D_{C-G}}{D_{G-A}} \geqslant \frac{1 + \rho [1 + \frac{d}{4\pi D_{G-A}} (\rho^{2} - 4 ln\rho) ]} {1 - \rho [1 + \frac{d}{4\pi D_{C-G}} (\rho^{2} - 4 ln\rho) ]}
 \end{equation}
-
-Where $C$ denotes cathode, $G$ denotes grid, and $A$ denotes anode. $d$ is the grid pitch, $D_{C-G}$ and $D_{G-A}$ are respectively the distances between $C$-$G$ and $G$-$A$ and $\rho$ is defined as $\rho \equiv 2\pi \frac{r}{d}$ where $r$ is the grid wire radius. The \ac{LHS} and \ac{RHS} of Equation~\ref{eq:bune} can be reorganized as: $T \equiv \mathrm{log}_{10}(LHS - RHS)$ to give the transparency condition $T \geqslant 0$. An example result, $T$ as a function of $V_{C}$, is shown in Figure~\ref{fig:bune} for a grid voltage of -4.0~kV. The charge-vs-drift plot in Figure~\ref{fig:charge_vs_drift} shows a loss of charge across the grid for voltage setting $V_{G}$ = -4.0~kVm, $V_{C}$ = -6.0~kV, and $V_{A}$ = 0V. According to Bunemann's equation plotted in Figure~\ref{fig:bune}, a cathode voltage of $V_{C}$ = -6~kV should have resulted in a transparent grid. Different voltages of $V_{C}$ were also tried, but they resulted in smaller drift fields, which reduced the charge yield from alphas. It is possible the grid transparency condition was affected by the relative angle of the cathode grid wires to those of the extraction grid; this was not investigated further.
+where $C$ denotes cathode, $G$ denotes grid, and $A$ denotes anode. $d$ is the grid pitch, $D_{C-G}$ and $D_{G-A}$ are respectively the distances between $C$-$G$ and $G$-$A$ and $\rho$ is defined as $\rho \equiv 2\pi \frac{r}{d}$ where $r$ is the grid wire radius. The \ac{LHS} and \ac{RHS} of Equation~\ref{eq:bune} can be reorganized as: $T \equiv \mathrm{log}_{10}(LHS - RHS)$ to give the transparency condition $T \geqslant 0$. An example result, $T$ as a function of $V_{C}$, is shown in Figure~\ref{fig:bune} for a grid voltage of -4.0~kV. The charge-vs-drift plot in Figure~\ref{fig:charge_vs_drift} shows a loss of charge across the grid for voltage setting $V_{G}$ = -4.0~kVm, $V_{C}$ = -6.0~kV, and $V_{A}$ = 0V. According to Bunemann's equation plotted in Figure~\ref{fig:bune}, a cathode voltage of $V_{C}$ = -6~kV should have resulted in a transparent grid. Different voltages of $V_{C}$ were also tried, but they resulted in smaller drift fields, which reduced the charge yield from alphas. It is possible the grid transparency condition was affected by the relative angle of the cathode grid wires to those of the extraction grid; this was not investigated further.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -191,7 +190,7 @@ The grid was removed and the separation from cathode to anode was reduced to 0.5
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=\halffig]{figures/testbed/internals1.png}
+\includegraphics[width=\halffig]{figures/etrains/internals_extraction.png}
 \caption{The testbed configuration used in \cite{SorensenKamdin2018}. There is only a cathode grid and anode, with no separate drift region. The \acs{TPC} can be thought of as ``extraction region only''.}
 \label{fig:extraction_tpc}
 \end{center}
