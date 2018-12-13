@@ -397,8 +397,9 @@
       %  {\raggedright\Large\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]% 
         %{\relax}{\raggedright\Large\textsf}{1em}{\thechapter\Large\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule] %same line but font different
        % {\relax}{\raggedright\Large\textsf\thechapter}{1em}{\Large\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule] %different line but same different
-        {\relax}{\raggedright\LARGE\textsf}{1em}{\raggedright\LARGE\textsf{\thechapter}\quad\LARGE\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule] %fuck you UC Berkeley
-        }
+        %{\relax}{\raggedright\LARGE\textsf}{1em}{\raggedright\LARGE\textsf{\thechapter}\quad\LARGE\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule] %fuck you UC Berkeley
+        {\relax}{\raggedright\LARGE\textsf}{1em}{\raggedright\LARGE\textsf{\ifnum\value{chapter}>0\relax\arabic{chapter}\quad.~\fi}\LARGE\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule] %fuck you UC Berkeley
+               }
     % sections \FloatBarrier
     \titleformat{\section}
         {\relax}{\Large\textsf{\thesection}}{1em}{\Large\spacedallcaps}
